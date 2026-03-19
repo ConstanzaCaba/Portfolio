@@ -484,6 +484,38 @@ p {
   color: rgb(243,241,239);
 }
 
+
+/*estilo popup mijardin*/
+#popup-jardin {
+  display:none; 
+  position:fixed; 
+  width:100%; 
+  height:auto; 
+  background:transparent; 
+  z-index:1000;
+} 
+
+#popup-contenido {
+   background:rgb(243,241,239); 
+   width:33%; 
+   position:relative; 
+   display:inline-block;
+   margin-top: 5px;
+   max-height: 110vh;
+  }
+
+#popup-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 70vh;
+  object-fit: contain;
+  object-position: left;
+}
+#popup-desc{
+  margin:0; font-size:12px; font-family:inherit;
+}
+
 @media (max-width: 768px) {
   .site-header {
     /*flex-wrap: wrap;*/
@@ -641,8 +673,35 @@ p {
     scroll-snap-align: start;
   }
 
-  #popup-contenido {
-    width: 100% !important;
+  #popup-jardin {
+  display:none; 
+  position:fixed; 
+  width:90%; 
+  height:auto; 
+  background:transparent; 
+  z-index:1000;
+} 
+
+#popup-contenido {
+   background:rgb(243,241,239); 
+   width:100%; 
+   position:relative; 
+   display:inline-block;
+   margin-top: 5px;
+   max-height: 90vh;
   }
+
+#popup-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 70vh;
+  object-fit: contain;
+  object-position: left;
+}
+#popup-desc{
+  font-size:12px; 
+  font-family:inherit;
+}
 
 }
