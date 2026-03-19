@@ -490,7 +490,7 @@ p {
     position: sticky;
     top: 0;
 
-    background-image: url('imagenes/rectangulo.header.png');
+    background-image: url('../imagenes/rectangulo.header.png');
     background-size: 100% 100%;
     background-position: center;
 
@@ -641,5 +641,8 @@ p {
     scroll-snap-align: start;
   }
 
+  #popup-contenido {
+    width: 100% !important;
+  }
 
 }

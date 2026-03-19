@@ -116,7 +116,7 @@ function initJardin() {
 
     const lineMat = new THREE.LineBasicMaterial({ vertexColors: true, opacity: 0.5, transparent: true });
     pivot.add(new THREE.Line(lineGeo, lineMat));
-    lineMats.push({ lineMat, lineGeo, idx, progress: 0 });
+    lineMats.push({ lineMat, lineGeo, idx, progress: Math.random() * 2  });
 
     // imagen plana
     loader.load(`imagenes/${n.nombre}.png`, tex => {
@@ -137,7 +137,7 @@ function initJardin() {
     canvas.width  = 512;
     canvas.height = 64;
     const ctx = canvas.getContext('2d');
-    ctx.fillStyle = '#887799';
+    ctx.fillStyle = '#ffffff';
     ctx.font = '32px serif';
     ctx.fillText(texto, 0, 40);
     const plano = new THREE.Mesh(
@@ -191,42 +191,48 @@ function initJardin() {
     }
   }
 
-  function checkClick(clientX, clientY) {
-    pointerToNDC(clientX, clientY);
-    raycaster.setFromCamera(mouse, camera);
-    const hits = raycaster.intersectObjects(meshes);
-    if (hits.length > 0) {
-      const data = nodosData[hits[0].object.userData.nodoIdx];
-      tooltip.textContent = data.descripcion;
-      tooltip.style.display = 'block';
-      tooltip.style.left = (clientX + 15) + 'px';
-      tooltip.style.top  = (clientY + 15) + 'px';
-    } else {
-      tooltip.style.display = 'none';
-    }
+function checkClick(clientX, clientY) {
+  pointerToNDC(clientX, clientY);
+  raycaster.setFromCamera(mouse, camera);
+  const hits = raycaster.intersectObjects(meshes);
+  if (hits.length > 0) {
+    const data = nodosData[hits[0].object.userData.nodoIdx];
+    document.getElementById('popup-img').src  = `imagenes/${data.nombre}.png`;
+    document.getElementById('popup-desc').textContent = data.descripcion;
+    document.getElementById('popup-jardin').style.display = 'flex';
   }
+}
 
   // eventos mouse
   let isDragging = false;
   let prevX      = 0;
   let mouseDownX = 0;
   let rotY       = 0;
+  let velocidad  = 0; // ← faltaba esta
 
-  document.addEventListener('mousemove', e => {
-    if (isDragging) { rotY += (e.clientX - prevX) * 0.005; prevX = e.clientX; }
-    checkHover(e.clientX, e.clientY);
-    if (tooltip.style.display === 'block') {
-      tooltip.style.left = (e.clientX + 15) + 'px';
-      tooltip.style.top  = (e.clientY + 15) + 'px';
-    }
-  });
+document.addEventListener('mousemove', e => {
+  if (isDragging) {
+    velocidad = (e.clientX - prevX) * 0.005;
+    rotY += velocidad;
+    prevX = e.clientX;
+  }
+  checkHover(e.clientX, e.clientY);
+  if (tooltip.style.display === 'block') {
+    tooltip.style.left = (e.clientX + 15) + 'px';
+    tooltip.style.top  = (e.clientY + 15) + 'px';
+  }
+});
   document.addEventListener('mousedown', e => { isDragging = true; prevX = e.clientX; mouseDownX = e.clientX; });
   document.addEventListener('mouseup',   e => { if (Math.abs(e.clientX - mouseDownX) < 4) checkClick(e.clientX, e.clientY); isDragging = false; });
 
   // eventos touch
   let touchStartX = 0, touchStartY = 0, touchPrevX = 0;
   document.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; touchStartY = e.touches[0].clientY; touchPrevX = touchStartX; }, { passive: true });
-  document.addEventListener('touchmove',  e => { rotY += (e.touches[0].clientX - touchPrevX) * 0.005; touchPrevX = e.touches[0].clientX; }, { passive: true });
+  document.addEventListener('touchmove', e => {
+  velocidad = (e.touches[0].clientX - touchPrevX) * 0.005;
+  rotY += velocidad;
+  touchPrevX = e.touches[0].clientX;
+}, { passive: true });
   document.addEventListener('touchend',   e => { const dx = Math.abs(e.changedTouches[0].clientX - touchStartX); const dy = Math.abs(e.changedTouches[0].clientY - touchStartY); if (dx < 8 && dy < 8) checkClick(e.changedTouches[0].clientX, e.changedTouches[0].clientY); });
 
   // resize
@@ -235,42 +241,40 @@ function initJardin() {
   // loop
   let autoRot = 0;
 
-  function animate() {
-    requestAnimationFrame(animate);
-    autoRot += 0.0003;
-    pivot.rotation.y = rotY + autoRot;
+function animate() {
+  requestAnimationFrame(animate);
+  autoRot += 0.0005;
 
-    // animar colores de líneas
+  // inercia
+  if (!isDragging) velocidad *= 0.968;
+  rotY += velocidad;
+
+  pivot.rotation.y = rotY + autoRot;
+
+  // animar colores de líneas
 lineMats.forEach(l => {
   const isHovered = hoveredMesh && hoveredMesh.userData.nodoIdx === l.idx;
-
-  if (isHovered) {
-    l.progress += 0.012; // avanza continuamente
-    if (l.progress > 2) l.progress = 0; // reinicia en loop
-  } else {
-    l.progress = 0;
-  }
+  
+  l.progress += isHovered ? 0.03 : 0.003; // más rápido en hover
+  if (l.progress > 2) l.progress = 0;
 
   const colors = l.lineGeo.attributes.color;
   const count  = colors.count;
 
   for (let i = 0; i < count; i++) {
-    const t = i / count;
-    // ola de color: zona brillante que sube continuamente
+    const t    = i / count;
     const dist = Math.abs(t - (l.progress % 1));
-    const glow = Math.max(0, 1 - dist * 8); // ancho de la ola
-
-    // interpolar entre rosado base y blanco/amarillo
+    const glow = Math.max(0, 1 - dist * 8);
     colors.setXYZ(i,
-      0.95 + glow * 0.05,        // r
-      0.5  + glow * 0.45,        // g
-      0.58 + glow * 0.12,        // b
+      0.95 + glow * 0.05,
+      0.5  + glow * 0.45,
+      0.58 + glow * 0.12,
     );
   }
   colors.needsUpdate = true;
 });
 
-    renderer.render(scene, camera);
-  }
-  animate();
+  renderer.render(scene, camera);
+}
+animate();
 }
