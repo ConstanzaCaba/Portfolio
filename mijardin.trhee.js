@@ -106,22 +106,22 @@ function initJardin() {
 
     const lineGeo = new THREE.BufferGeometry().setFromPoints(pts);
     const colors  = new Float32Array(pts.length * 3);
-    // inicializar con color base rosado
     for (let i = 0; i < pts.length; i++) {
-      colors[i * 3]     = 0.95; // r
-      colors[i * 3 + 1] = 0.5;  // g
-      colors[i * 3 + 2] = 0.58; // b
+      colors[i * 3]     = 0.95;
+      colors[i * 3 + 1] = 0.5;
+      colors[i * 3 + 2] = 0.58;
     }
     lineGeo.setAttribute('color', new THREE.BufferAttribute(colors, 3));
-
     const lineMat = new THREE.LineBasicMaterial({ vertexColors: true, opacity: 0.5, transparent: true });
     pivot.add(new THREE.Line(lineGeo, lineMat));
-    lineMats.push({ lineMat, lineGeo, idx, progress: Math.random() * 2  });
+    lineMats.push({ lineMat, lineGeo, idx, progress: Math.random() * 2 });
 
-    // imagen plana
+    // imagen plana con proporción correcta
     loader.load(`imagenes/${n.nombre}.png`, tex => {
+      const w = tex.image.width;
+      const h = tex.image.height;
       const plano = new THREE.Mesh(
-        new THREE.PlaneGeometry(60, 60),
+        new THREE.PlaneGeometry(60, 60 * (h / w)),
         new THREE.MeshBasicMaterial({ map: tex, transparent: true, side: THREE.DoubleSide })
       );
       plano.position.set(n.x, n.y, n.z);
@@ -129,7 +129,7 @@ function initJardin() {
       pivot.add(plano);
       meshes.push(plano);
     });
-  });
+  }); // ← cierre del forEach
 
   // textos en líneas
   function crearTextoEnLinea(texto, nodo) {
@@ -173,7 +173,6 @@ function initJardin() {
     pointerToNDC(clientX, clientY);
     raycaster.setFromCamera(mouse, camera);
     const hits = raycaster.intersectObjects(meshes);
-
     if (hits.length > 0) {
       const hit = hits[0].object;
       if (hoveredMesh !== hit) {
@@ -191,90 +190,95 @@ function initJardin() {
     }
   }
 
-function checkClick(clientX, clientY) {
-  pointerToNDC(clientX, clientY);
-  raycaster.setFromCamera(mouse, camera);
-  const hits = raycaster.intersectObjects(meshes);
-  if (hits.length > 0) {
-    const data = nodosData[hits[0].object.userData.nodoIdx];
-    document.getElementById('popup-img').src  = `imagenes/${data.nombre}.png`;
-    document.getElementById('popup-desc').textContent = data.descripcion;
-    document.getElementById('popup-jardin').style.display = 'flex';
+  function checkClick(clientX, clientY) {
+    pointerToNDC(clientX, clientY);
+    raycaster.setFromCamera(mouse, camera);
+    const hits = raycaster.intersectObjects(meshes);
+    if (hits.length > 0) {
+      const data = nodosData[hits[0].object.userData.nodoIdx];
+      document.getElementById('popup-img').src = `imagenes/${data.nombre}.png`;
+      document.getElementById('popup-desc').textContent = data.descripcion;
+      document.getElementById('popup-jardin').style.display = 'flex';
+    }
   }
-}
 
   // eventos mouse
   let isDragging = false;
   let prevX      = 0;
   let mouseDownX = 0;
   let rotY       = 0;
-  let velocidad  = 0; // ← faltaba esta
+  let velocidad  = 0;
 
-document.addEventListener('mousemove', e => {
-  if (isDragging) {
-    velocidad = (e.clientX - prevX) * 0.005;
-    rotY += velocidad;
-    prevX = e.clientX;
-  }
-  checkHover(e.clientX, e.clientY);
-  if (tooltip.style.display === 'block') {
-    tooltip.style.left = (e.clientX + 15) + 'px';
-    tooltip.style.top  = (e.clientY + 15) + 'px';
-  }
-});
+  document.addEventListener('mousemove', e => {
+    if (isDragging) {
+      velocidad = (e.clientX - prevX) * 0.005;
+      rotY += velocidad;
+      prevX = e.clientX;
+    }
+    checkHover(e.clientX, e.clientY);
+    if (tooltip.style.display === 'block') {
+      tooltip.style.left = (e.clientX + 15) + 'px';
+      tooltip.style.top  = (e.clientY + 15) + 'px';
+    }
+  });
   document.addEventListener('mousedown', e => { isDragging = true; prevX = e.clientX; mouseDownX = e.clientX; });
   document.addEventListener('mouseup',   e => { if (Math.abs(e.clientX - mouseDownX) < 4) checkClick(e.clientX, e.clientY); isDragging = false; });
 
   // eventos touch
   let touchStartX = 0, touchStartY = 0, touchPrevX = 0;
   document.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; touchStartY = e.touches[0].clientY; touchPrevX = touchStartX; }, { passive: true });
-  document.addEventListener('touchmove', e => {
-  velocidad = (e.touches[0].clientX - touchPrevX) * 0.005;
-  rotY += velocidad;
-  touchPrevX = e.touches[0].clientX;
-}, { passive: true });
-  document.addEventListener('touchend',   e => { const dx = Math.abs(e.changedTouches[0].clientX - touchStartX); const dy = Math.abs(e.changedTouches[0].clientY - touchStartY); if (dx < 8 && dy < 8) checkClick(e.changedTouches[0].clientX, e.changedTouches[0].clientY); });
+  document.addEventListener('touchmove',  e => {
+    velocidad  = (e.touches[0].clientX - touchPrevX) * 0.005;
+    rotY      += velocidad;
+    touchPrevX = e.touches[0].clientX;
+  }, { passive: true });
+  document.addEventListener('touchend', e => {
+    const dx = Math.abs(e.changedTouches[0].clientX - touchStartX);
+    const dy = Math.abs(e.changedTouches[0].clientY - touchStartY);
+    if (dx < 8 && dy < 8) checkClick(e.changedTouches[0].clientX, e.changedTouches[0].clientY);
+  });
 
   // resize
-  window.addEventListener('resize', () => { camera.aspect = window.innerWidth / window.innerHeight; camera.updateProjectionMatrix(); renderer.setSize(window.innerWidth, window.innerHeight); });
+  window.addEventListener('resize', () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+  });
 
   // loop
   let autoRot = 0;
 
-function animate() {
-  requestAnimationFrame(animate);
-  autoRot += 0.0005;
+  function animate() {
+    requestAnimationFrame(animate);
+    autoRot += 0.0005;
 
-  // inercia
-  if (!isDragging) velocidad *= 0.968;
-  rotY += velocidad;
+    if (!isDragging) velocidad *= 0.968;
+    rotY += velocidad;
 
-  pivot.rotation.y = rotY + autoRot;
+    pivot.rotation.y = rotY + autoRot;
 
-  // animar colores de líneas
-lineMats.forEach(l => {
-  const isHovered = hoveredMesh && hoveredMesh.userData.nodoIdx === l.idx;
-  
-  l.progress += isHovered ? 0.03 : 0.003; // más rápido en hover
-  if (l.progress > 2) l.progress = 0;
+    lineMats.forEach(l => {
+      const isHovered = hoveredMesh && hoveredMesh.userData.nodoIdx === l.idx;
+      l.progress += isHovered ? 0.03 : 0.003;
+      if (l.progress > 2) l.progress = 0;
 
-  const colors = l.lineGeo.attributes.color;
-  const count  = colors.count;
+      const colors = l.lineGeo.attributes.color;
+      const count  = colors.count;
+      for (let i = 0; i < count; i++) {
+        const t    = i / count;
+        const dist = Math.abs(t - (l.progress % 1));
+        const glow = Math.max(0, 1 - dist * 8);
+        colors.setXYZ(i,
+          0.95 + glow * 0.05,
+          0.5  + glow * 0.45,
+          0.58 + glow * 0.12,
+        );
+      }
+      colors.needsUpdate = true;
+    });
 
-  for (let i = 0; i < count; i++) {
-    const t    = i / count;
-    const dist = Math.abs(t - (l.progress % 1));
-    const glow = Math.max(0, 1 - dist * 8);
-    colors.setXYZ(i,
-      0.95 + glow * 0.05,
-      0.5  + glow * 0.45,
-      0.58 + glow * 0.12,
-    );
+    renderer.render(scene, camera);
   }
-  colors.needsUpdate = true;
-});
+  animate();
 
-  renderer.render(scene, camera);
-}
-animate();
-}
+} // ← cierre de initJardin
