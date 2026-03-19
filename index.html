@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Constanza Caba | Portfolio</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="site-header">
+    <h1>Constanza Caba</h1>
+    <button class="menu-toggle" onclick="document.querySelector('.site-nav').classList.toggle('abierto')">☰</button>
+    <nav class="site-nav">
+      <a href="index.html">Trabajos,</a>
+      <a href="sobremi.html">Sobre mí,</a>
+      <a href="#contacto" onclick="document.getElementById('overlay-contacto').style.display='flex'">Contacto</a>
+      <a href="mijardin.html" class="mi-jardin">Mi Jardín</a>
+    </nav>
+  </header>
+
+<!-- Overlay Contacto -->
+<div id="overlay-contacto">
+  <div class="overlay-content">
+    <button class="close-button" onclick="document.getElementById('overlay-contacto').style.display='none'">×</button>
+    <h2>Contacto</h2>
+    <p>Cualquier consulta o propuesta es bienvenida :)
+Sentite libre de escribirme </p>
+    <!-- tu contenido de contacto acá -->
+  </div>
+</div>
+
+  <section class="site-section">
+
+      <div class="col" id="texto">
+        Busco generar soluciones visuales que comuniquen con claridad y construyan sentido. Me interesa participar en proyectos creativos, gráficos, audiovisuales y culturales.
+      </div>
+      <div class="col">
+        <div class="inner-col">
+          <div>
+          Diseñadora Integral<br>Buenos Aires, Argentina
+          </div>
+          <div>
+            <nav class="contact-links">
+            <a href="https://www.linkedin.com/in/constanza-caba/" target="_blank">LinkedIn</a>,
+            <a href="https://www.instagram.com/coty_caba/" target="_blank">Instagram</a>,
+            <a href="https://www.behance.net/constanza-caba" target="_blank">Behance</a>,
+            <a href="https://wa.me/5492914133188" target="_blank">Whatsapp</a> <br>
+            <a href="mailto:caba.constanza@gmail.com">caba.constanza@gmail.com</a>,<br>   
+            </nav>
+          </div>
+        </div>
+      </div>
+
+  </section>
+ 
+  <section class="menu">
+    <nav>
+      <a href="#trabajos">All</a>
+      <a href="#sobre-mi">Gráfica</a>
+      <a href="#contacto">Identidad</a>
+      <a href="#mi-jardin">Infografía</a>
+      <a href="#mi-jardin">Editorial</a>
+      <a href="#mi-jardin">Audiovisual</a>
+      <a href="#mi-jardin">Cultural</a>
+    </nav>
+  </section>
+
+
+  <section class="trabajos">
+    <div class="main-col"> 
+      <div class="celda" onclick="window.location.href='trabajos/soma.html'">
+       <div class="inner-col">
+        <div>Gráfica</div>
+        <div>2025</div>
+      </div>
+       <h2>SOMA: Soporte Material</h2>
+       <img src="imagenes/soma.png" alt="SOMA" class="trabajo-imagen">
+       <p class="trabajo-descripcion">Proyecto de identidad visual para SOMA, explorando la dualidad entre lo orgánico y lo digital a través de formas en tensión.</p>
+      </div>
+
+      <div class="celda">
+        <div class="inner-col">
+          <div>Gráfica</div>
+          <div>2025</div>
+        </div>
+        <h2>Jaguar: Un musical del Centro de Arte UTDT</h2>
+        <img src="imagenes/jaguar2.png" alt="JAGUAR" class="trabajo-imagen">
+        <p class="trabajo-descripcion">Proyecto de identidad visual para JAGUAR, explorando la dualidad entre lo orgánico y lo digital a través de formas en tensión.</p>
+      </div>
+
+      <div class="celda">
+        <div class="inner-col">
+          <div>Gráfica</div>
+          <div>2025</div>
+        </div>
+        <h2>Ronda Redonda: Re-diseño de la exposición de arte “Aprendizaje Infinito” expuesta en el Museo Moderno.</h2>
+        <img src="imagenes/ronda.png" alt="Ronda Redonda" class="trabajo-imagen">
+        <p class="trabajo-descripcion">La muestra explora el vínculo entre diferentes pedagogías que aprovechan al arte como herramienta para expandir los limites del aprendizaje, recorriendo diferentes momentos de la historia a través de las voces de diferentes docentes, artistas y activistas. </p>
+      </div>
+
+    </div>
+
+    <div class="main-col"> 
+      <div class="celda">
+        <div class="inner-col">
+          <div>Gráfica</div>
+          <div>2025</div>
+        </div>
+        <h2>INTELI-GENTE: Exposición sobre tecnología en el MARQ</h2>
+        <img src="imagenes/inteli-gente3.png" alt="INTELI-GENTE" class="trabajo-imagen">
+        <p class="trabajo-descripcion">Proyecto de identidad visual para INTELI-GENTE, explorando la dualidad entre lo orgánico y lo digital a través de formas en tensión.</p>
+      </div>
+
+     <div class="celda">
+        <div class="inner-col">
+          <div>Gráfica</div>
+          <div>2025</div>
+        </div>
+        <h2>Pulsos: Una exploración sobre las convergencias entre arte y diseño</h2>
+        <img src="imagenes/pulsos1.png" alt="PULSOS" class="trabajo-imagen">
+        <p class="trabajo-descripcion">Proyecto de identidad visual para PULSOS, explorando la dualidad entre lo orgánico y lo digital a través de formas en tensión.</p>
+      </div>
+      
+      <div class="celda">
+        <div class="inner-col">
+          <div>Gráfica</div>
+          <div>2025</div>
+        </div>
+        <h2>Militante de la forma: Un documental sobre Elisa Strada.</h2>
+        <img src="imagenes/documental.png" alt="PULSOS" class="trabajo-imagen">
+        <p class="trabajo-descripcion">Proyecto de identidad visual para PULSOS, explorando la dualidad entre lo orgánico y lo digital a través de formas en tensión.</p>
+      </div>
+
+    </div>
+
+    <div class="main-col">
+       <div class="celda">
+        <div class="inner-col">
+          <div>Gráfica</div>
+          <div>2025</div>
+        </div>
+        <h2>¿VES EL RUIDO?: Un recorrido sensorial por la ciudad de Buenos Aires</h2>
+        <img src="imagenes/veselruido.png" alt="¿VES EL RUIDO?" class="trabajo-imagen">
+        <p class="trabajo-descripcion">Desarrollo de identidad visual para un evento que posee como objetivo concientizar sobre el nivel de la contaminación auditiva en la Ciudad de Buenos Aires y su vínculo directo con la contaminación visual.</p>
+      </div>
+    
+       <div class="celda">
+        <div class="inner-col">
+          <div>Gráfica</div>
+          <div>2025</div>
+        </div>
+        <h2>El cuerpo híbrido: Un paseo virtual.</h2>
+        <img src="imagenes/rosalia.png" alt="¿VES EL RUIDO?" class="trabajo-imagen">
+        <p class="trabajo-descripcion">La siguiente experiencia interactiva tiene como propuesta explorar los limites del cuerpo y su relación con el entorno social, político y social que condiciona los cuerpos, pero que hoy en dia, también les permite habitar el espacio como entes despersonalizados y fragmentados. Este concepto se toma directamente del último disco de Rosalía, “Motomami”, donde el cuerpo femenino sufre un shock de identidad al ser combinado con una moto</p>
+      </div>
+    
+      <div class="celda">
+        <div class="inner-col">
+          <div>Gráfica</div>
+          <div>2025</div>
+        </div>
+        <h2>Primitivo: sonido solo para quienes quieran conocer su verdadero ser.</h2>
+        <img src="imagenes/primitivo-mock.jpg" alt="Primitivo" class="trabajo-imagen">
+        <p class="trabajo-descripcion">La muestra explora el vínculo entre diferentes pedagogías que aprovechan al arte como herramienta para expandir los limites del aprendizaje, recorriendo diferentes momentos de la historia a través de las voces de diferentes docentes, artistas y activistas. </p>
+      </div>
+    
+    </div>
+
+
+  </section>
+
+
+<footer class="site-footer">
+  <img src="imagenes/footer.png" alt="Logo de Constanza Caba" class="footer-logo">
+  <p>© 2026 </p>
+</footer>
+
+
+<script src="sketch.js"></script>
+</body>
+</html>

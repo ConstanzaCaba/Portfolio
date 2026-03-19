@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Constanza Caba | Portfolio</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+   <style>
+    body {
+      background: radial-gradient(circle at 50% 100%,rgb(243, 127, 147) 0%, rgb(241, 47, 87) 25%, rgb(136, 119, 153) 80%);
+      /*background: radial-gradient(circle at 50% 100%, rgb(238, 200, 124) 0%, rgb(233, 179, 110) 10%, rgb(243, 127, 147) 20%, rgb(241, 47, 87) 25%, rgb(136, 119, 153) 80%);*/
+    }
+    </style>
+
+</head>
+
+<body id="fondo-degradado">
+  <header class="site-header">
+    <h1>Constanza Caba</h1>
+    <button class="menu-toggle" onclick="document.querySelector('.site-nav').classList.toggle('abierto')">☰</button>
+    <nav class="site-nav">
+      <a href="index.html">Trabajos,</a>
+      <a href="sobremi.html">Sobre mí,</a>
+      <a href="#contacto" onclick="document.getElementById('overlay-contacto').style.display='flex'">Contacto</a>
+      <a href="mijardin.html" class="mi-jardin">Mi Jardín</a>
+    </nav>
+  </header>
+
+<!-- Overlay Contacto -->
+<div id="overlay-contacto">
+  <div class="overlay-content">
+    <button class="close-button" onclick="document.getElementById('overlay-contacto').style.display='none'">×</button>
+    <h2>Contacto</h2>
+    <!-- tu contenido de contacto acá -->
+  </div>
+</div>
+
+  <section class="site-section">
+
+      
+      <div class="col">
+        <div class="inner-col">
+          <div>
+          Diseñadora Integral<br>Buenos Aires,<br>Argentina
+          </div>
+          <div>
+            <nav class="contact-links">
+            <a href="https://www.linkedin.com/in/constanza-caba/" target="_blank">LinkedIn</a>,
+            <a href="https://www.instagram.com/coty_caba/" target="_blank">Instagram</a>,
+            <a href="https://www.behance.net/constanza-caba" target="_blank">Behance</a>,
+            <a href="mailto:caba.constanza@gmail.com">caba.constanza@gmail.com</a>,     <br>   
+            <a href="https://wa.me/5492914133188" target="_blank">Whatsapp</a>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+  </section>
+ 
+    <div class="container">
+        
+      
+    </div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+<script src="sketch.js"></script>
+<script src="mijardin.trhee.js"></script>
+</body>
+</html>
