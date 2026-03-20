@@ -2,7 +2,7 @@ const nodosData = [
   { nombre: 'nodo16', x: -150, y:  -50, z:  230, cx1: -120, cy1: -150, cz1:  10, cx2: -230, cy2:  350, cz2:  15, descripcion: 'Descripción nodo 16' },
   { nombre: 'nodo2',  x:  -80, y: -320, z: -380, cx1:  -30, cy1: -100, cz1: -10, cx2:  -50, cy2: -220, cz2: -20, descripcion: 'Descripción nodo 2'  },
   { nombre: 'nodo3',  x:  300, y: -280, z:  360, cx1:   80, cy1: -200, cz1:  40, cx2:  200, cy2: -260, cz2:  50, descripcion: 'Descripción nodo 3'  },
-  { nombre: 'nodo4',  x: -350, y: -250, z:  -50, cx1: -100, cy1: -180, cz1: -30, cx2: -250, cy2: -230, cz2: -40, descripcion: 'Descripción nodo 4'  },
+  { nombre: 'nodo4',  x: -350, y: -250, z:  -50, cx1: -100, cy1: -180, cz1: -30, cx2: -250, cy2: -230, cz2: -40, descripcion: 'Collage digital'  },
   { nombre: 'nodo14', x:  500, y: -150, z:   30, cx1:  150, cy1: -300, cz1:  20, cx2:  350, cy2: -200, cz2:  25, descripcion: 'Descripción nodo 14' },
   { nombre: 'nodo6',  x: -600, y: -100, z: -280, cx1: -120, cy1: -280, cz1: -50, cx2: -380, cy2: -180, cz2: -60, descripcion: 'Descripción nodo 6'  },
   { nombre: 'nodo8',  x:  200, y: -400, z: -340, cx1:   60, cy1: -150, cz1: -20, cx2:  150, cy2: -300, cz2: -30, descripcion: 'Descripción nodo 8'  },
@@ -13,14 +13,20 @@ const nodosData = [
   { nombre: 'nodo10', x: -400, y: -300, z:   40, cx1:  -90, cy1: -200, cz1:  25, cx2: -300, cy2: -280, cz2:  35, descripcion: 'Descripción nodo 10' },
   { nombre: 'nodo11', x:  150, y: -450, z:   80, cx1:   40, cy1: -180, cz1:  50, cx2:  100, cy2: -350, cz2:  65, descripcion: 'Descripción nodo 11' },
   { nombre: 'nodo12', x:  100, y: -300, z:   80, cx1:   40, cy1: -180, cz1:  50, cx2:  100, cy2: -270, cz2:  65, descripcion: 'Descripción nodo 12' },
-  { nombre: 'nodo21', x:   90, y: -200, z:  -10, cx1:   40, cy1: -180, cz1:  50, cx2:  100, cy2: -130, cz2: -85, descripcion: 'Descripción nodo 21' },
+  { nombre: 'nodo21', x:  90, y: -200, z:  -10, cx1:   40, cy1: -180, cz1:  50, cx2:  100, cy2: -130, cz2: -85, descripcion: 'Descripción nodo 21' },
   { nombre: 'nodo22', x:   50, y:   20, z:   80, cx1:   40, cy1:   10, cz1:  50, cx2:   60, cy2:  -10, cz2:  65, descripcion: 'Descripción nodo 22' },
   { nombre: 'nodo20', x: -150, y: -420, z:  -60, cx1:  -40, cy1: -160, cz1: -35, cx2: -100, cy2: -320, cz2: -50, descripcion: 'Descripción nodo 20' },
   { nombre: 'nodo13', x:  300, y:  -80, z: -300, cx1:  200, cy1: -120, cz1:  10, cx2:  200, cy2: -150, cz2:  15, descripcion: 'Descripción nodo 13' },
   { nombre: 'nodo5',  x: -400, y:   70, z:  -80, cx1: -180, cy1:    0, cz1: -20, cx2: -220, cy2:   50, cz2: -25, descripcion: 'Descripción nodo 5'  },
   { nombre: 'nodo7',  x: -300, y:   70, z:   80, cx1: -180, cy1:    0, cz1: -20, cx2: -220, cy2:   50, cz2: -25, descripcion: 'Descripción nodo 7'  },
-  { nombre: 'nodo15', x:   30, y: -480, z: -300, cx1:   10, cy1: -200, cz1:  -5, cx2:   20, cy2: -380, cz2:  -8, descripcion: 'Descripción nodo 15' },
+  { nombre: 'nodo15', x:   30, y: -480, z: -300, cx1:   10, cy1: -200, cz1:  -5, cx2:   20, cy2: -380, cz2:  -8, descripcion: 'Fotografía' },
+  { nombre: 'nodo23', x:   90, y: -400, z: -200, cx1:   10, cy1: -200, cz1:  -5, cx2:   50, cy2: -480, cz2:  -8, descripcion: 'Ilustración digital' },
+  { nombre: 'nodo24', x:  400, y:  -180, z: -400, cx1:  80, cy1: -20, cz1:  -360, cx2:  200, cy2: -150, cz2:  195, descripcion: 'Ilustración digital' },
+  { nombre: 'nodo25',  x: -470, y: -190, z: -280, cx1: -120, cy1: -180, cz1: -50, cx2: 280, cy2: -120, cz2: -360, descripcion: 'Descripción nodo 6'  },
+  { nombre: 'nodo26',  x:  550, y: -50, z:  -90, cx1:  100, cy1: -350, cz1: -60, cx2:  390, cy2: -50, cz2: -75, descripcion: 'Descripción nodo 9'  },
+  { nombre: 'nodo27',  x:  600, y: -100, z:  -190, cx1:  100, cy1: -350, cz1: -60, cx2:  300, cy2: -250, cz2: -75, descripcion: 'Descripción nodo 9'  },
 ];
+
 
 (function () {
   const s = document.createElement('script');
@@ -118,6 +124,9 @@ function initJardin() {
 
     // imagen plana con proporción correcta
     loader.load(`imagenes/${n.nombre}.png`, tex => {
+      tex.minFilter = THREE.LinearFilter;
+      tex.magFilter = THREE.LinearFilter;
+      tex.generateMipmaps = false;
       const w = tex.image.width;
       const h = tex.image.height;
       const plano = new THREE.Mesh(

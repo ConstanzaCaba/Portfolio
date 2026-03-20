@@ -73,3 +73,13 @@ document.addEventListener('DOMContentLoaded', () => {
     slides[0].style.zIndex = 1;
   }
 });
+
+const carrusel = document.getElementById('carrusel');
+const dots     = document.querySelectorAll('.carrusel-dot');
+
+if (carrusel && dots.length) {
+  carrusel.addEventListener('scroll', () => {
+    const idx = Math.round(carrusel.scrollLeft / carrusel.offsetWidth);
+    dots.forEach((d, i) => d.classList.toggle('activo', i === idx));
+  });
+}
