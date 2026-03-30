@@ -52,7 +52,7 @@ function initJardin() {
   renderer.setPixelRatio(window.devicePixelRatio);
   
   const W = () => window.innerWidth;
-  const H = () => window.visualViewport ? window.visualViewport.height : window.innerHeight;
+  const H = () => window.screen.height;  // alto físico real de la pantalla
   renderer.setPixelRatio(window.devicePixelRatio);
   renderer.setSize(W(), H());
   Object.assign(renderer.domElement.style, {
@@ -60,7 +60,7 @@ function initJardin() {
     top: '0',
     left: '0',
     width: '100%',
-    height: '100dvh',
+    height: '120%',
     zIndex: '-1',
     pointerEvents: 'none',
   });
