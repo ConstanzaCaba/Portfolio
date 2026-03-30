@@ -596,6 +596,15 @@ p {
     line-height: 1.3;
   }
 
+  .celda:hover .trabajo-descripcion {
+    max-height: 0;
+  }
+
+  .trabajo-descripcion.visible {
+    max-height: 200px;
+    transition: max-height 0.4s ease-in-out;
+  }
+
   .site-nav {
     display: none;
     flex-direction: column;

@@ -83,3 +83,21 @@ if (carrusel && dots.length) {
     dots.forEach((d, i) => d.classList.toggle('activo', i === idx));
   });
 }
+
+// Al final del archivo, después del código del carrusel
+if (window.innerWidth <= 768) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const desc = entry.target.querySelector('.trabajo-descripcion');
+      if (desc) {
+        if (entry.isIntersecting) {
+          desc.classList.add('visible');
+        } else {
+          desc.classList.remove('visible');
+        }
+      }
+    });
+  }, { threshold: 0.9 });
+
+  document.querySelectorAll('.celda').forEach(celda => observer.observe(celda));
+}

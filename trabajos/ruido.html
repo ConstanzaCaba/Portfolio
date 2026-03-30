@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>¿Ves el ruido? | Constanza Caba</title>
+  <link rel="stylesheet" href="style-trabajos.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>Constanza Caba</h1>
+    <button class="menu-toggle" onclick="document.querySelector('.site-nav').classList.toggle('abierto')">☰</button>
+    <nav class="site-nav">
+      <a href="../index.html">Trabajos,</a>
+      <a href="../sobremi.html">Sobre mí,</a>
+      <a href="#contacto">Contacto</a>
+      <a href="../mijardin.html" class="mi-jardin">Mi Jardín</a>
+    </nav>
+  </header>
+
+ <div class="carrusel-wrapper">
+  <button class="carrusel-btn prev" onclick="moverSlide(-1)">‹</button>
+  <div class="carrusel" id="carrusel">
+    <div class="carrusel-slide"><img src="../imagenes/soma1.png"></div>
+    <div class="carrusel-slide"><img src="../imagenes/soma2.png"></div>
+    <div class="carrusel-slide"><img src="../imagenes/soma3.png"></div>
+     <div class="carrusel-slide"><img src="../imagenes/soma4.png"></div>
+    <div class="carrusel-slide"><img src="../imagenes/soma5.png"></div>
+    <div class="carrusel-slide"><img src="../imagenes/soma6.png"></div>
+  </div>
+  <button class="carrusel-btn next" onclick="moverSlide(1)">›</button>
+</div>
+  <div class="carrusel-dots">
+  <div class="carrusel-dot activo"></div>
+  <div class="carrusel-dot"></div>
+  <div class="carrusel-dot"></div>
+  <div class="carrusel-dot"></div>
+  <div class="carrusel-dot"></div>
+  <div class="carrusel-dot"></div>
+</div>
+
+  <section class="trabajo-detalle">
+    <div class="datita2">
+      <div>Gráfica</div>
+      <div>2025</div>
+    </div>
+
+<div class="trabajo-descripcion-larga">
+    <div class="main-col1">
+    <h1 id="titulo">¿Ves el ruido?</h1>
+    </div>
+
+    <div class="main-col2">
+        <p>Proyecto de identidad visual para SOMA, explorando la dualidad entre lo orgánico y lo digital a través de formas en tensión. El diseño se basa en la idea de un soporte material que alberga información, con una estética que combina elementos naturales y tecnológicos para reflejar la esencia del proyecto.</p>
+        
+        <p>Proyecto de identidad visual para SOMA, explorando la dualidad entre lo orgánico y lo digital a través de formas en tensión. El diseño se basa en la idea de un soporte material que alberga información, con una estética que combina elementos naturales y tecnológicos para reflejar la esencia del proyecto.</p>
+        <br>
+        <p id="info">info;cositas</p>
+        <p id="info">Colaboradores;cositas</p>
+        <p id="info">UTDT</p>
+
+        <a href="jaguar.html" class="btn-siguiente">Ver más →</a>
+        
+    </div>
+
+</div>    
+  </section>
+
+
+
+<footer class="site-footer">
+  <img src="../imagenes/footer.png" alt="Logo de Constanza Caba" class="footer-logo">
+  <p>© 2026</p>
+</footer>
+
+  <script src="../sketch.js"></script>
+</body>
+</html>
