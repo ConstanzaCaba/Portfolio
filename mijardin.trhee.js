@@ -51,19 +51,18 @@ function initJardin() {
   const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
   renderer.setPixelRatio(window.devicePixelRatio);
   const W = () => window.innerWidth;
-  const H = () => document.documentElement.clientHeight;
+  const H = () => window.innerHeight;
   renderer.setSize(W(), H());
   Object.assign(renderer.domElement.style, {
   position: 'fixed',
   top: '0',
   left: '0',
-  width: '100vw',
-  height: '100vh',
-  height: '100dvh',      // sobreescribe el anterior en browsers que lo soportan
+  width: '100%',
+  height: '100%',
   zIndex: '-1',
   pointerEvents: 'none',
-  
 });
+
   document.body.appendChild(renderer.domElement);
 
   // escena y cámara
