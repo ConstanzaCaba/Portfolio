@@ -8,8 +8,18 @@
   <link rel="stylesheet" href="style.css">
 
 <style>
+
   body {
-    background: radial-gradient(circle at 50% 100%, rgb(243, 127, 147) 0%, rgb(241, 47, 87) 25%, rgb(136, 119, 153) 80%) fixed !important;
+  /* NO tocás margin-left ni nada del layout */
+    background: none !important;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0; /* top:0, left:0, right:0, bottom:0 */
+    z-index: -2;
+    background: radial-gradient(circle at 50% 100%, rgb(243, 127, 147) 0%, rgb(241, 47, 87) 25%, rgb(136, 119, 153) 80%);
   }
 </style>
 
