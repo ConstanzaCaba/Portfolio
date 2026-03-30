@@ -6,30 +6,38 @@ body {
   min-height: -webkit-fill-available;
   font-family: 'Archivo', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
   background-color: rgb(136, 119, 153);
-  background-image: url('imagenes/fondo-degradado2.png');
+  background-image: url('imagenes/alo.png');
   background-size: cover;
-  background-position: 50% 100%;
-  cursor: url('imagenes/cursor.png') 0 0, auto;
+  background-repeat: no-repeat;
 }
 
 /* Load Archivo from local font file */
 @font-face {
   font-family: 'Archivo';
-  src: url('Archivo-Regular.ttf') format('truetype'),
-       url('../Archivo-Regular.ttf') format('truetype');
+  src: url('Archivo-Regular.ttf') format('truetype');
   font-weight: 300;
   font-style: normal;
-  font-display: swap;
+  font-display: block; /* cambiá swap por block */
 }
 
+@keyframes entrarIzquierda {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0% 0 0);
+  }
+}
 
 p {
   font-size:15px;
   text-indent: 1em;
 }
 
+
 /* Header styles: full width, height equal to text (32px) */
 .site-header {
+  animation: entrarIzquierda 0.6s cubic-bezier(0.77, 0, 0.175, 1) forwards;
   width: 100%;
   box-sizing: border-box;
   display: flex;
@@ -46,6 +54,7 @@ p {
   background-color: transparent; 
 }
 .site-header h1 {
+  animation: entrarIzquierda 0.7s cubic-bezier(0.77, 0, 0.175, 1) forwards;
   font-family: 'Archivo', sans-serif;
   font-size: 32px;
   white-space: nowrap;
@@ -67,6 +76,7 @@ p {
 
 .menu-toggle {
   display: none;
+  background-color:rgb(243,241,239);
 }
 
 .mi-jardin{
@@ -96,13 +106,14 @@ p {
 }
 
 .site-section {
+  animation: entrarIzquierda 0.8s cubic-bezier(0.77, 0, 0.175, 1) 0.2s forwards;  
   display: flex;
   font-size: 12px;
   gap:0.5%;
 }
 
 .col {
-  background-color: rgb(243,241,239);
+  background-color:rgb(243,241,239);
   display: flex;
   flex-direction: column;
   width: 33%;
@@ -126,88 +137,6 @@ p {
   text-indent: 25px;
 }
 
-.menu{
-  padding: 25px 0px;
-}
-
-.menu nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2px;
-}
-
-.menu nav a {
-  background-color:rgb(243,241,239);
-  color: black;
-  text-decoration: none;
-  font-size: 12px;
-  padding: 4px 10px;
-  border-radius: 999px;
-  transition: background-color 0.2s, color 0.2s;
-}
-
-.menu nav a:hover,
-.menu nav a.activo {
-  background-color: black;
-  color: rgb(243,241,239);
-}
-
-.main-col {
- /* background-color: rgb(250, 253, 247);*/
-  display: flex;
-  flex-direction: column;
-  width: 33%;
-  gap:25px;
-  text-indent: 25px;
-}
-
-.main-col h2{
-  font-size: 24px;
-  margin: 0;
-  font-weight: 300;
-}
-
-.trabajos {
-  display: flex;
-  font-size: 12px;
-  gap:0.5%;
-}
-
-.trabajo-imagen{
-  text-indent: 0;
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.celda{
-  background-color: rgb(243,241,239);
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-}
-
-.trabajo-descripcion {
-  margin: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s ease-in-out;
-}
-
-.celda:hover .trabajo-descripcion {
-  max-height: 200px; /* valor mayor al alto real del texto */
-  transition: max-height 0.2s ease-in-out; 
-}
-
-.celda .inner-col{
-  border-bottom: 1px solid rgb(192, 192, 192);
-}
-.celda h2{
-  border-bottom: 1px solid rgb(192, 192, 192);
-}
-.celda img{
-  border-bottom: 1px solid rgb(192, 192, 192);
-}
 
 #overlay-contacto {
   display: none;
@@ -267,78 +196,6 @@ p {
   outline: none;
 }
 
-.sobre-mi{
-  padding-top:35px;
-  display: flex;
-  font-size: 24px;
-  gap:0.5%;
-}
-
-.sobre-mi h1{
-  font-size: 24px;
-  margin: 0;
-  font-weight: 300;
-}
-
-.sobre-mi p{
-  text-indent: 25px;
-  font-size: 24px;
-  margin: 0;
-  font-weight: 300;
-}
-
-.main-col1{
-   /* background-color: rgb(250, 253, 247);*/
-  display: flex;
-  flex-direction: column;
-  width: 33%;
-  text-indent: 25px;
-}
-
-.main-col2{
-  gap:0px; 
-  display: flex;
-  flex-direction: column;
-  width: 66.5%;
-}
-
-.main-col2 p{
-  background-color: rgb(243,241,239);
-  text-indent: 25px;
-  font-size: 24px;
-}
-
-.seccion-texto {
-  margin-bottom: 35px;
-}
-
-.seccion-texto h1 {
-  font-size: 24px;
-  margin: 0;
-  font-weight: 300;
-  display: inline-block;
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  background-color: rgb(243,241,239);
-  padding:0px 25px;
-  font-family: 'archivo', serif;
-  line-height: 1.2;
-}
-
-.datita {
-  display:flex;
-  padding:0px 25px;
-  background-color: rgb(243,241,239);
-  border-bottom: 1px solid rgb(206,210,213)
-}
-.datita div{
-  font-size: 12px;
-}
-
-.datita > div {
-  flex: 1;
-}
-
 .site-footer {
   display: flex;
   justify-content: space-between;
@@ -364,94 +221,6 @@ p {
 
 .datita2{
   border-bottom: 1px solid rgb(192, 192, 192);
-}
-
-
-.carrusel-wrapper {
-  margin-top:25px;
-  position: relative;
-  width: 100%;
- /* background-color: rgb(243, 241, 239);*/
-  height: 500px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.carrusel {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.carrusel-slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transform: translateX(100%); /* escondidas por defecto */
-  transition: transform 0.5s ease-in-out;
-}
-
-.carrusel-slide img {
-  height: 100%;
-  width: auto;
-  display: block;
-  object-fit: contain;
-}
-
-.carrusel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
- /* background: rgb(243, 241, 239);*/
-  border: none;
-  font-size: 22px;
-  font-weight: 300;
-  cursor: pointer;
-  z-index: 10;
-  padding: 0;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 1;
-  transition: background 0.2s, color 0.2s;
-}
-
-.carrusel-btn:hover {
-  background: black;
-  color: rgb(243, 241, 239);
-}
-
-.carrusel-btn.prev { left: 10px; }
-.carrusel-btn.next { right: 10px; }
-
-
-.trabajo-descripcion-larga {
-  display: flex;
-  font-size: 32px;
-  gap:0.5%;
-}
-
-.trabajo-descripcion-larga h1{
-  font-size: 24px;
-  margin: 0;
-  font-weight: 300;
-}
-
-.trabajo-descripcion-larga p {
-  text-indent: 25px;
-  font-size: 24px;
-  margin: 0;
-  font-weight: 300;
 }
 
 .main-col1 h1{
@@ -543,27 +312,12 @@ p {
     font-size: 20px;
   }
 
- body {
-    background-size: 100% auto;
-    background-image: url('imagenes/fondo-degradado2.png');
-    background-position: 50% 0%;
-    background-attachment: scroll;
-  }
-
 }
 
 @media (max-width: 768px) {
-      
-    body {
-    overflow-x: hidden;
-    min-height: 100dvh;
-    min-height: -webkit-fill-available;
-    background-image: url('imagenes/fondo-degradado4.png');
-    background-size: cover;
-    background-position: 50% 0%;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-  }
+    body{
+    background-position: 50% -100%;
+    }  
 
   .site-header {
     /*flex-wrap: wrap;*/

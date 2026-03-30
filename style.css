@@ -5,7 +5,6 @@ body {
   min-height: -webkit-fill-available;
   background: rgb(206,210,213);
   font-family: 'Archivo', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-  cursor: url('imagenes/cerrar.png') 16 16, auto;
 }
 
 canvas {
@@ -18,13 +17,20 @@ canvas {
 /* Load Archivo from local font file */
 @font-face {
   font-family: 'Archivo';
-  src: url('Archivo-Regular.ttf') format('truetype'),
-       url('../Archivo-Regular.ttf') format('truetype');
+  src: url('Archivo-Regular.ttf') format('truetype');
   font-weight: 300;
   font-style: normal;
-  font-display: swap;
+  font-display: block; /* cambiá swap por block */
 }
 
+@keyframes entrarIzquierda {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0% 0 0);
+  }
+}
 
 p {
   font-size:15px;
@@ -33,6 +39,7 @@ p {
 
 /* Header styles: full width, height equal to text (32px) */
 .site-header {
+  animation: entrarIzquierda 0.6s cubic-bezier(0.77, 0, 0.175, 1) forwards;
   width: 100%;
   box-sizing: border-box;
   display: flex;
@@ -49,6 +56,7 @@ p {
   background-color: transparent; 
 }
 .site-header h1 {
+  animation: entrarIzquierda 0.7s cubic-bezier(0.77, 0, 0.175, 1) forwards;
   font-family: 'Archivo', sans-serif;
   font-size: 32px;
   white-space: nowrap;
@@ -60,12 +68,19 @@ p {
 }
 
 .site-nav {
+  animation: entrarIzquierda 0.7s cubic-bezier(0.77, 0, 0.175, 1) 0.2s forwards;
   display: flex;
   align-items: center;
   background-color: rgb(243,241,239);
   /* keep next to h1 on the left; gap handles spacing */
   width: 100%;
   padding:5px 25px;
+}
+
+/* para que .site-nav no sea invisible antes de arrancar */
+.site-nav {
+  opacity: 1;
+  clip-path: inset(0 100% 0 0);
 }
 
 .menu-toggle {
@@ -99,6 +114,7 @@ p {
 }
 
 .site-section {
+  animation: entrarIzquierda 0.8s cubic-bezier(0.77, 0, 0.175, 1) 0.2s forwards;
   display: flex;
   font-size: 12px;
   gap:0.5%;
@@ -177,13 +193,19 @@ p {
 }
 
 .trabajo-imagen{
+  animation: entrarIzquierda 1.2s cubic-bezier(0.77, 0, 0.175, 1) 0.2s forwards;
   text-indent: 0;
   width: 100%;
   height: auto;
   display: block;
 }
 
+.inner-col div{
+  animation: entrarIzquierda 1.1s cubic-bezier(0.77, 0, 0.175, 1) 0.2s forwards;
+}
+
 .celda{
+  animation: entrarIzquierda 0.8s cubic-bezier(0.77, 0, 0.175, 1) 0.2s forwards;
   background-color: rgb(243,241,239);
   box-sizing: border-box;
   display: flex;
@@ -191,6 +213,7 @@ p {
 }
 
 .trabajo-descripcion {
+  animation: entrarIzquierda 1.2s cubic-bezier(0.77, 0, 0.175, 1) 0.2s forwards;
   margin: 0;
   max-height: 0;
   overflow: hidden;
@@ -291,6 +314,7 @@ p {
 }
 
 .main-col1{
+  animation: entrarIzquierda 0.8s cubic-bezier(0.77, 0, 0.175, 1) 0.2s forwards;
    /* background-color: rgb(250, 253, 247);*/
   display: flex;
   flex-direction: column;
@@ -299,6 +323,7 @@ p {
 }
 
 .main-col2{
+  animation: entrarIzquierda 1s cubic-bezier(0.77, 0, 0.175, 1) 0.2s forwards;
   gap:0px; 
   display: flex;
   flex-direction: column;
@@ -306,6 +331,7 @@ p {
 }
 
 .main-col2 p{
+  animation: entrarIzquierda 1.2s cubic-bezier(0.77, 0, 0.175, 1) 0.2s forwards;
   background-color: rgb(243,241,239);
   text-indent: 25px;
   font-size: 24px;
