@@ -66,23 +66,14 @@ function initJardin() {
 });
   document.body.appendChild(renderer.domElement);
 
-  // escena
-  const scene = new THREE.Scene();
-
-  // detectar mobile
-  const esMobile = window.innerWidth < 768;
-
-  // cámara
-  const camera = new THREE.PerspectiveCamera(
-    esMobile ? 75 : 60,
-    W() / H(),
-    0.1, 5000
-  );
-  camera.position.set(0, 0, esMobile ? 600 : 780);
+  // escena y cámara
+  const scene  = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 5000);
+  camera.position.set(0, 0, 780);
 
   // pivot
   const pivot = new THREE.Group();
-  pivot.position.set(0, esMobile ? -50 : -200, 0);
+  pivot.position.set(0, -200, 0);
   scene.add(pivot);
 
   // luces
@@ -271,15 +262,8 @@ function initJardin() {
   window.addEventListener('resize', () => {
   const w = window.innerWidth;
   const h = window.visualViewport ? window.visualViewport.height : window.innerHeight;
-  const mobile = w < 768;
-
-  camera.fov = mobile ? 75 : 60;
   camera.aspect = w / h;
-  camera.position.z = mobile ? 600 : 780;
   camera.updateProjectionMatrix();
-
-  pivot.position.y = mobile ? -50 : -200;
-
   renderer.setSize(w, h);
   });
 
