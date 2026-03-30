@@ -53,10 +53,16 @@ function initJardin() {
   const H = () => document.documentElement.clientHeight;
   renderer.setSize(W(), H());
   Object.assign(renderer.domElement.style, {
-    position: 'fixed', top: '0', left: '0', zIndex: '-1', pointerEvents: 'none',
-    width: '100%',
-    height: '120dvh',
-  });
+  position: 'fixed',
+  top: '0',
+  left: '0',
+  width: '100vw',
+  height: '100vh',
+  height: '100dvh',      // sobreescribe el anterior en browsers que lo soportan
+  zIndex: '-1',
+  pointerEvents: 'none',
+  
+});
   document.body.appendChild(renderer.domElement);
 
   // escena y cámara
@@ -253,9 +259,11 @@ function initJardin() {
 
   // resize
   window.addEventListener('resize', () => {
-  camera.aspect = W() / H();
+  const w = window.innerWidth;
+  const h = window.visualViewport ? window.visualViewport.height : window.innerHeight;
+  camera.aspect = w / h;
   camera.updateProjectionMatrix();
-  renderer.setSize(W(), H());
+  renderer.setSize(w, h);
   });
 
   // loop
