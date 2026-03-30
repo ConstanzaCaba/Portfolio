@@ -51,7 +51,8 @@ function initJardin() {
   renderer.setPixelRatio(window.devicePixelRatio);
   renderer.setSize(window.innerWidth, window.innerHeight);
   Object.assign(renderer.domElement.style, {
-    position: 'fixed', top: '0', left: '0', zIndex: '-1', pointerEvents: 'none'
+    position: 'fixed', top: '0', left: '0', zIndex: '-1', pointerEvents: 'none',
+    background: 'red'
   });
   document.body.appendChild(renderer.domElement);
 
