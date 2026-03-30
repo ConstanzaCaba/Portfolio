@@ -541,13 +541,24 @@ p {
   .site-nav a {
     font-size: 20px;
   }
+
+ body {
+    background-size: 100% auto;
+    background-image: url('imagenes/fondo-degradado2.png');
+    background-position: 50% 0%;
+    background-attachment: scroll;
+  }
+
+
 }
 
 @media (max-width: 768px) {
     
     body {
-    background-position: 50% 100%;
-    background-size: auto 50%;  /* ajusta el alto según te quede mejor */
+    background-image: url('imagenes/fondo-degradado4.png');
+    background-size: cover;
+    background-position: 50% 0%;
+    background-repeat: no-repeat;
     background-attachment: scroll;
   }
 
