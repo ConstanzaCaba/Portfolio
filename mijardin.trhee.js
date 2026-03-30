@@ -55,8 +55,7 @@ function initJardin() {
   Object.assign(renderer.domElement.style, {
     position: 'fixed', top: '0', left: '0', zIndex: '-1', pointerEvents: 'none',
     width: '100%',
-    height: '100dvh',
-    background: 'green'
+    height: '120dvh',
   });
   document.body.appendChild(renderer.domElement);
 
