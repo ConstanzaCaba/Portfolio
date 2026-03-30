@@ -49,10 +49,14 @@ function initJardin() {
   // renderer
   const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
   renderer.setPixelRatio(window.devicePixelRatio);
-  renderer.setSize(window.innerWidth, window.innerHeight);
+  const W = () => window.innerWidth;
+  const H = () => document.documentElement.clientHeight;
+  renderer.setSize(W(), H());
   Object.assign(renderer.domElement.style, {
     position: 'fixed', top: '0', left: '0', zIndex: '-1', pointerEvents: 'none',
-    background: 'red'
+    width: '100%',
+    height: '100dvh',
+    background: 'green'
   });
   document.body.appendChild(renderer.domElement);
 
@@ -250,9 +254,9 @@ function initJardin() {
 
   // resize
   window.addEventListener('resize', () => {
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
+  camera.aspect = W() / H();
+  camera.updateProjectionMatrix();
+  renderer.setSize(W(), H());
   });
 
   // loop
