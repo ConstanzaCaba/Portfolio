@@ -50,24 +50,26 @@ function initJardin() {
   // renderer
   const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
   renderer.setPixelRatio(window.devicePixelRatio);
+  
   const W = () => window.innerWidth;
-  const H = () => window.innerHeight;
+  const H = () => window.visualViewport ? window.visualViewport.height : window.innerHeight;
+  renderer.setPixelRatio(window.devicePixelRatio);
   renderer.setSize(W(), H());
   Object.assign(renderer.domElement.style, {
-  position: 'fixed',
-  top: '0',
-  left: '0',
-  width: '100%',
-  height: '100%',
-  zIndex: '-1',
-  pointerEvents: 'none',
-});
+    position: 'fixed',
+    top: '0',
+    left: '0',
+    width: '100%',
+    height: '100dvh',
+    zIndex: '-1',
+    pointerEvents: 'none',
+  });
 
   document.body.appendChild(renderer.domElement);
 
   // escena y cámara
   const scene  = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 5000);
+  const camera = new THREE.PerspectiveCamera(60, W() / H(), 0.1, 5000);
   camera.position.set(0, 0, 780);
 
   // pivot
@@ -109,7 +111,7 @@ function initJardin() {
     n.cy1 *= -1;
     n.cy2 *= -1;
 
-    // línea curva con colores por vértice
+  // línea curva con colores por vértice
     const pts = [];
     for (let i = 0; i <= 60; i++) {
       const t = (i / 60) * 0.99;
@@ -259,12 +261,19 @@ function initJardin() {
 
   // resize
   window.addEventListener('resize', () => {
-  const w = window.innerWidth;
-  const h = window.visualViewport ? window.visualViewport.height : window.innerHeight;
-  camera.aspect = w / h;
+  renderer.setSize(W(), H());
+  camera.aspect = W() / H();
   camera.updateProjectionMatrix();
-  renderer.setSize(w, h);
   });
+
+  // también escuchar cambios de visualViewport (barra Safari aparece/desaparece)
+  if (window.visualViewport) {
+    window.visualViewport.addEventListener('resize', () => {
+      renderer.setSize(W(), H());
+      camera.aspect = W() / H();
+      camera.updateProjectionMatrix();
+    });
+  }
 
   // loop
   let autoRot = 0;
