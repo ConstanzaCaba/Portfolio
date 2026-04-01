@@ -434,11 +434,8 @@ p {
    padding-bottom: 0%;
   }
 
-  .idioma{
-    margin:0px;
-  }
-  
   .site-nav .idioma {
+    margin:0px;
     font-size: 12px !important;
     color: rgb(0, 0, 0) !important;
     padding: 4px 10px;
