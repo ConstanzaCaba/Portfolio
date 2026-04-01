@@ -17,7 +17,7 @@
     <nav class="site-nav">
       <a href="index.html">Trabajos,</a>
       <a href="sobremi.html">Sobre mí,</a>
-      <a href="#contacto" onclick="document.getElementById('overlay-contacto').style.display='flex'">Contacto</a>
+      <a href="#" onclick="abrirOverlay(); return false;">Contacto</a>
       <a href="mijardin.html" class="mi-jardin">Mi Jardín</a>
     </nav>
   </header>
@@ -25,9 +25,15 @@
 <!-- Overlay Contacto -->
 <div id="overlay-contacto">
   <div class="overlay-content">
-    <button class="close-button" onclick="document.getElementById('overlay-contacto').style.display='none'">×</button>
-    <h2>Contacto</h2>
-    <!-- tu contenido de contacto acá -->
+    <button class="close-button" id="close-button-contacto">
+      <img src="imagenes/cruz.rosa.png" alt="cerrar">
+    </button>
+    <div class="overlay-text-block">
+      <h2><span class="resaltado">CONTACTO</span></h2>
+      <p>Cualquier consulta o propuesta es bienvenida. No dudes en escribirme:)</p>
+      <a href="mailto:caba.constanza@gmail.com">caba.constanza@gmail.com</a>
+      <a href="https://wa.me/5492914133188" target="_blank">Whatsapp</a>
+    </div>
   </div>
 </div>
 

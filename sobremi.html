@@ -17,7 +17,7 @@
     <nav class="site-nav">
       <a href="index.html">Trabajos,</a>
       <a href="sobremi.html">Sobre mí,</a>
-      <a href="#contacto" onclick="document.getElementById('overlay-contacto').style.display='flex'">Contacto</a>
+      <a href="#" onclick="abrirOverlay(); return false;">Contacto</a>
       <a href="mijardin.html" class="mi-jardin">Mi Jardín</a>
     </nav>
   </header>
@@ -25,23 +25,16 @@
 <!-- Overlay Contacto -->
 <div id="overlay-contacto">
   <div class="overlay-content">
-    <h2>Contacto</h2>
-    <textarea class="consulta" placeholder="Escribí tu consulta acá..."></textarea>
-    <p>Cualquier consulta o propuesta es bienvenida :)
-Sentite libre de escribirme </p>
-    <div>
-            <nav class="contact-links">
-            <a href="https://www.linkedin.com/in/constanza-caba/" target="_blank">LinkedIn</a>,
-            <a href="https://www.instagram.com/coty_caba/" target="_blank">Instagram</a>,
-            <a href="https://www.behance.net/constanza-caba" target="_blank">Behance</a>,
-            <a href="mailto:caba.constanza@gmail.com">caba.constanza@gmail.com</a>,     <br>   
-            <a href="https://wa.me/5492914133188" target="_blank">Whatsapp</a>
-            </nav>
-          </div>
-    <button class="close-button" onclick="document.getElementById('overlay-contacto').style.display='none'">
-    <img src="imagenes/cerrar.png" alt="cerrar">
+    <button class="close-button" id="close-button-contacto">
+      <img src="imagenes/cruz.verde.png" alt="cerrar">
     </button>
-</div>
+    <div class="overlay-text-block">
+      <h2><span class="resaltado">CONTACTO</span></h2>
+      <p>Cualquier consulta o propuesta es bienvenida. No dudes en escribirme:)</p>
+      <a href="mailto:caba.constanza@gmail.com">caba.constanza@gmail.com</a>
+      <a href="https://wa.me/5492914133188" target="_blank">Whatsapp</a>
+    </div>
+  </div>
 </div>
 
   <section class="site-section">

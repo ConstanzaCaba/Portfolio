@@ -18,6 +18,13 @@ body {
   font-weight: 300;
   font-style: normal;
   font-display: block; /* cambiá swap por block */
+
+    font-family: 'IBMPlexMono';
+  src: url('IBMPlexMono-Medium.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: block; /* cambiá swap por block */
+
 }
 
 @keyframes entrarIzquierda {
@@ -28,6 +35,7 @@ body {
     clip-path: inset(0 0% 0 0);
   }
 }
+
 
 p {
   font-size:15px;
@@ -142,63 +150,74 @@ p {
   text-indent: 25px;
 }
 
-
 #overlay-contacto {
+  padding-left: 50px;
+  padding-top: 44px;
+  padding-bottom: 0;
   display: none;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.5);
+  height: auto;
+  background: none;
   z-index: 1000;
-  justify-content: center;
-  align-items: center;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .overlay-content {
-  background: rgb(128, 255, 0);
-  width: 33%;
-  height: 400px;
+  background-image: url("imagenes/contact.fondo.n1.png");
+  background-size: 100% 100%;
+  width: 100%;
   box-sizing: border-box;
   position: relative;
   font-weight: 300;
-  margin:0, 
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-bottom: 25px; /* los 25px después del texto */
 }
 
 .overlay-content h2 {
+  padding-top: 20px;
+  font-family: 'IBMPlexMono';
+  font-size: 9px;
   font-weight: 300;
+  margin: 0;
+}
+.resaltado {
+  background-color: rgb(255,92,175);
+  padding: 0 4px; /* opcional, da un poco de aire a los costados */
+}
+
+.overlay-content p,
+.overlay-content a {
+  font-size: 45px;
+  color:rgb(255,92,175);
+  margin: 0;
+  line-height: 1;
+}
+
+.overlay-text-block {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
 }
 
 .close-button {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  align-self: flex-end;
+  width: calc(100% / 6);  /* un sexto del overlay siempre en desktop */
   background: none;
   border: none;
-  font-size: 24px;
-  font-weight: 300;
   cursor: pointer;
-  padding: 0;
-  margin-top: auto; /* empuja el botón al fondo */
+  margin: 0;
 }
 
 .close-button img {
-  width: 30%; /* ajustá el tamaño */
-  height: auto;
-}
-
-.consulta {
+  display: block;
   width: 100%;
-  flex: 1; /* ocupa todo el espacio disponible */
-  resize: none;
-  border: none;
-  background: transparent;
-  font-family: 'Archivo', system-ui;
-  font-size: 14px;
-  font-weight: 300;
-  padding: 0;
-  outline: none;
+  height: auto;
 }
 
 .site-footer {
@@ -310,19 +329,40 @@ p {
 
 @media (max-width: 1024px) {
   .site-header h1 {
-    font-size: 20px;
+    font-size:24px;
+    line-height: 1;
   }
 
   .site-nav a {
-    font-size: 20px;
+    font-size: 24px;
   }
 
+  .site-header a{
+    line-height: 0.8;
+  }
+
+  #overlay-contacto {
+  padding-left: 50px;
+  padding-top: 34px;
+}
+  .close-button {
+    width: calc(100% / 6);
+  }
+.overlay-content p,
+.overlay-content a {
+  font-size: 25px;
+}
 }
 
 @media (max-width: 768px) {
-    body{
-    background-position: 50% -100%;
-    }  
+
+    .close-button {
+    width: 50%;
+  }
+
+  .overlay-text-block {
+    width: 100%;
+  }
 
   .site-header {
     /*flex-wrap: wrap;*/
@@ -343,6 +383,7 @@ p {
     line-height: 0.8;
   }
 
+  
   .menu{
    padding-top: 20px;
    padding-bottom: 0%;

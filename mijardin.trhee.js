@@ -325,3 +325,4 @@ function initJardin() {
   animate();
 
 } // ← cierre de initJardin
+

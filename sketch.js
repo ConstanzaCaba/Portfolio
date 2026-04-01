@@ -84,7 +84,6 @@ if (carrusel && dots.length) {
   });
 }
 
-// Al final del archivo, después del código del carrusel
 if (window.innerWidth <= 768) {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -101,3 +100,43 @@ if (window.innerWidth <= 768) {
 
   document.querySelectorAll('.celda').forEach(celda => observer.observe(celda));
 }
+
+const overlay = document.getElementById('overlay-contacto');
+const closeBtn = document.getElementById('close-button-contacto');
+
+function abrirOverlay() {
+  const scrollWidth = window.innerWidth - document.documentElement.clientWidth;
+  document.body.style.paddingRight = scrollWidth + 'px';
+  overlay.getAnimations().forEach(a => a.cancel());
+  overlay.style.display = 'block';
+  overlay.style.clipPath = 'inset(0 100% 100% 0)';
+  document.body.style.overflow = 'hidden';
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      overlay.animate(
+        [
+          { clipPath: 'inset(0 100% 100% 0)' },
+          { clipPath: 'inset(0 0 0 0)' }
+        ],
+        { duration: 500, easing: 'ease-out', fill: 'forwards' }
+      );
+    });
+  });
+}
+
+closeBtn.addEventListener('click', () => {
+  overlay.getAnimations().forEach(a => a.cancel());
+  const anim = overlay.animate(
+    [
+      { clipPath: 'inset(0 0 0 0)' },
+      { clipPath: 'inset(0 100% 100% 0)' }
+    ],
+    { duration: 500, easing: 'ease-in', fill: 'forwards' }
+  );
+  anim.onfinish = () => {
+    overlay.style.display = 'none';
+    overlay.style.clipPath = '';
+    document.body.style.overflow = '';
+    document.body.style.paddingRight = '';
+  };
+});
