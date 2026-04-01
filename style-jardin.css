@@ -92,8 +92,17 @@ p {
   display: none;
 }
 
-.idioma{
+.site-nav .idioma {
   margin-left: auto;
+  font-family: 'IBMPlexMono', 'Courier New', monospace;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 12px !important;
+  color: rgb(0, 0, 0) !important;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid rgb(0, 0, 0);
+  margin-top: 5px;
 }
 
 .site-nav a {
@@ -427,6 +436,15 @@ p {
 
   .idioma{
     margin:0px;
+  }
+  
+  .site-nav .idioma {
+    font-size: 12px !important;
+    color: rgb(0, 0, 0) !important;
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid rgb(0, 0, 0);
+    margin-top: 5px;
   }
 
   .contact-links {

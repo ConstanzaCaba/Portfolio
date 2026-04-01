@@ -93,8 +93,18 @@ p {
   display: none;
 }
 
-.idioma{
+
+.site-nav .idioma {
   margin-left: auto;
+  font-family: 'IBMPlexMono', 'Courier New', monospace;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 12px !important;
+  color: rgb(0, 0, 0) !important;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid rgb(0, 0, 0);
+  margin-top: 5px;
 }
 
 .site-nav a {
@@ -399,7 +409,6 @@ p {
   flex: 1;
 }
 
-
 .timeline {
   display: flex;
   flex-direction: column;
@@ -687,6 +696,15 @@ p {
   .idioma{
     margin:0px;
   }
+  
+  .site-nav .idioma {
+    font-size: 12px !important;
+    color: rgb(0, 0, 0) !important;
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid rgb(0, 0, 0);
+    margin-top: 5px;
+  }
 
   .contact-links {
     display: block;
@@ -766,15 +784,26 @@ p {
     flex-direction: column;
   }
 
+  .seccion-texto p{
+    font-size: 16px;
+  }
+
   .timeline-desc {
-  font-size: 12px;
+  font-size: 16px;
+  }
+
+  .seccion-texto h1{
+    font-size: 6px;
+  } 
+  .timeline-fecha{
+    font-size: 6px;
   }
 
   .main-col2 p{
   animation: entrarIzquierda 1.2s cubic-bezier(0.77, 0, 0.175, 1) 0.2s forwards;
   background-color: rgb(243,241,239);
   text-indent: 25px;
-  font-size: 12px;
+
 }
 
   .main-col1 {
