@@ -7,7 +7,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
   <link rel="stylesheet" href="style-jardin.css">
   <link rel="icon" type="image/png" href="imagenes/favicon.png">
-  <link rel="preload" href="Archivo-Regular.ttf" as="font" type="font/truetype" crossorigin>
+   <link rel="preload" href="Archivo-Regular.ttf" as="font" type="font/truetype">
+  <link rel="preload" href="IBMPlexMono-Regular.ttf" as="font" type="font/truetype">
 </head>
 
 <body class="fondo-degradado">
@@ -17,8 +18,9 @@
     <nav class="site-nav">
       <a href="index.html">Trabajos,</a>
       <a href="sobremi.html">Sobre mí,</a>
-      <a href="#" onclick="abrirOverlay(); return false;">Contacto</a>
-      <a href="mijardin.html" class="mi-jardin">Mi Jardín</a>
+      <a href="mijardin.html">Mi Jardín,</a>
+      <a href="#" onclick="abrirOverlay(); return false;">Contacto,</a>
+      <a href="mijardin.html" class="idioma">Idioma</a>
     </nav>
   </header>
 
@@ -42,15 +44,15 @@
       <div class="col" id="mijardin-col">
         <div class="inner-col">
           <div>
-          Diseñadora Integral<br>Buenos Aires,<br>Argentina
+          Diseñadora Integral<br>Buenos Aires, Argentina
           </div>
           <div>
             <nav class="contact-links">
             <a href="https://www.linkedin.com/in/constanza-caba/" target="_blank">LinkedIn</a>,
             <a href="https://www.instagram.com/coty_caba/" target="_blank">Instagram</a>,
             <a href="https://www.behance.net/constanza-caba" target="_blank">Behance</a>,
-            <a href="mailto:caba.constanza@gmail.com">caba.constanza@gmail.com</a>,     <br>   
-            <a href="https://wa.me/5492914133188" target="_blank">Whatsapp</a>
+            <a href="mailto:caba.constanza@gmail.com">caba.constanza@gmail.com</a>,     
+            <a href="https://wa.me/5492914133188" target="_blank">Whatsapp</a> <br>  
             </nav>
           </div>
         </div>
@@ -66,6 +68,16 @@
     <p id="popup-desc"></p>
   </div>
 </div>
+
+<div class="bienvenida">
+  <h2>Bienvenid@</h2>
+  <p>Me dicen coty. siemrpe me gustó dibujar pintar y jugar con la imagen.
+creo en el poder de las formas, el color y la imagen. Estoy siempre buscando crear nuevos mundos y experiencias que combinen el arte y el diseño.</p>
+  <p>Aquí podrás ver ilustraciones, fotografías, visuales y todo tipo de paisajes digitales y analógicos.
+Paseate tranquil@. Disponible para comisiones :)</p>
+ <img src="imagenes/detalle.png" alt="detalle">
+</div>
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
 <script src="sketch.js"></script>

@@ -8,18 +8,19 @@
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="imagenes/favicon.png">
   <link rel="preload" href="Archivo-Regular.ttf" as="font" type="font/truetype">
-  <link rel="preload" href="IBMPlexMono-Medium.ttf" as="font" type="font/truetype">
+  <link rel="preload" href="IBMPlexMono-Regular.ttf" as="font" type="font/truetype">
 </head>
 <body>
 
   <header class="site-header">
     <h1>Constanza Caba</h1>
     <button class="menu-toggle" onclick="document.querySelector('.site-nav').classList.toggle('abierto')">☰</button>
-    <nav class="site-nav">
+      <nav class="site-nav">
       <a href="index.html">Trabajos,</a>
       <a href="sobremi.html">Sobre mí,</a>
-      <a href="#" onclick="abrirOverlay(); return false;">Contacto</a>
-      <a href="mijardin.html" class="mi-jardin">Mi Jardín</a>
+      <a href="mijardin.html">Mi Jardín,</a>
+      <a href="#" onclick="abrirOverlay(); return false;">Contacto,</a>
+      <a href="mijardin.html" class="idioma">Idioma</a>
     </nav>
   </header>
 
@@ -38,27 +39,25 @@
 </div>
 
   <section class="site-section">
-
-      <div class="col" id="texto">
-        Busco generar soluciones visuales que comuniquen con claridad y construyan sentido. Me interesa participar en proyectos creativos, gráficos, audiovisuales y culturales.
-      </div>
-      <div class="col">
-        <div class="inner-col">
-          <div>
-          Diseñadora Integral<br>Buenos Aires, Argentina
+    <div class="col">
+          <div class="inner-col">
+              <div>
+              Diseñadora Integral<br>Buenos Aires, Argentina
+              </div>
+              <div>
+                <nav class="contact-links">
+                <a href="https://www.linkedin.com/in/constanza-caba/" target="_blank">LinkedIn</a>,
+                <a href="https://www.instagram.com/coty_caba/" target="_blank">Instagram</a>,
+                <a href="https://www.behance.net/constanza-caba" target="_blank">Behance</a>,
+                <a href="https://wa.me/5492914133188" target="_blank">Whatsapp</a> 
+                <a href="mailto:caba.constanza@gmail.com">caba.constanza@gmail.com</a>,<br>   
+                </nav>
+              </div>
           </div>
-          <div>
-            <nav class="contact-links">
-            <a href="https://www.linkedin.com/in/constanza-caba/" target="_blank">LinkedIn</a>,
-            <a href="https://www.instagram.com/coty_caba/" target="_blank">Instagram</a>,
-            <a href="https://www.behance.net/constanza-caba" target="_blank">Behance</a>,
-            <a href="https://wa.me/5492914133188" target="_blank">Whatsapp</a> <br>
-            <a href="mailto:caba.constanza@gmail.com">caba.constanza@gmail.com</a>,<br>   
-            </nav>
-          </div>
-        </div>
-      </div>
-
+    </div>
+    <div class="col" id="texto">
+    Busco generar soluciones visuales que comuniquen con claridad y construyan sentido. Me interesa participar en proyectos creativos, gráficos, audiovisuales y culturales.
+    </div>
   </section>
  
   <section class="menu">

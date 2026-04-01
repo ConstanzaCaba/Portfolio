@@ -4,8 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
   <title>SOMA | Constanza Caba</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
   <link rel="stylesheet" href="style-trabajos.css">
   <link rel="icon" type="image/png" href="../imagenes/favicon.png">
+  <link rel="preload" href="Archivo-Regular.ttf" as="font" type="font/truetype">
+  <link rel="preload" href="IBMPlexMono-Regular.ttf" as="font" type="font/truetype">
 </head>
 <body>
   <header class="site-header">
@@ -13,11 +16,26 @@
     <button class="menu-toggle" onclick="document.querySelector('.site-nav').classList.toggle('abierto')">☰</button>
     <nav class="site-nav">
       <a href="../index.html">Trabajos,</a>
-      <a href="../sobremi.html">Sobre mí,</a>
-      <a href="#contacto">Contacto</a>
-      <a href="../mijardin.html" class="mi-jardin">Mi Jardín</a>
+      <a href="../sobremi.html"> Sobre mí,</a>
+      <a href="../mijardin.html"> Mi Jardín,</a>
+      <a href="#" onclick="abrirOverlay(); return false;"> Contacto,</a>
+      <a href="../mijardin.html" class="idioma">Idioma</a>
     </nav>
   </header>
+
+<div id="overlay-contacto">
+  <div class="overlay-content">
+    <button class="close-button" id="close-button-contacto">
+      <img src="../imagenes/cruz.verde.png" alt="cerrar">
+    </button>
+    <div class="overlay-text-block">
+      <h2><span class="resaltado">CONTACTO</span></h2>
+      <p>Cualquier consulta o propuesta es bienvenida. No dudes en escribirme:)</p>
+      <a href="mailto:caba.constanza@gmail.com">caba.constanza@gmail.com</a>
+      <a href="https://wa.me/5492914133188" target="_blank">Whatsapp</a>
+    </div>
+  </div>
+</div>
 
  <div class="carrusel-wrapper">
   <button class="carrusel-btn prev" onclick="moverSlide(-1)">‹</button>

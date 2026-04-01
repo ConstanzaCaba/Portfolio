@@ -18,13 +18,13 @@ body {
   font-weight: 300;
   font-style: normal;
   font-display: block; /* cambiá swap por block */
-
-    font-family: 'IBMPlexMono';
-  src: url('IBMPlexMono-Medium.ttf') format('truetype');
-  font-weight: 300;
+}
+@font-face{
+  font-family: 'IBMPlexMono';
+  src: url('IBMPlexMono-Regular.ttf') format('truetype');
+  font-weight: 400;
   font-style: normal;
   font-display: block; /* cambiá swap por block */
-
 }
 
 @keyframes entrarIzquierda {
@@ -92,7 +92,7 @@ p {
   display: none;
 }
 
-.mi-jardin{
+.idioma{
   margin-left: auto;
 }
 
@@ -121,7 +121,9 @@ p {
 .site-section {
   animation: entrarIzquierda 0.8s cubic-bezier(0.77, 0, 0.175, 1) 0.2s forwards;  
   display: flex;
-  font-size: 12px;
+  font-size: 9px;
+  font-family: 'IBMPlexMono', monospace;
+  text-transform: uppercase;
   gap:0.5%;
 }
 
@@ -219,6 +221,39 @@ p {
   width: 100%;
   height: auto;
 }
+
+.bienvenida{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: calc(100% / 6);
+  padding-right: 25px;
+  padding-bottom: 100px;
+}
+
+.bienvenida img{
+  display: block;
+  width: 100%;
+  height: auto;
+  padding-top: 50px;
+}
+
+.bienvenida p{
+  text-indent: 25px;
+  font-size: 9px;
+  color: rgb(125, 125, 125);
+}
+
+.bienvenida h2 {
+  font-family: 'IBMPlexMono', monospace;
+  text-transform: uppercase;
+  font-size: 9px;
+  font-weight: 300;
+  display:flex;
+  color: rgb(125, 125, 125);
+  text-indent: 0px;
+}
+
 
 .site-footer {
   display: flex;
@@ -389,7 +424,7 @@ p {
    padding-bottom: 0%;
   }
 
-  .mi-jardin{
+  .idioma{
     margin:0px;
   }
 
@@ -471,10 +506,7 @@ p {
     padding-top: 20px;
   }
 
-  .sobre-mi {
-    flex-direction: column;
-  }
-
+ 
   .main-col1 {
     width: 100%;
     position: sticky;
@@ -606,6 +638,37 @@ p {
   -moz-appearance: none;
   appearance: none;
   color: black;
+}
+
+  .bienvenida {
+    position: fixed;
+    bottom: 10px;
+    left: 50px;
+    right: 0;
+    width: auto; /* ocupa desde left:50px hasta el borde derecho */
+  }
+
+.bienvenida img{
+  display: block;
+  width: 100%;
+  height: auto;
+  padding-top: 50px;
+}
+
+.bienvenida p{
+  text-indent: 25px;
+  font-size: 9px;
+  color: rgb(125, 125, 125);
+}
+
+.bienvenida h2 {
+  font-family: 'IBMPlexMono', monospace;
+  text-transform: uppercase;
+  font-size: 9px;
+  font-weight: 300;
+  display:flex;
+  color: rgb(125, 125, 125);
+  text-indent: 0px;
 }
 
 }
