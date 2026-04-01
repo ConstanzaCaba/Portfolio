@@ -15,16 +15,16 @@ body {
 @font-face {
   font-family: 'Archivo';
   src: url('Archivo-Regular.ttf') format('truetype');
-  font-weight: 300;
+  font-weight: 400;
   font-style: normal;
   font-display: block; /* cambiá swap por block */
 }
-@font-face{
+@font-face {
   font-family: 'IBMPlexMono';
   src: url('IBMPlexMono-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
-  font-display: block; /* cambiá swap por block */
+  font-display: block;
 }
 
 @keyframes entrarIzquierda {
@@ -68,7 +68,7 @@ p {
   background-color: rgb(255,92,175);
   margin: 0;
   line-height: 1;
-  font-weight: 300;
+  font-weight: 400;
   padding:5px 25px;
 }
 
@@ -101,7 +101,7 @@ p {
   font-size: 32px;
   text-decoration: none;
   color: inherit;
-  font-weight: 300;
+  font-weight: 400;
   color:rgb(206,59,110);
   transition: color 0.2s;
 }
@@ -122,7 +122,8 @@ p {
   animation: entrarIzquierda 0.8s cubic-bezier(0.77, 0, 0.175, 1) 0.2s forwards;  
   display: flex;
   font-size: 9px;
-  font-family: 'IBMPlexMono', monospace;
+  font-family: 'IBMPlexMono', 'Courier New', monospace;
+  font-weight: 400;
   text-transform: uppercase;
   gap:0.5%;
 }
@@ -174,7 +175,7 @@ p {
   width: 100%;
   box-sizing: border-box;
   position: relative;
-  font-weight: 300;
+  font-weight: 400;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -183,9 +184,9 @@ p {
 
 .overlay-content h2 {
   padding-top: 20px;
-  font-family: 'IBMPlexMono';
+  font-family: 'IBMPlexMono', 'Courier New', monospace;
   font-size: 9px;
-  font-weight: 300;
+  font-weight: 400;
   margin: 0;
 }
 .resaltado {
@@ -245,10 +246,10 @@ p {
 }
 
 .bienvenida h2 {
-  font-family: 'IBMPlexMono', monospace;
+  font-family: 'IBMPlexMono', 'Courier New', monospace;
+  font-weight: 400;
   text-transform: uppercase;
   font-size: 9px;
-  font-weight: 300;
   display:flex;
   color: rgb(125, 125, 125);
   text-indent: 0px;
@@ -662,10 +663,10 @@ p {
 }
 
 .bienvenida h2 {
-  font-family: 'IBMPlexMono', monospace;
+  font-family: 'IBMPlexMono', 'Courier New', monospace;
+  font-weight: 400;
   text-transform: uppercase;
   font-size: 9px;
-  font-weight: 300;
   display:flex;
   color: rgb(125, 125, 125);
   text-indent: 0px;
