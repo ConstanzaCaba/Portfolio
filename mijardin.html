@@ -7,7 +7,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
   <link rel="stylesheet" href="style-jardin.css">
   <link rel="icon" type="image/png" href="imagenes/favicon.png">
-   <link rel="preload" href="Archivo-Regular.ttf" as="font" type="font/truetype">
+  <link rel="preload" href="Archivo-Regular.ttf" as="font" type="font/truetype">
   <link rel="preload" href="IBMPlexMono-Regular.ttf" as="font" type="font/truetype">
 </head>
 
@@ -63,7 +63,9 @@
 
 <div id="popup-jardin">
   <div id="popup-contenido">
-   <button onclick="document.getElementById('popup-jardin').style.display='none'" id="close-button">×</button>
+   <button onclick="document.getElementById('popup-jardin').style.display='none'" id="close-button">
+    <img src="imagenes/cruz.chica.png" alt="cerrar">
+   </button>
     <img id="popup-img" src="">
     <p id="popup-desc"></p>
   </div>
@@ -77,7 +79,6 @@ creo en el poder de las formas, el color y la imagen. Estoy siempre buscando cre
 Paseate tranquil@. Disponible para comisiones :)</p>
  <img src="imagenes/detalle.png" alt="detalle">
 </div>
-
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
 <script src="sketch.js"></script>

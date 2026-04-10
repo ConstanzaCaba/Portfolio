@@ -39,11 +39,6 @@ canvas {
   }
 }
 
-p {
-  font-size:15px;
-  text-indent: 1em;
-}
-
 /* Header styles: full width, height equal to text (32px) */
 .site-header {
   width: 100%;
@@ -126,7 +121,7 @@ p {
 }
 
 #texto{
-  text-indent: 25px;
+  text-indent: 2em;
 }
 
 .site-section {
@@ -161,7 +156,7 @@ p {
 .inner-col p{
   margin:0px;
   font-size:9px;
-  text-indent: 25px;
+  text-indent: 2em;
 }
 
 .menu{
@@ -199,7 +194,7 @@ p {
   flex-direction: column;
   width: 33%;
   gap:25px;
-  text-indent: 25px;
+  text-indent: 2em;
 }
 
 .main-col h2{
@@ -339,12 +334,6 @@ p {
   gap:0.5%;
 }
 
-.sobre-mi p{
-  text-indent: 25px;
-  font-size: 24px;
-  font-weight: 400;
-}
-
 .main-col1{
   animation: entrarIzquierda 0.8s cubic-bezier(0.77, 0, 0.175, 1) 0.2s forwards;
   display: flex;
@@ -357,28 +346,21 @@ p {
   display: flex;
   flex-direction: column;
   width: 66.5%;
-  
+  background-color: rgb(243,241,239);
 }
 
 .main-col2 p{
   animation: entrarIzquierda 1.2s cubic-bezier(0.77, 0, 0.175, 1) 0.2s forwards;
-  background-color: rgb(243,241,239);
-  text-indent: 25px;
   font-size: 24px;
 }
 
-.seccion-texto {
-  margin: 0;
-}
-
-.seccion-texto div{
-  background-color: rgb(243,241,239);
-  text-indent: 25px;
-  margin: 0;
+.seccion-texto p:first-of-type {
+  text-indent: 2em;
 }
 
 .seccion-texto p{
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 10px;
 }
 
 .seccion-texto h1 {
@@ -387,7 +369,6 @@ p {
   text-transform: uppercase;
   font-size: 9px;
   background-color: rgb(243,241,239);
-  margin: 0;
   display: block;
 }
 
@@ -398,11 +379,7 @@ p {
   font-size: 9px;
   display:flex;
   background-color: rgb(243,241,239);
-  border-bottom: 1px solid rgb(206,210,213)
-}
-
-#titulo{
-  padding-top: 15px;
+  border-bottom: 0.5px solid rgb(206,210,213)
 }
 
 .datita > div {
@@ -435,12 +412,79 @@ p {
   font-size: 24px;
 }
 
+.trabajo-descripcion-larga{
+  background-color: rgb(243,241,239);
+}
+
+.main-col3{
+  animation: entrarIzquierda 0.8s cubic-bezier(0.77, 0, 0.175, 1) 0.2s forwards;
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+}
+
+.main-col3 h1{
+  text-indent: 25px;
+}
+
+.main-col4{
+  animation: entrarIzquierda 1s cubic-bezier(0.77, 0, 0.175, 1) 0.2s forwards;
+  display: flex;
+  margin-left: auto;
+  flex-direction: column;
+  width: 33%;
+  background-color: rgb(243,241,239);
+}
+
+.trabajo-descripcion-larga .main-col4 p{
+  animation: entrarIzquierda 1.2s cubic-bezier(0.77, 0, 0.175, 1) 0.2s forwards;
+  font-size: 14px;
+    margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.trabajo-descripcion-larga .main-col4 h1{
+  font-family: 'IBMPlexMono', 'Courier New', monospace;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size:9px;
+}
+
+.timeline-desc2 {
+  font-size: 14px;
+  }
+
+.linea{
+  background-color: rgb(243,241,239);
+  border-bottom: 1px solid rgb(192, 192, 192);
+}
+
+.datita2 {
+  display:flex;
+  margin-top:25px;
+  width: 33%;
+}
+
+.datita2 > div {
+  flex: 1;
+  margin:0px;
+  font-size:9px;
+  text-indent: 25px;
+  font-family: 'IBMPlexMono', 'Courier New', monospace;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+#subrayado{
+  text-decoration: underline;
+  margin-bottom:25px;
+}
 
 .site-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(253, 119, 173);
+  background-color: rgb(173, 176, 178);
   font-size: 12px;
   margin-top: 40px;
   padding:0px 25px;
@@ -450,26 +494,12 @@ p {
   width:15%;
 }
 
-.datita2{
-  margin-top:25px;
-  display:flex;
-  padding:0px 25px;
-  background-color: rgb(243,241,239);
-  font-size: 12px;
-  Gap: 13.5%;
-}
-
-.datita2{
-  border-bottom: 1px solid rgb(192, 192, 192);
-}
-
-
 .carrusel-wrapper {
   margin-top:25px;
   position: relative;
   width: 100%;
  /* background-color: rgb(243, 241, 239);*/
-  height: 500px;
+  height: 550px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -545,14 +575,10 @@ p {
 }
 
 .trabajo-descripcion-larga p {
-  text-indent: 25px;
+  text-indent: 2em;
   font-size: 24px;
   margin: 0;
   font-weight: 400;
-}
-
-.main-col1 h1{
-  background-color: rgb(243,241,239);
 }
 
 #info{
@@ -701,6 +727,7 @@ p {
     border-radius: 999px;
     border: 1px solid rgb(0, 0, 0);
     margin-top: 5px;
+    margin-bottom: 5px;
   }
 
   .contact-links {
@@ -780,27 +807,10 @@ p {
   .sobre-mi {
     flex-direction: column;
   }
-
-  .seccion-texto p{
-    font-size: 16px;
-  }
-
-  .timeline-desc {
-  font-size: 16px;
-  }
-
-  .seccion-texto h1{
-    font-size: 6px;
-  } 
-  .timeline-fecha{
-    font-size: 6px;
-  }
-
   .main-col2 p{
   animation: entrarIzquierda 1.2s cubic-bezier(0.77, 0, 0.175, 1) 0.2s forwards;
   background-color: rgb(243,241,239);
   text-indent: 25px;
-
 }
 
   .main-col1 {
@@ -815,9 +825,45 @@ p {
     z-index: 1;
     width: 100%;
   }
+  .seccion-texto p{
+    font-size: 15px;
+  }
 
-  .site-footer img{
-   width:35%;
+  .timeline-desc {
+  font-size: 15px;
+  }
+
+  .seccion-texto h1{
+    font-size: 6px;
+  } 
+
+  .timeline-fecha{
+    font-size: 6px;
+  }
+
+  #titulo{
+    font-size: 6px;
+  }
+
+  .timeline-desc2 {
+  font-size: 15px;
+  }
+
+  .main-col3 {
+    width: 100%;
+    position: sticky;
+    top: 34px; /* igual al alto del header */
+    align-self: flex-start;
+    height: fit-content;
+  }
+
+  .main-col3 h1{
+  margin-bottom: 25px;
+  }
+
+  .main-col4 {
+    z-index: 1;
+    width: 100%;
   }
 
   .trabajo-detalle {
@@ -911,7 +957,6 @@ p {
    width:100%; 
    position:relative; 
    display:inline-block;
-   margin-top: 5px;
    max-height: 90vh;
   }
 
@@ -928,12 +973,13 @@ p {
   font-family:inherit;
 }
 
-.menu-toggle,
-#popup-jardin button {
+.menu-toggle{
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   color: black;
 }
-
+  .site-footer img{
+   width:35%;
+  }
 }

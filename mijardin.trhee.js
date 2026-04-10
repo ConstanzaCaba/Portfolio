@@ -194,8 +194,9 @@ function initJardin() {
     pivot.add(plano);
   }
 
-  crearTextoEnLinea('ilustración', nodosData[5]);
-  crearTextoEnLinea('collage',     nodosData[3]);
+  crearTextoEnLinea('Ilustración',nodosData[5]);
+  crearTextoEnLinea('Collage',nodosData[3]);
+  crearTextoEnLinea('Fotografía',nodosData[1]);
 
   // helpers de pointer
   function pointerToNDC(clientX, clientY) {
