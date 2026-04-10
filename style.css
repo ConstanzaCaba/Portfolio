@@ -658,16 +658,58 @@ canvas {
 
 @media (max-width: 1024px) {
   .site-header h1 {
-    font-size:24px;
+    font-size:20px;
     line-height: 1;
   }
 
   .site-nav a {
-    font-size: 24px;
+    font-size: 20px;
+  }
+
+  .main-col h2{
+    font-size: 18px;
+    margin: 0;
+    font-weight: 400;
   }
 
   .site-header a{
     line-height: 0.8;
+  }
+
+  .seccion-texto p{
+    font-size: 15px;
+  }
+
+  .timeline-desc {
+  font-size: 15px;
+  }
+
+  .seccion-texto h1{
+    font-size: 6px;
+  } 
+
+  .timeline-fecha{
+    font-size: 6px;
+  }
+  
+  .main-col3 h1{
+    font-size: 18px;
+  }
+
+  .seccion-texto p{
+    font-size: 15px;
+  }
+
+  .timeline-fecha{
+    font-size: 6px;
+  }
+
+  #titulo{
+    font-size: 6px;
+  }
+
+  .timeline-desc2 {
+  font-size: 15px;
   }
 
   #overlay-contacto {
@@ -683,7 +725,7 @@ canvas {
 }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px){
 
   .close-button {
     width: 50%;
@@ -697,7 +739,6 @@ canvas {
     /*flex-wrap: wrap;*/
     position: sticky;
     top: 0;
-
     background-image: url('../imagenes/rectangulo.header.png');
     background-size: 100% 100%;
     background-position: center;
@@ -705,7 +746,7 @@ canvas {
   }
 
   .site-header h1 {
-    font-size:24px;
+    font-size:20px;
     line-height: 1;
   }
 
@@ -824,6 +865,7 @@ canvas {
     z-index: 1;
     width: 100%;
   }
+
   .seccion-texto p{
     font-size: 15px;
   }
