@@ -76,13 +76,11 @@ canvas {
   /* keep next to h1 on the left; gap handles spacing */
   width: 100%;
   padding:5px 25px;
-}
-
-/* para que .site-nav no sea invisible antes de arrancar */
-.site-nav {
   opacity: 1;
   clip-path: inset(0 100% 0 0);
 }
+/* para que .site-nav no sea invisible antes de arrancar */
+
 
 .menu-toggle {
   display: none;
