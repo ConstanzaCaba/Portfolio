@@ -50,7 +50,7 @@ canvas {
   padding: 0;
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1500;
   background-image: url('imagenes/rectangulo.header.png');
   background-size: 100% 100%;
   background-position: center;
@@ -267,7 +267,7 @@ canvas {
   width: 100%;
   height: auto;
   background: none;
-  z-index: 1000;
+  z-index: 2000;
   box-sizing: border-box;
   overflow: hidden;
 }
@@ -813,7 +813,7 @@ canvas {
     top: 100%;
     left: 0;
     right: 0;
-    z-index: 200;
+    z-index: 2000;
     border-top: 1px solid rgb(192, 192, 192);
   }
 

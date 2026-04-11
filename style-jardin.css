@@ -1,4 +1,9 @@
 
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 body {
   padding-left: 50px;
   margin: 0px;
@@ -54,7 +59,7 @@ p {
   padding: 0;
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1500;
   background-image: url('imagenes/rectangulo.header2.png');
   background-size: 100% 100%;
   background-position: center;
@@ -173,7 +178,7 @@ p {
   width: 100%;
   height: auto;
   background: none;
-  z-index: 1000;
+  z-index: 2000;
   box-sizing: border-box;
   overflow: hidden;
 }
@@ -466,7 +471,7 @@ p {
     top: 100%;
     left: 0;
     right: 0;
-    z-index: 200;
+    z-index: 2000;
     background-color: rgb(243,241,239);
   }
 
