@@ -199,12 +199,21 @@ function initJardin() {
   crearTextoEnLinea('Fotografía',nodosData[1]);
 
   // helpers de pointer
+  function menuEstaAbierto() {
+    return document.querySelector('.site-nav.abierto') !== null;
+  }
+
   function pointerToNDC(clientX, clientY) {
     mouse.x =  (clientX / window.innerWidth)  * 2 - 1;
     mouse.y = -(clientY / window.innerHeight) * 2 + 1;
   }
 
   function checkHover(clientX, clientY) {
+    if (menuEstaAbierto()) {
+      if (hoveredMesh) { hoveredMesh.scale.set(1, 1, 1); hoveredMesh = null; }
+      document.body.style.cursor = 'default';
+      return;
+    }
     pointerToNDC(clientX, clientY);
     raycaster.setFromCamera(mouse, camera);
     const hits = raycaster.intersectObjects(meshes);
@@ -226,6 +235,7 @@ function initJardin() {
   }
 
   function checkClick(clientX, clientY) {
+    if (menuEstaAbierto()) return;
     pointerToNDC(clientX, clientY);
     raycaster.setFromCamera(mouse, camera);
     const hits = raycaster.intersectObjects(meshes);
@@ -326,4 +336,3 @@ function initJardin() {
   animate();
 
 } // ← cierre de initJardin
-
