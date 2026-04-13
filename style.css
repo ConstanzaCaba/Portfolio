@@ -59,7 +59,7 @@ canvas {
 .site-header h1 {
   animation: entrarIzquierda 0.7s cubic-bezier(0.77, 0, 0.175, 1) forwards;
   font-family: 'Archivo', sans-serif;
-  font-size: 32px;
+  font-size: 24px;
   white-space: nowrap;
   background-color: rgb(243,241,239);
   margin: 0;
@@ -102,7 +102,7 @@ canvas {
 
 .site-nav a {
   font-family: 'Archivo', sans-serif;
-  font-size: 32px;
+  font-size: 24px;
   text-decoration: none;
   color: inherit;
   font-weight: 400;
@@ -119,7 +119,7 @@ canvas {
 }
 
 #texto{
-  text-indent: 2em;
+  text-indent: 25px;
 }
 
 .site-section {
@@ -154,7 +154,7 @@ canvas {
 .inner-col p{
   margin:0px;
   font-size:9px;
-  text-indent: 2em;
+  text-indent: 25px;
 }
 
 .menu{
@@ -192,7 +192,7 @@ canvas {
   flex-direction: column;
   width: 33%;
   gap:25px;
-  text-indent: 2em;
+  text-indent: 25px;
 }
 
 .main-col h2{
@@ -353,7 +353,7 @@ canvas {
 }
 
 .seccion-texto p:first-of-type {
-  text-indent: 2em;
+  text-indent: 25px;
 }
 
 .seccion-texto p{
@@ -392,7 +392,7 @@ canvas {
 
 .timeline-item {
   display: flex;
-  gap: 25px;
+  gap: 15px;
   padding: 5px 0px;
 }
 
@@ -400,14 +400,16 @@ canvas {
   font-family: 'IBMPlexMono', 'Courier New', monospace;
   font-weight: 400;
   text-transform: uppercase;
-  font-size: 9px;
+  font-size: 7px;
   white-space: nowrap;
-  width: 50px;
+  width: 25px;
   flex-shrink: 0;
 }
 
 .timeline-desc {
-  font-size: 24px;
+  font-size: 20px;
+  padding: 0px 25px;
+
 }
 
 .trabajo-descripcion-larga{
@@ -437,7 +439,7 @@ canvas {
 .trabajo-descripcion-larga .main-col4 p{
   animation: entrarIzquierda 1.2s cubic-bezier(0.77, 0, 0.175, 1) 0.2s forwards;
   font-size: 14px;
-    margin-top: 0;
+  margin-top: 0;
   margin-bottom: 10px;
 }
 
@@ -445,12 +447,12 @@ canvas {
   font-family: 'IBMPlexMono', 'Courier New', monospace;
   font-weight: 400;
   text-transform: uppercase;
-  font-size:9px;
+  font-size:7px;
 }
 
 .timeline-desc2 {
   font-size: 14px;
-  }
+}
 
 .linea{
   background-color: rgb(243,241,239);
@@ -572,7 +574,7 @@ canvas {
 }
 
 .trabajo-descripcion-larga p {
-  text-indent: 2em;
+  text-indent: 25px;
   font-size: 24px;
   margin: 0;
   font-weight: 400;
@@ -913,6 +915,7 @@ canvas {
   .main-col4 {
     z-index: 1;
     width: 100%;
+    font-size: 15px;
   }
 
   .trabajo-detalle {
@@ -1028,7 +1031,7 @@ canvas {
   appearance: none;
   color: black;
 }
-  .site-footer img{
-   width:20%;
-  }
+ .site-footer img{
+  width:20%;
+}
 }

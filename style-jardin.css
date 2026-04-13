@@ -39,7 +39,7 @@ body {
 
 p {
   font-size:15px;
-  text-indent: 1em;
+  text-indent: 25px;
 }
 
 
@@ -63,7 +63,7 @@ p {
 .site-header h1 {
   animation: entrarIzquierda 0.7s cubic-bezier(0.77, 0, 0.175, 1) forwards;
   font-family: 'Archivo', sans-serif;
-  font-size: 32px;
+  font-size: 24px;
   white-space: nowrap;
   background-color: rgb(255,92,175);
   margin: 0;
@@ -105,7 +105,7 @@ p {
 
 .site-nav a {
   font-family: 'Archivo', sans-serif;
-  font-size: 32px;
+  font-size: 24px;
   text-decoration: none;
   color: inherit;
   font-weight: 400;
@@ -157,7 +157,7 @@ p {
 .inner-col p{
   margin:0px;
   font-size:12px;
-  text-indent: 2em;
+  text-indent: 25px;
 }
 
 #overlay-contacto {
