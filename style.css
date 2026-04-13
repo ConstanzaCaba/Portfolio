@@ -809,7 +809,7 @@ canvas {
     display: none;
     flex-direction: column;
     align-items: flex-start;
-    width: calc(100% - 50px);
+    width: 100%;
     box-sizing: border-box;
     padding: 0px 25px;
     position: absolute;
