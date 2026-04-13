@@ -488,7 +488,7 @@ canvas {
 }
 
 .site-footer img{
-  width:20%;
+  width:10%;
 }
 
 .carrusel-wrapper {
@@ -745,7 +745,7 @@ canvas {
     background-image: url('../imagenes/rectangulo.header.png');
     background-size: 100% 100%;
     background-position: center;
-
+    align-items: stretch;
   }
 
   .site-header h1 {
@@ -779,17 +779,21 @@ canvas {
   }
 
   .menu-toggle {
-    color:black !important;
-    display: block;
-    position: absolute;
-    right: 0px;
+    display: flex;
+    position: relative; /* saca el absolute */
+    margin-left: auto;
+    height: 100%; /* mismo alto que el header */
+    padding: 0px 10px;
     background-color: rgb(243,241,239);
     border: none;
     font-size: 24px;
     cursor: pointer;
     z-index: 101;
-    border-bottom: 1px solid rgb(192, 192, 192);
-    line-height: 1.2;
+    line-height: 1.4;
+    -webkit-appearance: none;
+    appearance: none;
+    color: black !important;
+    flex-shrink: 0;
   }
 
   .celda:hover .trabajo-descripcion {
@@ -820,7 +824,7 @@ canvas {
   }
 
   .site-nav a {
-    font-size: 24px;
+    font-size: 20px;
     padding: 5px 0;
   }
 

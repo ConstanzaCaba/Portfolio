@@ -4,21 +4,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
   <title>¿Ves el ruido? | Constanza Caba</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
   <link rel="stylesheet" href="style-trabajos.css">
   <link rel="icon" type="image/png" href="../imagenes/favicon.png">
+  <link rel="preload" href="Archivo-Regular.ttf" as="font" type="font/truetype">
+  <link rel="preload" href="IBMPlexMono-Regular.ttf" as="font" type="font/truetype">
 </head>
 <body>
   <header class="site-header">
     <h1>Constanza Caba</h1>
     <button class="menu-toggle" onclick="document.querySelector('.site-nav').classList.toggle('abierto')">☰</button>
     <nav class="site-nav">
-      <a href="index.html">Trabajos,</a>
-      <a href="sobremi.html">Sobre mí,</a>
-      <a href="mijardin.html">Mi Jardín,</a>
-      <a href="#" onclick="abrirOverlay(); return false;">Contacto,</a>
-      <a href="mijardin.html" class="idioma">Idioma</a>
+      <a href="../index.html">Trabajos,</a>
+      <a href="../sobremi.html"> Sobre mí,</a>
+      <a href="../mijardin.html"> Mi Jardín,</a>
+      <a href="#" onclick="abrirOverlay(); return false;"> Contacto,</a>
+      <a href="../mijardin.html" class="idioma">ES→</a>
     </nav>
   </header>
+
+  <div id="overlay-contacto">
+    <div class="overlay-content">
+      <button class="close-button" id="close-button-contacto">
+        <img src="../imagenes/cruz.verde.png" alt="cerrar">
+      </button>
+      <div class="overlay-text-block">
+        <h2><span class="resaltado">CONTACTO</span></h2>
+        <p>Cualquier consulta o propuesta es bienvenida. No dudes en escribirme:)</p>
+        <a href="mailto:caba.constanza@gmail.com">caba.constanza@gmail.com</a>
+        <a href="https://wa.me/5492914133188" target="_blank">Whatsapp</a>
+      </div>
+    </div>
+  </div>
 
  <div class="carrusel-wrapper">
   <button class="carrusel-btn prev" onclick="moverSlide(-1)">‹</button>
@@ -41,34 +58,45 @@
   <div class="carrusel-dot"></div>
 </div>
 
-  <section class="trabajo-detalle">
-    <div class="datita2">
-      <div>Gráfica</div>
-      <div>2025</div>
+  <section>
+    <div class="linea">
+    <div class="datita">
+      <div>Infografía</div>
+      <div>2022</div>
+    </div>
     </div>
 
 <div class="trabajo-descripcion-larga">
-    <div class="main-col1">
-    <h1 id="titulo">¿Ves el ruido?</h1>
+    <div class="main-col3">
+    <h1>¿Ves el ruido?</h1>
     </div>
-
-    <div class="main-col2">
-        <p>En la ciudad estamos envueltos en un ruido constante, tanto visual como sonoro. A partir de un recorrido consciente por la Comuna 13, el proyecto propone visibilizar estos patrones de ruido y entender cómo se manifiestan en el espacio urbano. Las zonas más ruidosas coinciden con aquellas más saturadas de estímulos: carteles, grafitis, colores y texturas que se superponen y compiten por la atención.
+    <div class="main-col4">
+       <h1 id="titulo">CONCEPTO</h1>
+        <p id="subrayado">En la ciudad estamos envueltos en un ruido constante, tanto visual como sonoro. A partir de un recorrido consciente por la Comuna 13, el proyecto propone visibilizar estos patrones de ruido y entender cómo se manifiestan en el espacio urbano. </p>
+        <p>Las zonas más ruidosas coinciden con aquellas más saturadas de estímulos: carteles, grafitis, colores y texturas que se superponen y compiten por la atención.
         El recorrido invita a agudizar la percepción y a observar la ciudad como un sistema de capas en tensión.</p>
-  
         <p> diseñó una pieza infográfica que acompaña el recorrido, señalando paradas clave y ofreciendo un análisis de las distintas expresiones visuales presentes en el entorno: marcas, grafitis y arte callejero.
         A través de este relevamiento se identifican patrones, repeticiones y firmas, entendiendo la calle como un espacio de comunicación en constante transformación.
-        
         <p>El sistema propone una lógica adaptable: así como el entorno cambia, la lectura también se construye en movimiento. El recorrido no es fijo, sino que se redefine con cada experiencia. Se desarrolló un sistema gráfico que traduce la intensidad del entorno urbano.
         La tipografía se presenta irreverente y expansiva, mientras que los grafismos ocupan todo el espacio disponible, imponiéndose en la composición. La calle se entiende como soporte y como medio.</p>
         <p>El sistema responde al contexto: en espacios vacíos y silenciosos, la comunicación amplifica su presencia; en zonas saturadas, se vuelve más directa y sintética, generando hitos visuales a través de intervenciones gráficas y objetuales.</p>
         
-        <br>
-        <p id="info">info;cositas</p>
-        <p id="info">Colaboradores;cositas</p>
-        <p id="info">UTDT</p>
+         <div class="timeline">
+        <div class="timeline-item">
+          <span class="timeline-fecha">PROYECTO</span>
+          <span class="timeline-desc2">Académico</span>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-fecha">EQUIPO</span>
+          <span class="timeline-desc2">Constanza Caba</span>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-fecha">ROL</span>
+          <span class="timeline-desc2">Diseñadora, imágen</span>
+        </div>
+      </div>
 
-        <a href="jaguar.html" class="btn-siguiente">Ver más →</a>
+        <a href="cuerpohibrido.html" class="btn-siguiente">Ver más →</a>
         
     </div>
 
@@ -78,7 +106,7 @@
 
 
 <footer class="site-footer">
-  <img src="../imagenes/footer.png" alt="Logo de Constanza Caba" class="footer-logo">
+  <img src="../imagenes/footer2.png" alt="Logo de Constanza Caba" class="footer-logo">
   <p>© 2026</p>
 </footer>
 

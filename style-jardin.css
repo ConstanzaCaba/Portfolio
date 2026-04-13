@@ -380,7 +380,7 @@ p {
 
 @media (max-width: 768px) {
 
-    .close-button {
+  .close-button {
     width: 50%;
   }
 
@@ -395,11 +395,12 @@ p {
     background-image: url('../imagenes/rectangulo.header2.png');
     background-size: 100% 100%;
     background-position: center;
+    align-items: stretch;
 
   }
 
   .site-header h1 {
-    font-size:24px;
+    font-size:20px;
     line-height: 1;
   }
 
@@ -429,9 +430,11 @@ p {
   }
 
   .menu-toggle {
-    display: block;
-    position: absolute;
-    right: 0px;
+    display: flex;
+    position: relative; /* saca el absolute */
+    margin-left: auto;
+    height: 100%; /* mismo alto que el header */
+    padding: 0px 10px;
     background-color: rgb(255,97,175);
     border: none;
     font-size: 24px;
@@ -441,7 +444,7 @@ p {
     -webkit-appearance: none;
     appearance: none;
     color: black !important;
-    border-bottom: 1px solid rgb(170, 255, 0);
+    flex-shrink: 0;
   }
 
   
@@ -473,7 +476,7 @@ p {
   }
 
   .site-nav a {
-    font-size: 24px;
+    font-size: 20px;
     padding: 5px 0;
     color:rgb(206,59,110);
   }

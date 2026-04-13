@@ -4,21 +4,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
   <title>Pulsos | Constanza Caba</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
   <link rel="stylesheet" href="style-trabajos.css">
   <link rel="icon" type="image/png" href="../imagenes/favicon.png">
+  <link rel="preload" href="Archivo-Regular.ttf" as="font" type="font/truetype">
+  <link rel="preload" href="IBMPlexMono-Regular.ttf" as="font" type="font/truetype">
 </head>
 <body>
   <header class="site-header">
     <h1>Constanza Caba</h1>
     <button class="menu-toggle" onclick="document.querySelector('.site-nav').classList.toggle('abierto')">☰</button>
     <nav class="site-nav">
-      <a href="index.html">Trabajos,</a>
-      <a href="sobremi.html">Sobre mí,</a>
-      <a href="mijardin.html">Mi Jardín,</a>
-      <a href="#" onclick="abrirOverlay(); return false;">Contacto,</a>
-      <a href="mijardin.html" class="idioma">Idioma</a>
+      <a href="../index.html">Trabajos,</a>
+      <a href="../sobremi.html"> Sobre mí,</a>
+      <a href="../mijardin.html"> Mi Jardín,</a>
+      <a href="#" onclick="abrirOverlay(); return false;"> Contacto,</a>
+      <a href="../mijardin.html" class="idioma">ES→</a>
     </nav>
   </header>
+
+<div id="overlay-contacto">
+  <div class="overlay-content">
+    <button class="close-button" id="close-button-contacto">
+      <img src="../imagenes/cruz.verde.png" alt="cerrar">
+    </button>
+    <div class="overlay-text-block">
+      <h2><span class="resaltado">CONTACTO</span></h2>
+      <p>Cualquier consulta o propuesta es bienvenida. No dudes en escribirme:)</p>
+      <a href="mailto:caba.constanza@gmail.com">caba.constanza@gmail.com</a>
+      <a href="https://wa.me/5492914133188" target="_blank">Whatsapp</a>
+    </div>
+  </div>
+</div>
 
  <div class="carrusel-wrapper">
   <button class="carrusel-btn prev" onclick="moverSlide(-1)">‹</button>
@@ -41,27 +58,40 @@
   <div class="carrusel-dot"></div>
 </div>
 
-  <section class="trabajo-detalle">
-    <div class="datita2">
-      <div>Gráfica</div>
+  <section>
+    <div class="linea">
+    <div class="datita">
+      <div>Gráfica Editorial</div>
       <div>2025</div>
+    </div>
     </div>
 
 <div class="trabajo-descripcion-larga">
-    <div class="main-col1">
-    <h1 id="titulo">Pulsos</h1>
+    <div class="main-col3">
+    <h1>Pulsos</h1>
     </div>
-
-    <div class="main-col2">
+    <div class="main-col4">
+      <h1 id="titulo">CONCEPTO</h1>
+        <p id="subrayado">“Pulsos” es un proyecto de diseño editorial que explora la relación entre el cuerpo, el espacio y el tiempo a través de una narrativa visual. La publicación se estructura en torno a la idea de los pulsos como ritmos vitales que conectan diferentes dimensiones de la experiencia humana. A través de una combinación de fotografía, ilustración y tipografía, el proyecto busca crear una experiencia inmersiva que invite a reflexionar sobre la interconexión entre el individuo y su entorno.</p>
+        <p>Proyecto de identidad visual para SOMA, explorando la dualidad entre lo orgánico y lo digital a través de formas en tensión. El diseño se basa en la idea de un soporte material que alberga información, con una estética que combina elementos naturales y tecnológicos para reflejar la esencia del proyecto.</p>
         <p>Proyecto de identidad visual para SOMA, explorando la dualidad entre lo orgánico y lo digital a través de formas en tensión. El diseño se basa en la idea de un soporte material que alberga información, con una estética que combina elementos naturales y tecnológicos para reflejar la esencia del proyecto.</p>
         
-        <p>Proyecto de identidad visual para SOMA, explorando la dualidad entre lo orgánico y lo digital a través de formas en tensión. El diseño se basa en la idea de un soporte material que alberga información, con una estética que combina elementos naturales y tecnológicos para reflejar la esencia del proyecto.</p>
-        <br>
-        <p id="info">info;cositas</p>
-        <p id="info">Colaboradores;cositas</p>
-        <p id="info">UTDT</p>
+       <div class="timeline">
+        <div class="timeline-item">
+          <span class="timeline-fecha">PROYECTO</span>
+          <span class="timeline-desc2">Académico</span>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-fecha">EQUIPO</span>
+          <span class="timeline-desc2">Constanza Caba</span>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-fecha">ROL</span>
+          <span class="timeline-desc2">Diseñadora, imágen</span>
+        </div>
+      </div>
 
-        <a href="jaguar.html" class="btn-siguiente">Ver más →</a>
+        <a href="militante.html" class="btn-siguiente">Ver más →</a>
         
     </div>
 
@@ -71,7 +101,7 @@
 
 
 <footer class="site-footer">
-  <img src="../imagenes/footer.png" alt="Logo de Constanza Caba" class="footer-logo">
+  <img src="../imagenes/footer2.png" alt="Logo de Constanza Caba" class="footer-logo">
   <p>© 2026</p>
 </footer>
 
