@@ -438,7 +438,7 @@ canvas {
 
 .trabajo-descripcion-larga .main-col4 p{
   animation: entrarIzquierda 1.2s cubic-bezier(0.77, 0, 0.175, 1) 0.2s forwards;
-  font-size: 14px;
+  font-size: 18px;
   margin-top: 0;
   margin-bottom: 10px;
 }
@@ -484,7 +484,7 @@ canvas {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(173, 176, 178);
+  
   font-size: 12px;
   margin-top: 40px;
 }
@@ -542,7 +542,7 @@ canvas {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
- /* background: rgb(243, 241, 239);*/
+  background: none;
   border: none;
   font-size: 22px;
   font-weight: 400;
@@ -575,7 +575,7 @@ canvas {
 }
 
 .trabajo-descripcion-larga h1{
-  font-size: 24px;
+  font-size: 36px;
   margin: 0;
   font-weight: 400;
 }
@@ -909,7 +909,6 @@ canvas {
 
   .main-col3 {
     width: 100%;
-    position: sticky;
     top: 34px; /* igual al alto del header */
     align-self: flex-start;
     height: fit-content;
@@ -917,6 +916,7 @@ canvas {
 
   .main-col3 h1{
   margin-bottom: 25px;
+  font-size: 26px;
   }
 
   .main-col4 {
@@ -949,7 +949,7 @@ canvas {
 .carrusel-wrapper {
     width: 100%;
     height: auto;
-    overflow: hidden;
+    overflow: visible;
     position: relative;
   }
 

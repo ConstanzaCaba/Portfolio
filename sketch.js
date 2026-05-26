@@ -17,7 +17,12 @@ document.querySelectorAll('.site-nav a').forEach(link => {
 let slideActual = 0;
 let animando = false;
 
+function esMobile() {
+  return window.innerWidth <= 768;
+}
+
 function moverSlide(direccion) {
+  if (esMobile()) return; // en mobile el scroll nativo se encarga
   if (animando) return;
   const slides = document.querySelectorAll('.carrusel-slide');
   const dots = document.querySelectorAll('.carrusel-dot');
@@ -66,30 +71,36 @@ function moverSlide(direccion) {
 
 document.addEventListener('DOMContentLoaded', () => {
   const slides = document.querySelectorAll('.carrusel-slide');
-  slides.forEach((slide, i) => {
-    slide.style.zIndex = 0;
-    slide.style.transform = i === 0 ? 'translateX(0)' : 'translateX(100%)';
-  });
-  slides[0].style.zIndex = 1;
-});
+  const carrusel = document.getElementById('carrusel');
+  const dots = document.querySelectorAll('.carrusel-dot');
 
-document.addEventListener('DOMContentLoaded', () => {
-  const slides = document.querySelectorAll('.carrusel-slide');
-  if (slides.length) {
-    slides[0].style.transform = 'translateX(0)';
+  if (!slides.length) return;
+
+  if (!esMobile()) {
+    // Desktop: inicializar con transforms para la animación JS
+    slides.forEach((slide, i) => {
+      slide.style.zIndex = 0;
+      slide.style.transform = i === 0 ? 'translateX(0)' : 'translateX(100%)';
+    });
     slides[0].style.zIndex = 1;
   }
+
+  // Listener de scroll para mobile (actualiza los dots con el scroll nativo)
+  if (carrusel && dots.length) {
+    let scrollTimer = null;
+    carrusel.addEventListener('scroll', () => {
+      if (!esMobile()) return;
+      // Usar requestAnimationFrame para no saturar el hilo principal
+      if (scrollTimer) return;
+      scrollTimer = requestAnimationFrame(() => {
+        const idx = Math.round(carrusel.scrollLeft / carrusel.offsetWidth);
+        slideActual = idx;
+        dots.forEach((d, i) => d.classList.toggle('activo', i === idx));
+        scrollTimer = null;
+      });
+    }, { passive: true });
+  }
 });
-
-const carrusel = document.getElementById('carrusel');
-const dots     = document.querySelectorAll('.carrusel-dot');
-
-if (carrusel && dots.length) {
-  carrusel.addEventListener('scroll', () => {
-    const idx = Math.round(carrusel.scrollLeft / carrusel.offsetWidth);
-    dots.forEach((d, i) => d.classList.toggle('activo', i === idx));
-  });
-}
 
 if (window.innerWidth <= 768) {
   const observer = new IntersectionObserver((entries) => {
