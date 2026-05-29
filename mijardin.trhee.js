@@ -18,6 +18,7 @@ const nodosData = [
   { nombre: 'nodo20', x: -150, y: -420, z:  -60, cx1:  -40, cy1: -160, cz1: -35, cx2: -100, cy2: -320, cz2: -50, descripcion: 'Descripción nodo 20' },
   { nombre: 'nodo13', x:  300, y:  -80, z: -300, cx1:  200, cy1: -120, cz1:  10, cx2:  200, cy2: -150, cz2:  15, descripcion: 'Descripción nodo 13' },
   { nombre: 'nodo5',  x: -400, y:   70, z:  -80, cx1: -180, cy1:    0, cz1: -20, cx2: -220, cy2:   50, cz2: -25, descripcion: 'Descripción nodo 5'  },
+  { nombre: 'nodo28',  x: -450, y:   -40, z:  -80, cx1: -180, cy1:    0, cz1: -20, cx2: -220, cy2:   50, cz2: -25, descripcion: 'Descripción nodo 5'  },
   { nombre: 'nodo7',  x: -300, y:   70, z:   80, cx1: -180, cy1:    0, cz1: -20, cx2: -220, cy2:   50, cz2: -25, descripcion: 'Descripción nodo 7'  },
   { nombre: 'nodo15', x:   30, y: -480, z: -300, cx1:   10, cy1: -200, cz1:  -5, cx2:   20, cy2: -380, cz2:  -8, descripcion: 'Fotografía' },
   { nombre: 'nodo23', x:   90, y: -400, z: -200, cx1:   10, cy1: -200, cz1:  -5, cx2:   50, cy2: -480, cz2:  -8, descripcion: 'Ilustración digital' },
@@ -79,6 +80,7 @@ function initJardin() {
   });
 
   document.body.appendChild(renderer.domElement);
+  document.body.style.cursor = "url('../imagenes/cursor1.png') 16 16, auto";
 
   // escena y cámara
   const scene  = new THREE.Scene();
@@ -211,7 +213,7 @@ function initJardin() {
   function checkHover(clientX, clientY) {
     if (menuEstaAbierto()) {
       if (hoveredMesh) { hoveredMesh.scale.set(1, 1, 1); hoveredMesh = null; }
-      document.body.style.cursor = 'default';
+      document.body.style.cursor = "url('../imagenes/cursor1.png') 16 16, auto";
       return;
     }
     pointerToNDC(clientX, clientY);
@@ -223,14 +225,14 @@ function initJardin() {
         if (hoveredMesh) hoveredMesh.scale.set(1, 1, 1);
         hoveredMesh = hit;
         hoveredMesh.scale.set(1.18, 1.18, 1.18);
-        document.body.style.cursor = 'pointer';
+        document.body.style.cursor = "url('../imagenes/cursor.activo.png') 16 16, pointer";
       }
     } else {
       if (hoveredMesh) {
         hoveredMesh.scale.set(1, 1, 1);
         hoveredMesh = null;
-        document.body.style.cursor = 'default';
       }
+      document.body.style.cursor = "url('../imagenes/cursor1.png') 16 16, auto";
     }
   }
 
