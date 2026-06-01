@@ -389,6 +389,7 @@ canvas {
 .datita {
   font-family: 'IBMPlexMono', 'Courier New', monospace;
   font-weight: 400;
+  text-indent: 25px;
   text-transform: uppercase;
   font-size: 9px;
   display:flex;
@@ -398,34 +399,6 @@ canvas {
 
 .datita > div {
   flex: 1;
-}
-
-.timeline {
-  display: flex;
-  flex-direction: column;
-  background-color: rgb(243,241,239);
-}
-
-.timeline-item {
-  display: flex;
-  gap: 15px;
-  padding: 5px 0px;
-}
-
-.timeline-fecha {
-  font-family: 'IBMPlexMono', 'Courier New', monospace;
-  font-weight: 400;
-  text-transform: uppercase;
-  font-size: 7px;
-  white-space: nowrap;
-  width: 25px;
-  flex-shrink: 0;
-}
-
-.timeline-desc {
-  font-size: 20px;
-  padding: 0px 25px;
-
 }
 
 .trabajo-descripcion-larga{
@@ -451,6 +424,18 @@ canvas {
   width: 33%;
   background-color: rgb(243,241,239);
 }
+#datos{
+  margin-top: 25px;
+}
+
+#titulo{
+  font-size: 9px;
+  text-indent: 25px;
+}
+
+#lista{
+  font-size: 10px;
+}
 
 .trabajo-descripcion-larga .main-col4 p{
   animation: entrarIzquierda 1.2s cubic-bezier(0.77, 0, 0.175, 1) 0.2s forwards;
@@ -464,10 +449,6 @@ canvas {
   font-weight: 400;
   text-transform: uppercase;
   font-size:7px;
-}
-
-.timeline-desc2 {
-  font-size: 14px;
 }
 
 .linea{
@@ -500,7 +481,6 @@ canvas {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
   font-size: 12px;
   margin-top: 40px;
 }
@@ -695,7 +675,7 @@ canvas {
   }
 
   .main-col h2{
-    font-size: 18px;
+    font-size: 20px;
     margin: 0;
     font-weight: 400;
   }
@@ -721,24 +701,22 @@ canvas {
   }
   
   .main-col3 h1{
-    font-size: 18px;
+    font-size: 20px;
   }
 
   .seccion-texto p{
     font-size: 15px;
   }
 
-  .timeline-fecha{
-    font-size: 6px;
-  }
-
   #titulo{
-    font-size: 6px;
+    font-size: 9px;
+    text-indent: 25px;
   }
 
-  .timeline-desc2 {
-  font-size: 14px;
+  #lista{
+    font-size: 10px;
   }
+
 
   #overlay-contacto {
   padding-left: 50px;
@@ -917,7 +895,12 @@ canvas {
   }
 
   #titulo{
-    font-size: 8px;
+    font-size: 9px;
+    font-family: 'IBMPlexMono', 'Courier New', monospace;
+    font-weight: 400;
+    text-indent: 25px;
+    text-transform: uppercase;
+    font-size: 9px;
   }
 
   .timeline-desc2 {
@@ -968,15 +951,12 @@ canvas {
 .carrusel-wrapper {
     width: 100%;
     height: auto;
-    overflow: visible;
+    overflow: hidden;
     position: relative;
   }
 
   .carrusel {
     display: flex;
-    overflow-x: scroll;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
     scrollbar-width: none; /* oculta barra en Firefox */
   }
 
@@ -985,12 +965,9 @@ canvas {
   }
 
 .carrusel-slide {
-  min-width: 100%;
-  scroll-snap-align: start;
+  
   position: relative; /* sobreescribe el absolute de desktop */
-  transform: none !important; /* cancela el translateX del JS */
 }
-
   .carrusel-slide img {
     width: 100%;
     height: auto;

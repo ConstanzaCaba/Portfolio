@@ -16,13 +16,9 @@ document.querySelectorAll('.site-nav a').forEach(link => {
 
 let slideActual = 0;
 let animando = false;
-
-function esMobile() {
-  return window.innerWidth <= 768;
-}
+let touchStartX = 0;
 
 function moverSlide(direccion) {
-  if (esMobile()) return; // en mobile el scroll nativo se encarga
   if (animando) return;
   const slides = document.querySelectorAll('.carrusel-slide');
   const dots = document.querySelectorAll('.carrusel-dot');
@@ -72,32 +68,27 @@ function moverSlide(direccion) {
 document.addEventListener('DOMContentLoaded', () => {
   const slides = document.querySelectorAll('.carrusel-slide');
   const carrusel = document.getElementById('carrusel');
-  const dots = document.querySelectorAll('.carrusel-dot');
 
   if (!slides.length) return;
 
-  if (!esMobile()) {
-    // Desktop: inicializar con transforms para la animación JS
-    slides.forEach((slide, i) => {
-      slide.style.zIndex = 0;
-      slide.style.transform = i === 0 ? 'translateX(0)' : 'translateX(100%)';
-    });
-    slides[0].style.zIndex = 1;
-  }
+  // Inicializar transforms (desktop y mobile usan el mismo sistema)
+  slides.forEach((slide, i) => {
+    slide.style.zIndex = 0;
+    slide.style.transform = i === 0 ? 'translateX(0)' : 'translateX(100%)';
+  });
+  slides[0].style.zIndex = 1;
 
-  // Listener de scroll para mobile (actualiza los dots con el scroll nativo)
-  if (carrusel && dots.length) {
-    let scrollTimer = null;
-    carrusel.addEventListener('scroll', () => {
-      if (!esMobile()) return;
-      // Usar requestAnimationFrame para no saturar el hilo principal
-      if (scrollTimer) return;
-      scrollTimer = requestAnimationFrame(() => {
-        const idx = Math.round(carrusel.scrollLeft / carrusel.offsetWidth);
-        slideActual = idx;
-        dots.forEach((d, i) => d.classList.toggle('activo', i === idx));
-        scrollTimer = null;
-      });
+  // Swipe táctil para mobile
+  if (carrusel) {
+    carrusel.addEventListener('touchstart', e => {
+      touchStartX = e.touches[0].clientX;
+    }, { passive: true });
+
+    carrusel.addEventListener('touchend', e => {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 50) {
+        moverSlide(diff > 0 ? 1 : -1);
+      }
     }, { passive: true });
   }
 });
