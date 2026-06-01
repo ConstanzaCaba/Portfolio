@@ -555,63 +555,6 @@ p {
     font-size: 12px;
   }
 
-/*carrusel en los trabajos*/
-.carrusel-wrapper {
-    width: 100%;
-    height: auto;
-    overflow: hidden;
-    position: relative;
-  }
-
-  .carrusel {
-    display: flex;
-    overflow-x: scroll;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none; /* oculta barra en Firefox */
-  }
-
-  .carrusel::-webkit-scrollbar {
-    display: none; /* oculta barra en Chrome/Safari */
-  }
-
-.carrusel-slide {
-  min-width: 100%;
-  scroll-snap-align: start;
-  position: relative; /* sobreescribe el absolute de desktop */
-  transform: none !important; /* cancela el translateX del JS */
-}
-
-  .carrusel-slide img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-  }
-
-  .carrusel-btn {
-    display: none;
-  }
-
-  /* puntos indicadores */
-  .carrusel-dots {
-    display: flex;
-    justify-content: center;
-    gap: 6px;
-    padding: 10px 0;
-  }
-
-  .carrusel-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: rgb(206, 210, 213);
-    transition: background 0.2s;
-  }
-
-  .carrusel-dot.activo {
-    background: black;
-  }
-
   #popup-jardin {
   display:none; 
   position:fixed; 
