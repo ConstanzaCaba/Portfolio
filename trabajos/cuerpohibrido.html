@@ -3,23 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-  <title>El cuerpo híbrido| Constanza Caba</title>
+  <title>El cuerpo híbrido | Constanza Caba</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
   <link rel="stylesheet" href="style-trabajos.css">
   <link rel="icon" type="image/png" href="../imagenes/favicon.png">
   <link rel="preload" href="Archivo-Regular.ttf" as="font" type="font/truetype">
   <link rel="preload" href="IBMPlexMono-Regular.ttf" as="font" type="font/truetype">
 </head>
+
 <body>
   <header class="site-header">
     <h1>Constanza Caba</h1>
-    <button class="menu-toggle" onclick="document.querySelector('.site-nav').classList.toggle('abierto')">☰</button>
+    <button class="menu-toggle" onclick="toggleMenu(event)">☰</button>
     <nav class="site-nav">
-      <a href="../index.html">Trabajos,</a>
-      <a href="../sobremi.html"> Sobre mí,</a>
-      <a href="../mijardin.html"> Mi Jardín,</a>
-      <a href="#" onclick="abrirOverlay(); return false;"> Contacto,</a>
-      <a href="../mijardin.html" class="idioma">ES→</a>
+      <a href="../index.html" data-es="Trabajos," data-en="Works,">Trabajos,</a>
+      <a href="../sobremi.html" data-es=" Sobre mí," data-en=" About,"> Sobre mí,</a>
+      <a href="../mijardin.html" data-es=" Mi Jardín," data-en=" My Garden,"> Mi Jardín,</a>
+      <a href="#" onclick="abrirOverlay(); return false;" data-es=" Contacto," data-en=" Contact,"> Contacto,</a>
+      <a href="#" class="idioma" id="idioma-toggle" onclick="toggleIdioma(); return false;">EN→</a>
     </nav>
   </header>
 
@@ -29,8 +30,8 @@
       <img src="../imagenes/cruz.verde.png" alt="cerrar">
     </button>
     <div class="overlay-text-block">
-      <h2><span class="resaltado">CONTACTO</span></h2>
-      <p>Cualquier consulta o propuesta es bienvenida. No dudes en escribirme:)</p>
+      <h2><span class="resaltado" data-es="CONTACTO" data-en="CONTACT">CONTACTO</span></h2>
+      <p data-es="Cualquier consulta o propuesta es bienvenida. No dudes en escribirme:)" data-en="Any inquiry or proposal is welcome. Feel free to write to me :)">Cualquier consulta o propuesta es bienvenida. No dudes en escribirme:)</p>
       <a href="mailto:caba.constanza@gmail.com">caba.constanza@gmail.com</a>
       <a href="https://wa.me/5492914133188" target="_blank">Whatsapp</a>
     </div>
@@ -63,7 +64,6 @@
     <div class="carrusel-slide"><img src="../imagenes/cuerpo3.png"></div>
     <div class="carrusel-slide"><img src="../imagenes/cuerpo4.png"></div>
     <div class="carrusel-slide"><img src="../imagenes/cuerpo5.png"></div>
-    <div class="carrusel-slide"><img src="../imagenes/cuerpo6.png"></div>
   </div>
   <button class="carrusel-btn next" onclick="moverSlide(1)">›</button>
 </div>
@@ -79,13 +79,12 @@
   <div class="carrusel-dot"></div>
   <div class="carrusel-dot"></div>
   <div class="carrusel-dot"></div>
-  <div class="carrusel-dot"></div>
 </div>
 
   <section>
     <div class="linea">
     <div class="datita">
-      <div>Interactividad digital</div>
+      <div data-es="Interactividad" data-en="Interactivity">Interactividad</div>
       <div></div>
       <div>2024</div>
     </div>
@@ -93,41 +92,38 @@
 
 <div class="trabajo-descripcion-larga">
     <div class="main-col3">
-    <h1>El cuerpo híbrido</h1>
+    <h1 data-es="El cuerpo híbrido" data-en="The Hybrid Body">El cuerpo híbrido</h1>
     </div>
     <div class="main-col4">
-      <h1 id="titulo">CONCEPTO</h1>
-        <p id="subrayado">Género, sexo y erotismo: La construcción de la identidad y las posibilidades de experimentación que presentan para el arte hoy.</p>
-        <p>La siguiente experiencia interactiva tiene como propuesta explorar los limites del cuerpo y su relación con el entorno social, político y social que condiciona los cuerpos, pero que hoy en dia, también les permite habitar el espacio como entes despersonalizados y fragmentados. Este concepto se toma directamente del último disco de Rosalía, “Motomami”, donde el cuerpo femenino sufre un shock de identidad al ser combinado con una moto, y se abren preguntas como ¿Cómo es el cuerpo de una Motomami?</p>
-        <p>Como eje central se explora las transformaciones que sufren las imágenes de cuerpos al ser interpretadas por una inteligencia artificial, esto siempre en dialogo con el clima de hibridez que propone el sonido de “Motomami”.</p>
-        <p>Como recurso estético se utiliza el collage minimalista. Esta técnica no solo referencia la práctica más utilizada en la esfera cultural de masas (reusar recursos transformándolos), sino también el tipo de producción utilizada en el disco.</p>
-        <p>Por último, y de forma más sutil, se referencia el culto a la velocidad. Idea que es propuesta en el disco, y que atraviesa fuertemente las cuestiones de género y de construcción de la identidad en la contemporaneidad.</p>
-        <p>La experimentación culmina con un afiche/fanzine que condensa el lenguaje visual de la experiencia, que logra pasar de la digitalidad y el cambio constante al papel, la quietud y la permanencia. </p>
+      <h1 id="titulo" data-es="CONCEPTO" data-en="CONCEPT">CONCEPTO</h1>
+        <p><u data-es="Género, sexo y erotismo: La construcción de la identidad y las posibilidades de experimentación que presentan para el arte hoy." data-en="Gender, sex and eroticism: the construction of identity and the possibilities for experimentation they open up for art today.">Género, sexo y erotismo: La construcción de la identidad y las posibilidades de experimentación que presentan para el arte hoy.</u></p>
+        <p data-es='La siguiente experiencia interactiva tiene como propuesta explorar los limites del cuerpo y su relación con el entorno social, político y social que condiciona los cuerpos, pero que hoy en dia, también les permite habitar el espacio como entes despersonalizados y fragmentados. Este concepto se toma directamente del último disco de Rosalía, "Motomami", donde el cuerpo femenino sufre un shock de identidad al ser combinado con una moto, y se abren preguntas como ¿Cómo es el cuerpo de una Motomami?' data-en='This interactive experience proposes to explore the limits of the body and its relationship with the social and political environment that conditions bodies — yet today also allows them to inhabit space as depersonalized and fragmented entities. The concept draws directly from Rosalía&apos;s album "Motomami", in which the female body undergoes an identity shock when combined with a motorcycle, raising questions such as: what does the body of a Motomami look like?'>La siguiente experiencia interactiva tiene como propuesta explorar los limites del cuerpo y su relación con el entorno social, político y social que condiciona los cuerpos, pero que hoy en dia, también les permite habitar el espacio como entes despersonalizados y fragmentados. Este concepto se toma directamente del último disco de Rosalía, "Motomami", donde el cuerpo femenino sufre un shock de identidad al ser combinado con una moto, y se abren preguntas como ¿Cómo es el cuerpo de una Motomami?</p>
+        <p data-es="Como eje central se explora las transformaciones que sufren las imágenes de cuerpos al ser interpretadas por una inteligencia artificial, esto siempre en dialogo con el clima de hibridez que propone el sonido de &quot;Motomami&quot;." data-en='At its core, the project explores the transformations that images of bodies undergo when interpreted by artificial intelligence, always in dialogue with the sense of hybridity that the sound of "Motomami" proposes.'>Como eje central se explora las transformaciones que sufren las imágenes de cuerpos al ser interpretadas por una inteligencia artificial, esto siempre en dialogo con el clima de hibridez que propone el sonido de "Motomami".</p>
+        <p data-es="Como recurso estético se utiliza el collage minimalista. Esta técnica no solo referencia la práctica más utilizada en la esfera cultural de masas (reusar recursos transformándolos), sino también el tipo de producción utilizada en el disco." data-en="Minimalist collage is used as the main aesthetic resource — a technique that references not only the most widespread practice in mass culture (reusing and transforming existing material), but also the type of production behind the album itself.">Como recurso estético se utiliza el collage minimalista. Esta técnica no solo referencia la práctica más utilizada en la esfera cultural de masas (reusar recursos transformándolos), sino también el tipo de producción utilizada en el disco.</p>
+        <p data-es="Por último, y de forma más sutil, se referencia el culto a la velocidad. Idea que es propuesta en el disco, y que atraviesa fuertemente las cuestiones de género y de construcción de la identidad en la contemporaneidad." data-en="Finally, and more subtly, the project references the cult of speed — an idea embedded in the album that cuts strongly across questions of gender and identity construction in contemporary life.">Por último, y de forma más sutil, se referencia el culto a la velocidad. Idea que es propuesta en el disco, y que atraviesa fuertemente las cuestiones de género y de construcción de la identidad en la contemporaneidad.</p>
+        <p data-es="La experimentación culmina con un afiche/fanzine que condensa el lenguaje visual de la experiencia, que logra pasar de la digitalidad y el cambio constante al papel, la quietud y la permanencia." data-en="The experimentation culminates in a poster/fanzine that condenses the visual language of the experience, making the leap from the digital and constantly shifting to the printed page, stillness, and permanence.">La experimentación culmina con un afiche/fanzine que condensa el lenguaje visual de la experiencia, que logra pasar de la digitalidad y el cambio constante al papel, la quietud y la permanencia.</p>
         <div id="datos">
-        <h1 id="titulo">PROYECTO</h1>
-          <P id="lista">Académico</P>
-        <h1 id="titulo">EQUIPO</h1>
-          <P id="lista">Constanza Caba</P>
-        <h1 id="titulo">ROL</h1>
-          <P id="lista">Experiencia virtual / Desarrollo de gráfica</P>
+        <h1 id="titulo" data-es="PROYECTO" data-en="PROJECT">PROYECTO</h1>
+          <p id="lista" data-es="Académico" data-en="Academic">Académico</p>
+        <h1 id="titulo" data-es="EQUIPO" data-en="TEAM">EQUIPO</h1>
+          <p id="lista">Constanza Caba</p>
+        <h1 id="titulo" data-es="ROL" data-en="ROLE">ROL</h1>
+          <p id="lista" data-es="Experiencia virtual, Dirección de arte" data-en="Virtual experience, Art direction">Experiencia virtual, Dirección de arte</p>
         </div>
-        
-       
 
-        <a href="primitivo.html" class="btn-siguiente">Ver más →</a>
+        <a href="primitivo.html" class="btn-siguiente">→</a>
         
     </div>
 
 </div>    
   </section>
 
-
-
 <footer class="site-footer">
   <img src="../imagenes/footer2.png" alt="Logo de Constanza Caba" class="footer-logo">
-
 </footer>
 
+  <script src="../cursor.js"></script>
   <script src="../sketch.js"></script>
+  <script src="../idioma.js"></script>
 </body>
 </html>

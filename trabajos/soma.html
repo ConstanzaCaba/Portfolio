@@ -13,13 +13,13 @@
 <body>
   <header class="site-header">
     <h1>Constanza Caba</h1>
-    <button class="menu-toggle" onclick="document.querySelector('.site-nav').classList.toggle('abierto')">☰</button>
+    <button class="menu-toggle" onclick="toggleMenu(event)">☰</button>
     <nav class="site-nav">
-      <a href="../index.html">Trabajos,</a>
-      <a href="../sobremi.html"> Sobre mí,</a>
-      <a href="../mijardin.html"> Mi Jardín,</a>
-      <a href="#" onclick="abrirOverlay(); return false;"> Contacto,</a>
-      <a href="../mijardin.html" class="idioma">ES→</a>
+      <a href="../index.html" data-es="Trabajos," data-en="Works,">Trabajos,</a>
+      <a href="../sobremi.html" data-es=" Sobre mí," data-en=" About,"> Sobre mí,</a>
+      <a href="../mijardin.html" data-es=" Mi Jardín," data-en=" My Garden,"> Mi Jardín,</a>
+      <a href="#" onclick="abrirOverlay(); return false;" data-es=" Contacto," data-en=" Contact,"> Contacto,</a>
+      <a href="#" class="idioma" id="idioma-toggle" onclick="toggleIdioma(); return false;">EN→</a>
     </nav>
   </header>
 
@@ -29,8 +29,8 @@
       <img src="../imagenes/cruz.verde.png" alt="cerrar">
     </button>
     <div class="overlay-text-block">
-      <h2><span class="resaltado">CONTACTO</span></h2>
-      <p>Cualquier consulta o propuesta es bienvenida. No dudes en escribirme:)</p>
+      <h2><span class="resaltado" data-es="CONTACTO" data-en="CONTACT">CONTACTO</span></h2>
+      <p data-es="Cualquier consulta o propuesta es bienvenida. No dudes en escribirme:)" data-en="Any inquiry or proposal is welcome. Feel free to write to me :)">Cualquier consulta o propuesta es bienvenida. No dudes en escribirme:)</p>
       <a href="mailto:caba.constanza@gmail.com">caba.constanza@gmail.com</a>
       <a href="https://wa.me/5492914133188" target="_blank">Whatsapp</a>
     </div>
@@ -99,7 +99,7 @@
   <section>
     <div class="linea">
     <div class="datita">
-      <div>Gráfica</div>
+      <div data-es="Experiencia e imágen" data-en="Experience and Image design">Experiencia e imágen</div>
       <div></div>
       <div>2025</div>
     </div>
@@ -107,34 +107,46 @@
 
 <div class="trabajo-descripcion-larga">
     <div class="main-col3">
-    <h1>SOMA: Soporte Material</h1>
+    <h1 data-es="SOMA: Soporte Material" data-en="SOMA: Material Support">SOMA: Soporte Material</h1>
     </div>
     <div class="main-col4">
-        <h1 id="titulo">CONCEPTO</h1>
-        <p id="subrayado">Todo es cuerpo.Toda cosa que existe, que posee materia y que es perceptible por los sentidos, puede considerarse un cuerpo.</p>
-        <p>A partir de la colección, se construyó un concepto vinculante que dio origen a la identidad: todo es cuerpo. Toda cosa que existe, posee materia y es perceptible por los sentidos puede considerarse un cuerpo.
-        SOMA, palabra de origen griego utilizada en biología y medicina, significa “cuerpo”, y funciona como eje conceptual del proyecto.
-        <p>El diseño del sistema parte del comportamiento de la materia y su capacidad de transformarse.</p>
-        <p>El logotipo se construye a partir de la idea de un cuerpo que contiene a otro cuerpo. La tipografía actúa como una estructura de tensión, similar a pinzas que estiran un tejido blando que la envuelve. Este “tejido” se deforma y genera múltiples variaciones del logo.
+        <h1 id="titulo" data-es="CONCEPTO" data-en="CONCEPT">CONCEPTO</h1>
+        <p> <u data-es="Todo es cuerpo.Toda cosa que existe, que posee materia y que es perceptible por los sentidos, puede considerarse un cuerpo." data-en="Everything is body. Anything that exists, has matter, and is perceptible by the senses, can be considered a body.">Todo es cuerpo.Toda cosa que existe, que posee materia y que es perceptible por los sentidos, puede considerarse un cuerpo.</u></p>
+        <p data-es="A partir de la colección, se construyó un concepto vinculante que dio origen a la identidad: todo es cuerpo. Toda cosa que existe, posee materia y es perceptible por los sentidos puede considerarse un cuerpo.
+        SOMA, palabra de origen griego utilizada en biología y medicina, significa “cuerpo”, y funciona como eje conceptual del proyecto." data-en="Starting from the collection, a linking concept was built that gave origin to the identity: everything is body. Anything that exists, has matter, and is perceptible by the senses can be considered a body.
+        SOMA, a word of Greek origin used in biology and medicine, means 'body', and functions as the conceptual axis of the project.">A partir de la colección, se construyó un concepto vinculante que dio origen a la identidad: todo es cuerpo. Toda cosa que existe, posee materia y es perceptible por los sentidos puede considerarse un cuerpo.
+        SOMA, palabra de origen griego utilizada en biología y medicina, significa “cuerpo”, y funciona como eje conceptual del proyecto.</p>
+        <p data-es="El diseño del sistema parte del comportamiento de la materia y su capacidad de transformarse." data-en="The design of the system is based on the behavior of matter and its ability to transform.">El diseño del sistema parte del comportamiento de la materia y su capacidad de transformarse.</p>
+        <p data-es="El logotipo se construye a partir de la idea de un cuerpo que contiene a otro cuerpo. La tipografía actúa como una estructura de tensión, similar a pinzas que estiran un tejido blando que la envuelve. Este “tejido” se deforma y genera múltiples variaciones del logo.
+        A través de estas transformaciones, la marca adquiere dinamismo y un sistema flexible, donde la tipografía y la forma se expanden, adaptándose a diferentes piezas de comunicación.
+        Este mismo principio se traslada al comportamiento tipográfico dentro del sistema, reforzando la idea de materia en constante cambio." data-en="The logo is constructed from the idea of a body containing another body. The typography acts as a tension structure, similar to pliers stretching a soft fabric that envelops it. This 'fabric' deforms and generates multiple variations of the logo.
+        Through these transformations, the brand acquires dynamism and a flexible system, where the typography and form expand, adapting to different communication pieces.
+        This same principle is transferred to the typographic behavior within the system, reinforcing the idea of matter in constant change.">El logotipo se construye a partir de la idea de un cuerpo que contiene a otro cuerpo. La tipografía actúa como una estructura de tensión, similar a pinzas que estiran un tejido blando que la envuelve. Este “tejido” se deforma y genera múltiples variaciones del logo.
         A través de estas transformaciones, la marca adquiere dinamismo y un sistema flexible, donde la tipografía y la forma se expanden, adaptándose a diferentes piezas de comunicación.
         Este mismo principio se traslada al comportamiento tipográfico dentro del sistema, reforzando la idea de materia en constante cambio.</p>
-        <p>Se desarrolló un sistema visual integral aplicado a piezas de comunicación y al diseño espacial de la muestra.
+        <p data-es="Se desarrolló un sistema visual integral aplicado a piezas de comunicación y al diseño espacial de la muestra.
+        El espacio expositivo fue concebido para materializar el concepto: las superficies invitan al visitante a experimentar cómo los objetos moldean al cuerpo y cómo el cuerpo moldea a los objetos.
+        La exhibición pone el foco en la contraforma de los objetos, destacándola por sobre el objeto en sí y desplazándolo del campo visual. De esta manera, se propone una nueva forma de percibir la materialidad." data-en="An integral visual system was developed applied to communication pieces and the spatial design of the exhibition.
+        The exhibition space was conceived to materialize the concept: the surfaces invite visitors to experience how objects mold the body and how the body molds objects.
+        The display focuses on the negative space of objects, highlighting it over the object itself and displacing it from the visual field. In this way, a new way of perceiving materiality is proposed.">Se desarrolló un sistema visual integral aplicado a piezas de comunicación y al diseño espacial de la muestra.
         El espacio expositivo fue concebido para materializar el concepto: las superficies invitan al visitante a experimentar cómo los objetos moldean al cuerpo y cómo el cuerpo moldea a los objetos.
         La exhibición pone el foco en la contraforma de los objetos, destacándola por sobre el objeto en sí y desplazándolo del campo visual. De esta manera, se propone una nueva forma de percibir la materialidad.</p>
         
       <div id="datos">
-      <h1 id="titulo">PROYECTO</h1>
-        <P id="lista">Académico</P>
-      <h1 id="titulo">EQUIPO</h1>
-        <P id="lista">Bautista Ausqui, Julián Leiss, Constanza Caba</P>
-      <h1 id="titulo">ROL</h1>
-        <P id="lista">Diseñadora, imágen.</P>
-      <h1 id="titulo">MENTORES</h1>
-        <P id="lista">Lucrecia Landin, .</P>
+      <h1 id="titulo" data-es="PROYECTO" data-en="PROJECT">PROYECTO</h1>
+        <P id="lista" data-es="Académico" data-en="Academic">Académico</P>
+      <h1 id="titulo" data-es="EQUIPO" data-en="TEAM">EQUIPO</h1>
+        <P id="lista" data-es="Bautista Ausqui, Julián Leiss, Constanza Caba" data-en="Bautista Ausqui, Julián Leiss, Constanza Caba">Bautista Ausqui, Julián Leiss, Constanza Caba</P>
+      <h1 id="titulo" data-es="ROL" data-en="ROLE">ROL</h1>
+        <P id="lista" data-es="Diseñadora, imágen." data-en="Designer, image.">Diseñadora, imágen.</P>
+      <h1 id="titulo" data-es="MENTORES" data-en="MENTORS">MENTORES</h1>
+        <P id="lista" data-es="Lucrecia Landin, Pablo Veron." data-en="Lucrecia Landin, Pablo Veron.">Lucrecia Landin, Pablo Veron.</P>
+      <h1 id="titulo" data-es="MENCIONES" data-en="MENTIONS">MENCIONES</h1>
+        <P id="lista" data-es="Muestra 'Todo es diseño' 2025 - LED UTDT" data-en="Design Show 2025 'Everything is design' - LED UTDT">Muestra 'Todo es diseño' 2025 - LED UTDT</P>
       </div>
 
   
-        <a href="jaguar.html" class="btn-siguiente">Ver más →</a>
+        <a href="jaguar.html" class="btn-siguiente">→</a>
      </div>
 </div>    
   </section>
@@ -143,6 +155,8 @@
   <img src="../imagenes/footer2.png" alt="Logo de Constanza Caba" class="footer-logo">
 </footer>
 
+  <script src="../cursor.js"></script>
   <script src="../sketch.js"></script>
+  <script src="../idioma.js"></script>
 </body>
 </html>

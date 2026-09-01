@@ -13,13 +13,13 @@
 <body>
   <header class="site-header">
     <h1>Constanza Caba</h1>
-    <button class="menu-toggle" onclick="document.querySelector('.site-nav').classList.toggle('abierto')">☰</button>
+    <button class="menu-toggle" onclick="toggleMenu(event)">☰</button>
     <nav class="site-nav">
-      <a href="../index.html">Trabajos,</a>
-      <a href="../sobremi.html"> Sobre mí,</a>
-      <a href="../mijardin.html"> Mi Jardín,</a>
-      <a href="#" onclick="abrirOverlay(); return false;"> Contacto,</a>
-      <a href="../mijardin.html" class="idioma">ES→</a>
+      <a href="../index.html" data-es="Trabajos," data-en="Works,">Trabajos,</a>
+      <a href="../sobremi.html" data-es=" Sobre mí," data-en=" About,"> Sobre mí,</a>
+      <a href="../mijardin.html" data-es=" Mi Jardín," data-en=" My Garden,"> Mi Jardín,</a>
+      <a href="#" onclick="abrirOverlay(); return false;" data-es=" Contacto," data-en=" Contact,"> Contacto,</a>
+      <a href="#" class="idioma" id="idioma-toggle" onclick="toggleIdioma(); return false;">EN→</a>
     </nav>
   </header>
 
@@ -29,8 +29,8 @@
       <img src="../imagenes/cruz.verde.png" alt="cerrar">
     </button>
     <div class="overlay-text-block">
-      <h2><span class="resaltado">CONTACTO</span></h2>
-      <p>Cualquier consulta o propuesta es bienvenida. No dudes en escribirme:)</p>
+      <h2><span class="resaltado" data-es="CONTACTO" data-en="CONTACT">CONTACTO</span></h2>
+      <p data-es="Cualquier consulta o propuesta es bienvenida. No dudes en escribirme:)" data-en="Any inquiry or proposal is welcome. Feel free to write to me :)">Cualquier consulta o propuesta es bienvenida. No dudes en escribirme:)</p>
       <a href="mailto:caba.constanza@gmail.com">caba.constanza@gmail.com</a>
       <a href="https://wa.me/5492914133188" target="_blank">Whatsapp</a>
     </div>
@@ -53,7 +53,7 @@
   <section class="trabajo-detalle">
       <div class="linea">
     <div class="datita">
-      <div>Documental</div>
+      <div data-es="Documental" data-en="Documentary">Documental</div>
       <div></div>
       <div>2025</div>
     </div>
@@ -61,24 +61,28 @@
 
 <div class="trabajo-descripcion-larga">
     <div class="main-col3">
-    <h1>Militante de la forma</h1>
+    <h1 data-es="Militante de la forma" data-en="Militant of the Form">Militante de la forma</h1>
     </div>
-
     <div class="main-col4">
-        <h1 id="titulo">CONCEPTO</h1>
-        <p>Proyecto de identidad visual para SOMA, explorando la dualidad entre lo orgánico y lo digital a través de formas en tensión. El diseño se basa en la idea de un soporte material que alberga información, con una estética que combina elementos naturales y tecnológicos para reflejar la esencia del proyecto.</p>
-        <p>Proyecto de identidad visual para SOMA, explorando la dualidad entre lo orgánico y lo digital a través de formas en tensión. El diseño se basa en la idea de un soporte material que alberga información, con una estética que combina elementos naturales y tecnológicos para reflejar la esencia del proyecto.</p>
-        
+        <h1 id="titulo" data-es="CONCEPTO" data-en="CONCEPT">CONCEPTO</h1>
+        <p><u data-es="Desarrollo de video documental sobre el poder de transformación social de la imagen, el color y la forma. Entre FADU y Di Tella." data-en="Development of a documentary video about the power of social transformation of image, color and form. Between FADU and Di Tella.">Desarrollo de video documental sobre el poder de transformación social de la imagen, el color y la forma. Entre FADU y Di Tella.</u></p>
+        <p data-es="Noviembre 2025 en FADU se terminan las clases de morfología, de la cátedra Longinotti. Cómo proyecto de fin de cursada “Trama-social” busca producir una imagen colectiva: una serie de más de 100 banderas diseñadas en grupos de 5 o 6 alumnos." data-en="November 2025 at FADU, the classes of morphology from the Longinotti course end. As a final project “Trama-social”, it seeks to produce a collective image: a series of more than 100 flags designed in groups of 5 or 6 students.">Noviembre 2025 en FADU se terminan las clases de morfología, de la cátedra Longinotti. Cómo proyecto de fin de cursada “Trama-social” busca producir una imagen colectiva: una serie de más de 100 banderas diseñadas en grupos de 5 o 6 alumnos.</p>
+        <p data-es="Las bandera llegan  en un rollo, que es cargado por los docentes  hasta el aula, colocado cuidadosamente sobre unas mesas y desenrollado lentamente para dejar ver un entramado infinito de colores y formas. Elisa es la encargada de guiar la actividad y de dar el primer tijeretazo en la tela. Una tras otra van cayendo." data-en="The flags arrive in a roll, which is loaded by the teachers until the classroom, placed carefully on some tables and unrolled slowly to reveal an infinite web of colors and forms. Elisa is in charge of guiding the activity and making the first cut on the fabric. One after another they fall.">Las bandera llegan  en un rollo, que es cargado por los docentes  hasta el aula, colocado cuidadosamente sobre unas mesas y desenrollado lentamente para dejar ver un entramado infinito de colores y formas. Elisa es la encargada de guiar la actividad y de dar el primer tijeretazo en la tela. Una tras otra van cayendo.</p>
+        <P data-es="Esto es la Militancia de la forma: la fe en que si una imagen puede nacer del deseo colectivo para tomar cuerpo y cubrir el espacio, entonces todo lo puede." data-en="This is the Militancy of the Form: the faith that if an image can be born from the collective desire to take shape and fill the space, then everything is possible.">Esto es la Militancia de la forma: la fe en que si una imagen puede nacer del deseo colectivo para tomar cuerpo y cubrir el espacio, entonces todo lo puede.</P>
+
        <div id="datos">
-      <h1 id="titulo">PROYECTO</h1>
-        <P id="lista">Académico</P>
-      <h1 id="titulo">EQUIPO</h1>
-        <P id="lista">Constanza Caba</P>
-      <h1 id="titulo">ROL</h1>
-        <P id="lista">Ideación, grabación y edición.</P>
+      <h1 id="titulo" data-es="PROYECTO" data-en="PROJECT">PROYECTO</h1>
+        <P id="lista" data-es="Académico" data-en="Academic">Académico</P>
+      <h1 id="titulo" data-es="EQUIPO" data-en="TEAM">EQUIPO</h1>
+        <P id="lista" data-es="Constanza Caba" data-en="Constanza Caba">Constanza Caba</P>
+      <h1 id="titulo" data-es="ROL" data-en="ROLE">ROL</h1>
+        <P id="lista" data-es="Ideación, grabación y edición." data-en="Conceptualization, recording and editing.">Ideación, grabación y edición.</P>
+      <h1 id="titulo" data-es="MEDIOS" data-en="MEDIA">MEDIOS</h1>
+        <P id="lista" 
+        data-es='<a href="https://theweirdshow.info/2026/01/05/elisa-strada-and-the-power-of-visual-encounters/" target="_blank">"Elisa Strada y el poder de los encuentros visuales" - The Weird Show, 2026</a>' data-en=' <a href="https://theweirdshow.info/2026/01/05/elisa-strada-and-the-power-of-visual-encounters/" target="_blank">"Elisa Strada and the Power of Visual Encounters" - The Weird Show, 2026</a>'> <a href="https://theweirdshow.info/2026/01/05/elisa-strada-and-the-power-of-visual-encounters/" target="_blank">"Elisa Strada and the Power of Visual Encounters" - The Weird Show, 2026</a></P>
       </div>
 
-        <a href="ruido.html" class="btn-siguiente">Ver más →</a>
+        <a href="ruido.html" class="btn-siguiente">→</a>
         
     </div>
 
@@ -91,6 +95,8 @@
   <img src="../imagenes/footer2.png" alt="Logo de Constanza Caba" class="footer-logo">
 </footer>
 
+  <script src="../cursor.js"></script>
   <script src="../sketch.js"></script>
+  <script src="../idioma.js"></script>
 </body>
 </html>

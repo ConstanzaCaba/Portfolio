@@ -11,15 +11,15 @@
   <link rel="preload" href="IBMPlexMono-Regular.ttf" as="font" type="font/truetype">
 </head>
 <body>
-  <header class="site-header">
+   <header class="site-header">
     <h1>Constanza Caba</h1>
-    <button class="menu-toggle" onclick="document.querySelector('.site-nav').classList.toggle('abierto')">☰</button>
+    <button class="menu-toggle" onclick="toggleMenu(event)">☰</button>
     <nav class="site-nav">
-      <a href="../index.html">Trabajos,</a>
-      <a href="../sobremi.html"> Sobre mí,</a>
-      <a href="../mijardin.html"> Mi Jardín,</a>
-      <a href="#" onclick="abrirOverlay(); return false;"> Contacto,</a>
-      <a href="../mijardin.html" class="idioma">ES→</a>
+      <a href="../index.html" data-es="Trabajos," data-en="Works,">Trabajos,</a>
+      <a href="../sobremi.html" data-es=" Sobre mí," data-en=" About,"> Sobre mí,</a>
+      <a href="../mijardin.html" data-es=" Mi Jardín," data-en=" My Garden,"> Mi Jardín,</a>
+      <a href="#" onclick="abrirOverlay(); return false;" data-es=" Contacto," data-en=" Contact,"> Contacto,</a>
+      <a href="#" class="idioma" id="idioma-toggle" onclick="toggleIdioma(); return false;">EN→</a>
     </nav>
   </header>
 
@@ -29,8 +29,8 @@
       <img src="../imagenes/cruz.verde.png" alt="cerrar">
     </button>
     <div class="overlay-text-block">
-      <h2><span class="resaltado">CONTACTO</span></h2>
-      <p>Cualquier consulta o propuesta es bienvenida. No dudes en escribirme:)</p>
+      <h2><span class="resaltado" data-es="CONTACTO" data-en="CONTACT">CONTACTO</span></h2>
+      <p data-es="Cualquier consulta o propuesta es bienvenida. No dudes en escribirme:)" data-en="Any inquiry or proposal is welcome. Feel free to write to me :)">Cualquier consulta o propuesta es bienvenida. No dudes en escribirme:)</p>
       <a href="mailto:caba.constanza@gmail.com">caba.constanza@gmail.com</a>
       <a href="https://wa.me/5492914133188" target="_blank">Whatsapp</a>
     </div>
@@ -62,7 +62,7 @@
   <section>
     <div class="linea">
     <div class="datita">
-      <div>Identidad</div>
+      <div data-es="Identidad" data-en="Identity">Identidad</div>
       <div></div>
       <div>2024</div>
     </div>
@@ -70,22 +70,23 @@
 
 <div class="trabajo-descripcion-larga">
     <div class="main-col3">
-    <h1>Primitivo</h1>
+    <h1 data-es="Primitivo" data-en="Primitive">Primitivo</h1>
     </div>
 
     <div class="main-col4">
-      <h1 id="titulo">CONCEPTO</h1>
-        <p>Proyecto de identidad visual para SOMA, explorando la dualidad entre lo orgánico y lo digital a través de formas en tensión. El diseño se basa en la idea de un soporte material que alberga información, con una estética que combina elementos naturales y tecnológicos para reflejar la esencia del proyecto.</p>
-        <p>Proyecto de identidad visual para SOMA, explorando la dualidad entre lo orgánico y lo digital a través de formas en tensión. El diseño se basa en la idea de un soporte material que alberga información, con una estética que combina elementos naturales y tecnológicos para reflejar la esencia del proyecto.</p>
+      <h1 id="titulo" data-es="CONCEPTO" data-en="CONCEPT">CONCEPTO</h1>
+        <p><u data-es="Una imagen que acompaña un sonido nuevo, que combina la electrónica con instrumentales en vivo, dando una puesta curada y enérgica." data-en="An image that accompanies a new sound, combining electronic with live instruments, creating a curated and energetic performance.">Una imagen que acompaña un sonido nuevo, que combina la electrónica con instrumentales en vivo, dando una puesta curada y enérgica.</u></p>
+        <p data-es="Se diseño un sistema que refleja el espíritu de transformación con una tipografía ue busca comunicar con los mínimos trazos posibles, el mensaje estará ahi para quienes estén dispuestos a renunciar a la comodidad de lo conocido. Se desprenden flyers, portadas de singles y visuales para shows." data-en="A system was designed that reflects the spirit of transformation with a typography that seeks to communicate with the minimal possible strokes, the message will be there for those who are willing to give up the comfort of the known. Flyers, single covers and visuals for shows are derived from it.">
+        Se diseño un sistema que refleja el espíritu de transformación con una tipografía ue busca comunicar con los mínimos trazos posibles, el mensaje estará ahi para quienes estén dispuestos a renunciar a la comodidad de lo conocido. Se desprenden flyers, portadas de singles y visuales para shows.</p>
       <div id="datos">
-      <h1 id="titulo">PROYECTO</h1>
-        <P id="lista">Encargo</P>
-      <h1 id="titulo">EQUIPO</h1>
-        <P id="lista" >Bautista Ausqui y Constanza Caba / @Studio_cobalto</P>
-      <h1 id="titulo">ROL</h1>
-        <P id="lista">Diseñadora, imágen</P>
+      <h1 id="titulo" data-es="PROYECTO" data-en="PROJECT">PROYECTO</h1>
+        <P id="lista" data-es="Encargo" data-en="Commission">Encargo</P>
+      <h1 id="titulo" data-es="EQUIPO" data-en="TEAM">EQUIPO</h1>
+        <P id="lista" data-es="Bautista Ausqui y Constanza Caba / @Studio_cobalto" data-en="Bautista Ausqui and Constanza Caba / @Studio_cobalto">Bautista Ausqui y Constanza Caba / @Studio_cobalto</P>
+      <h1 id="titulo" data-es="ROL" data-en="ROLE">ROL</h1>
+        <P id="lista" data-es="Dirección de arte, tipografía " data-en="Art Direction, Typography ">Dirección de arte, tipografía </P>
       </div>
-      <a href="soma.html" class="btn-siguiente">Ver más →</a>
+      <a href="soma.html" class="btn-siguiente">→</a>
     </div>
 </div>    
   </section>
@@ -96,6 +97,8 @@
   <img src="../imagenes/footer2.png" alt="Logo de Constanza Caba" class="footer-logo">
 </footer>
 
+  <script src="../cursor.js"></script>
   <script src="../sketch.js"></script>
+  <script src="../idioma.js"></script>
 </body>
 </html>

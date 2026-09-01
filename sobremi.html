@@ -11,27 +11,26 @@
 </head>
 
 <body>
-  <header class="site-header">
+ <header class="site-header">
     <h1>Constanza Caba</h1>
-    <button class="menu-toggle" onclick="document.querySelector('.site-nav').classList.toggle('abierto')">☰</button>
-     <nav class="site-nav">
-      <a href="index.html">Trabajos,</a>
-      <a href="sobremi.html">Sobre mí,</a>
-      <a href="mijardin.html">Mi Jardín,</a>
-      <a href="#" onclick="abrirOverlay(); return false;">Contacto,</a>
-      <a href="mijardin.html" class="idioma">ES→</a>
+    <button class="menu-toggle" onclick="toggleMenu(event)">☰</button>
+    <nav class="site-nav">
+      <a href="../index.html" data-es="Trabajos," data-en="Works,">Trabajos,</a>
+      <a href="../sobremi.html" data-es=" Sobre mí," data-en=" About,"> Sobre mí,</a>
+      <a href="../mijardin.html" data-es=" Mi Jardín," data-en=" My Garden,"> Mi Jardín,</a>
+      <a href="#" onclick="abrirOverlay(); return false;" data-es=" Contacto," data-en=" Contact,"> Contacto,</a>
+      <a href="#" class="idioma" id="idioma-toggle" onclick="toggleIdioma(); return false;">EN→</a>
     </nav>
   </header>
 
-<!-- Overlay Contacto -->
 <div id="overlay-contacto">
   <div class="overlay-content">
     <button class="close-button" id="close-button-contacto">
-      <img src="imagenes/cruz.verde.png" alt="cerrar">
+      <img src="../imagenes/cruz.verde.png" alt="cerrar">
     </button>
     <div class="overlay-text-block">
-      <h2><span class="resaltado">CONTACTO</span></h2>
-      <p>Cualquier consulta o propuesta es bienvenida. No dudes en escribirme:)</p>
+      <h2><span class="resaltado" data-es="CONTACTO" data-en="CONTACT">CONTACTO</span></h2>
+      <p data-es="Cualquier consulta o propuesta es bienvenida. No dudes en escribirme:)" data-en="Any inquiry or proposal is welcome. Feel free to write to me :)">Cualquier consulta o propuesta es bienvenida. No dudes en escribirme:)</p>
       <a href="mailto:caba.constanza@gmail.com">caba.constanza@gmail.com</a>
       <a href="https://wa.me/5492914133188" target="_blank">Whatsapp</a>
     </div>
@@ -42,8 +41,7 @@
 
        <div class="col" id="mijardin-col">
         <div class="inner-col">
-          <div>
-          Diseñadora Integral<br>Buenos Aires, Argentina
+          <div data-es="Diseñadora Integral<br>Buenos Aires, Argentina" data-en="Integral Designer<br>Buenos Aires, Argentina">
           </div>
           <div>
             <nav class="contact-links">
@@ -64,31 +62,31 @@
     </div>
     <div class="main-col2">
      <div class="datita">
-        <div>Diseño|Arte</div>
+        <div data-es="Diseño|Arte" data-en="Design|Art">Diseño|Arte</div>
         <div>2026</div>
      </div>
     <div class="seccion-texto">   
-        <h1 id="titulo">Formación</h1>
-        <p>Soy diseñadora integral, graduada de la Universidad Torcuato Di Tella (2025), con especialización en <u>Comunicación y Cultura</u>.</p>
-        <p>Concibo el diseño como una herramienta estratégica para la comunicación de mensajes sensoriales y emocionales, combinando creatividad y precisión en cada propuesta visual.</p>
+        <h1 id="titulo" data-es="Formación" data-en="Education">Formación</h1>
+        <p data-es="Soy diseñadora integral, graduada de la Universidad Torcuato Di Tella (2025), con especialización en Comunicación y Cultura." data-en="I am an integral designer, graduated from Torcuato Di Tella University (2025), with a specialization in Communication and Culture.">Soy diseñadora integral, graduada de la Universidad Torcuato Di Tella (2025), con especialización en <u>Comunicación y Cultura</u>.</p>
+        <p data-es="Concibo el diseño como una herramienta estratégica para la comunicación de mensajes sensoriales y emocionales, combinando creatividad y precisión en cada propuesta visual." data-en="I view design as a strategic tool for communicating sensory and emotional messages, combining creativity and precision in each visual proposal.">Concibo el diseño como una herramienta estratégica para la comunicación de mensajes sensoriales y emocionales, combinando creatividad y precisión en cada propuesta visual.</p>
     </div>
     <div class="seccion-texto">    
-        <h1 id="titulo">Intereses y Visión</h1>
-        <p>Mi interés se centra en el desarrollo de identidades visuales para proyectos y marcas, abordando cada proceso desde una mirada sensible y estratégica, atenta a las necesidades particulares de cada caso.</p>
-        <p>La mirada integral permite entender el problema en diferentes niveles y encontrar una solución más consciente y humana. Busco participar en proyectos innovadores y desafiantes que me permitan explorar y crecer, siempre buscando crear nuevos mundos y experiencias que combinen el arte y el diseño.</p>
-        <p> Para conocerme más, visitá <a href="mijardin.html">Mi Jardín</a>.</p>
+        <h1 id="titulo" data-es="Intereses y Visión" data-en="Interests and Vision">Intereses y Visión</h1>
+        <p data-es="Mi interés se centra en el desarrollo de identidades visuales para proyectos y marcas, abordando cada proceso desde una mirada sensible y estratégica, atenta a las necesidades particulares de cada caso." data-en="My interest lies in developing visual identities for projects and brands, approaching each process with a sensitive and strategic perspective, attentive to the particular needs of each case.">Mi interés se centra en el desarrollo de identidades visuales para proyectos y marcas, abordando cada proceso desde una mirada sensible y estratégica, atenta a las necesidades particulares de cada caso.</p>
+        <p data-es="La mirada integral permite entender el problema en diferentes niveles y encontrar una solución más consciente y humana. Busco participar en proyectos innovadores y desafiantes que me permitan explorar y crecer, siempre buscando crear nuevos mundos y experiencias que combinen el arte y el diseño." data-en="The integral perspective allows understanding the problem at different levels and finding a more conscious and human solution. I seek to participate in innovative and challenging projects that allow me to explore and grow, always looking to create new worlds and experiences that combine art and design.">La mirada integral permite entender el problema en diferentes niveles y encontrar una solución más consciente y humana. Busco participar en proyectos innovadores y desafiantes que me permitan explorar y crecer, siempre buscando crear nuevos mundos y experiencias que combinen el arte y el diseño.</p>
+        <p data-es='Para conocerme más, visitá <a href="mijardin.html">Mi Jardín</a>.'' data-en='To know me better, visit <a href="mijardin.html">My Garden</a>.'> Para conocerme más, visitá <a href="mijardin.html">Mi Jardín</a>.</p>
     </div>
 
     <div class="seccion-texto2">
       <div>   
-        <h1 id="titulo">Experiencia</h1>
+        <h1 id="titulo" data-es="Experiencia" data-en="Experience">Experiencia</h1>
       </div> 
       <div>
         <h1 id="titulo">2022 - 2026</h1>
-        <P>Independiente, freelance</P>
-        <h1 id="titulo">2025 - 2026</h1>
-        <P>Creadora de Contenido y Social Media Manager, Area de Graduados, UTDT.</P>
-        <h1 id="titulo">DESCARGAR CV</h1>  
+        <P data-es="Independiente, freelance" data-en="Independent, freelance">Independiente, freelance</P>
+        <h1 id="titulo" data-es="2025 - 2026" data-en="2025 - 2026">2025 - 2026</h1>
+        <P data-es="Creadora de Contenido y Social Media Manager, Area de Graduados, UTDT." data-en="Content Creator and Social Media Manager, Alumni Office, UTDT.">Creadora de Contenido y Social Media Manager, Area de Graduados, UTDT.</P>
+        <h1 id="titulo" data-es="DESCARGAR CV" data-en="DOWNLOAD CV">DESCARGAR CV</h1>  
       </div>
     </div>
     <div class="seccion-texto"></div>
@@ -104,6 +102,8 @@
 </footer>
 
 
-<script src="sketch.js"></script>    
+<script src="cursor.js"></script>
+<script src="sketch.js"></script>
+<script src="../idioma.js"></script>
 </body>
 </html>

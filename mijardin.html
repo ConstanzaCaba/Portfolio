@@ -13,26 +13,25 @@
 
 <body class="fondo-degradado">
   <header class="site-header">
-    <h1>Constanza Caba</h1>
-    <button class="menu-toggle" onclick="document.querySelector('.site-nav').classList.toggle('abierto')">☰</button>
+  <h1>Constanza Caba</h1>
+     <button class="menu-toggle" onclick="toggleMenu(event)">☰</button>
     <nav class="site-nav">
-      <a href="index.html">Trabajos,</a>
-      <a href="sobremi.html">Sobre mí,</a>
-      <a href="mijardin.html">Mi Jardín,</a>
-      <a href="#" onclick="abrirOverlay(); return false;">Contacto,</a>
-      <a href="mijardin.html" class="idioma">ES→</a>
+      <a href="../index.html" data-es="Trabajos," data-en="Works,">Trabajos,</a>
+      <a href="../sobremi.html" data-es=" Sobre mí," data-en=" About,"> Sobre mí,</a>
+      <a href="../mijardin.html" data-es=" Mi Jardín," data-en=" My Garden,"> Mi Jardín,</a>
+      <a href="#" onclick="abrirOverlay(); return false;" data-es=" Contacto," data-en=" Contact,"> Contacto,</a>
+      <a href="#" class="idioma" id="idioma-toggle" onclick="toggleIdioma(); return false;">EN→</a>
     </nav>
   </header>
 
-<!-- Overlay Contacto -->
 <div id="overlay-contacto">
   <div class="overlay-content">
     <button class="close-button" id="close-button-contacto">
-      <img src="imagenes/cruz.rosa.png" alt="cerrar">
+      <img src="../imagenes/cruz.rosa.png" alt="cerrar">
     </button>
     <div class="overlay-text-block">
-      <h2><span class="resaltado">CONTACTO</span></h2>
-      <p>Cualquier consulta o propuesta es bienvenida. No dudes en escribirme:)</p>
+      <h2><span class="resaltado" data-es="CONTACTO" data-en="CONTACT">CONTACTO</span></h2>
+      <p data-es="Cualquier consulta o propuesta es bienvenida. No dudes en escribirme:)" data-en="Any inquiry or proposal is welcome. Feel free to write to me :)">Cualquier consulta o propuesta es bienvenida. No dudes en escribirme:)</p>
       <a href="mailto:caba.constanza@gmail.com">caba.constanza@gmail.com</a>
       <a href="https://wa.me/5492914133188" target="_blank">Whatsapp</a>
     </div>
@@ -43,8 +42,7 @@
 
       <div class="col" id="mijardin-col">
         <div class="inner-col">
-          <div>
-          Diseñadora Integral<br>Buenos Aires, Argentina
+          <div data-es="Diseñadora Integral<br>Buenos Aires, Argentina" data-en="Integral Designer<br>Buenos Aires, Argentina">
           </div>
           <div>
             <nav class="contact-links">
@@ -71,15 +69,20 @@
   </div>
 </div>
 
-<div class="bienvenida">
-  <h2>Bienvenid@</h2>
-    <p>Aquí podrás ver ilustraciones, fotografías, visuales y todo tipo de paisajes digitales y analógicos.
-Paseate tranquil@. Disponible para comisiones :)</p>
- <img src="imagenes/detalle.png" alt="detalle">
+<div class="bienvenida" id="bienvenida">
+  <div class="bienvenida-contenido">
+    <h2 data-es="Bienvenid@" data-en="Welcome">Bienvenid@</h2>
+    <p data-es="Aquí podrás ver ilustraciones, fotografías, visuales y todo tipo de paisajes digitales y analógicos.
+Paseate tranquil@. Disponible para comisiones :)" data-en="Here you can see illustrations, photographs, visuals and all kinds of digital and analog landscapes.
+Take your time. Available for commissions :)">Aquí podrás ver ilustraciones, fotografías, visuales y todo tipo de paisajes digitales y analógicos. Paseate tranquil@. Disponible para comisiones :)</p>
+    <button id="btn-pasear" data-es="Pasear" data-en="Walk around">Pasear</button>
+  </div>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+<script src="cursor.js"></script>
 <script src="sketch.js"></script>
 <script src="mijardin.trhee.js"></script>
+<script src="../idioma.js"></script>
 </body>
 </html>

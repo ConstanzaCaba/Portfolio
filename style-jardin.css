@@ -9,22 +9,7 @@ body {
  /* background-image: url('imagenes/alo.png');*/
   background-size: cover;
   background-repeat: no-repeat;
-  cursor: url('/imagenes/cursor1.png') 16 16, auto;
-}
-
- a, button [role="button"] { 
-  cursor: url('/imagenes/cursor.activo.png') 16 16, pointer !important; 
-}
-
-video::-webkit-media-controls,
-video::-webkit-media-controls-panel,
-video::-webkit-media-controls-play-button,
-video::-webkit-media-controls-timeline,
-video::-webkit-media-controls-volume-slider,
-video::-webkit-media-controls-mute-button,
-video::-webkit-media-controls-fullscreen-button,
-video {
-  cursor: url('/imagenes/cursor1.png') 16 16, auto;
+  /* Cursor personalizado: ver cursor.js */
 }
 
 /* Load Archivo from local font file */
@@ -247,38 +232,90 @@ p {
 }
 
 .bienvenida{
+  display: none;
   position: fixed;
-  bottom: 0;
-  right: 0;
-  width: calc(100% / 6);
-  padding-right: 25px;
-  padding-bottom: 120px;
+  inset: 0;
+  z-index: 3000;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  margin-left:25px;
+  box-sizing: border-box;
+  clip-path: inset(0 100% 0 0);
+  pointer-events: none; /* deja pasar los clicks al header/nav, que quedan debajo */
 }
 
-.bienvenida img{
-  display: block;
-  width: 100%;
-  height: auto;
-  padding-top: 50px;
+.bienvenida-contenido {
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+  pointer-events: auto; /* el contenido (botón incluido) sigue siendo clickeable */
 }
 
 .bienvenida p{
   font-family: 'IBMPlexMono', 'Courier New', monospace;
   font-weight: 400;
   text-transform: uppercase;
-  text-indent: 25px;
-  font-size: 9px;
-  color: rgb(125, 125, 125);
+  font-size: 10px;
+  line-height: 1.6;
+  color: rgb(243,241,239);
+  text-indent: 0;
+  margin: 0;
 }
 
 .bienvenida h2 {
   font-family: 'IBMPlexMono', 'Courier New', monospace;
   font-weight: 400;
   text-transform: uppercase;
-  font-size: 9px;
-  display:flex;
-  color: rgb(125, 125, 125);
-  text-indent: 0px;
+  font-size: 12px;
+  color: rgb(243,241,239);
+  text-indent: 0;
+  margin: 0;
+}
+
+.bienvenida button {
+  font-family: 'IBMPlexMono', 'Courier New', monospace;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 10px;
+  padding: 10px 32px;
+  border-radius: 999px;
+  border: 1px solid rgb(243,241,239);
+  background: transparent;
+  color: rgb(243,241,239);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.bienvenida button:hover {
+  background: rgb(243,241,239);
+  color: rgb(40,40,40);
+}
+
+.jardin-fade {
+  opacity: 0;
+  transition: opacity 1.4s ease;
+}
+
+.jardin-fade.visible {
+  opacity: 1;
+}
+
+.jardin-canvas {
+  opacity: 0;
+  transition: filter 0.8s ease, opacity 1.4s ease;
+}
+
+.jardin-canvas.desenfocado {
+  filter: blur(22px);
+  opacity: 0.45;
+}
+
+.jardin-canvas.visible {
+  filter: none;
+  opacity: 1;
 }
 
 
@@ -461,7 +498,6 @@ p {
     appearance: none;
     color: black !important;
     flex-shrink: 0;
-    cursor: url('/imagenes/cursor.activo.png') 16 16, pointer; 
   }
 
   
@@ -476,6 +512,7 @@ p {
 
   .site-nav {
     display: none;
+    animation: none; /* apertura/cierre animados por JS (sketch.js) */
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
@@ -601,37 +638,24 @@ p {
 }
 
 .bienvenida {
-  position: fixed;
-  left: 50px;
-  right: 0;
-  width: auto; /* ocupa desde left:50px hasta el borde derecho */
-  padding-bottom: 20px;
+  padding: 20px;
 }
 
-.bienvenida img{
-  display: block;
-  width: 100%;
-  height: auto;
-  padding-top: 10px;
+.bienvenida-contenido {
+  max-width: 100%;
 }
 
 .bienvenida p{
-  font-family: 'IBMPlexMono', 'Courier New', monospace;
-  font-weight: 400;
-  text-transform: uppercase;
-  text-indent: 25px;
-  font-size: 6px;
-  color: rgb(125, 125, 125);
+  font-size: 10px;
 }
 
 .bienvenida h2 {
-  font-family: 'IBMPlexMono', 'Courier New', monospace;
-  font-weight: 400;
-  text-transform: uppercase;
-  font-size: 6px;
-  display:flex;
-  color: rgb(125, 125, 125);
-  text-indent: 0px;
+  font-size: 13px;
+}
+
+.bienvenida button {
+  font-size: 11px;
+  padding: 8px 26px;
 }
 
 }

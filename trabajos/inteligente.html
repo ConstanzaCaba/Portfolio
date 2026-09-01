@@ -13,13 +13,13 @@
 <body>
   <header class="site-header">
     <h1>Constanza Caba</h1>
-    <button class="menu-toggle" onclick="document.querySelector('.site-nav').classList.toggle('abierto')">☰</button>
+    <button class="menu-toggle" onclick="toggleMenu(event)">☰</button>
     <nav class="site-nav">
-      <a href="../index.html">Trabajos,</a>
-      <a href="../sobremi.html"> Sobre mí,</a>
-      <a href="../mijardin.html"> Mi Jardín,</a>
-      <a href="#" onclick="abrirOverlay(); return false;"> Contacto,</a>
-      <a href="../mijardin.html" class="idioma">ES→</a>
+      <a href="../index.html" data-es="Trabajos," data-en="Works,">Trabajos,</a>
+      <a href="../sobremi.html" data-es=" Sobre mí," data-en=" About,"> Sobre mí,</a>
+      <a href="../mijardin.html" data-es=" Mi Jardín," data-en=" My Garden,"> Mi Jardín,</a>
+      <a href="#" onclick="abrirOverlay(); return false;" data-es=" Contacto," data-en=" Contact,"> Contacto,</a>
+      <a href="#" class="idioma" id="idioma-toggle" onclick="toggleIdioma(); return false;">EN→</a>
     </nav>
   </header>
 
@@ -75,7 +75,7 @@
   <section>
       <div class="linea">
     <div class="datita">
-      <div>Identidad</div>
+      <div data-es="Identidad" data-en="Identity">Identidad</div>
       <div></div>
       <div>2022</div>
     </div>
@@ -83,31 +83,45 @@
 
 <div class="trabajo-descripcion-larga">
     <div class="main-col3">
-    <h1>Inteli-Gente</h1>
+    <h1 data-es="Inteli-Gente" data-en="Intelligent Being">Inteli-Gente</h1>
     </div>
     <div class="main-col4">
-      <h1 id="titulo">CONCEPTO</h1>
-      <p id="subrayado">El píxel se aproxima a la lógica de la célula: ambos funcionan como estructuras básicas que, al organizarse, dan forma a un cuerpo.</p>
-      <p>¿Cómo es nuestro vínculo con la tecnología? ¿Qué lugar ocupa en la construcción de lo humano?
+      <h1 id="titulo" data-es="CONCEPTO" data-en="CONCEPT">CONCEPTO</h1>
+      <p> <u data-es="El píxel se aproxima a la lógica de la célula: ambos funcionan como estructuras básicas que, al organizarse, dan forma a un cuerpo." data-en="The pixel approaches the logic of the cell: both function as basic structures that, when organized, give form to a body.">El píxel se aproxima a la lógica de la célula: ambos funcionan como estructuras básicas que, al organizarse, dan forma a un cuerpo.</u></p>
+      <p data-es="¿Cómo es nuestro vínculo con la tecnología? ¿Qué lugar ocupa en la construcción de lo humano?
+      Inteli-gente propone una reflexión sobre la relación entre cuerpo y tecnología, entendidos no como opuestos, sino como sistemas que se entrelazan y se transforman mutuamente.
+      La comunicación acompaña este cuestionamiento, construyendo una experiencia que invita al espectador a hacerse estas preguntas antes y durante el recorrido de la muestra." data-en="How is our link with technology? What place does it occupy in the construction of the human?
+      Inteli-gente proposes a reflection on the relationship between body and technology, understood not as opposites, but as systems that intertwine and transform each other.
+      Communication accompanies this questioning, creating an experience that invites the viewer to ask these questions before and during the tour of the exhibition.">¿Cómo es nuestro vínculo con la tecnología? ¿Qué lugar ocupa en la construcción de lo humano?
       Inteli-gente propone una reflexión sobre la relación entre cuerpo y tecnología, entendidos no como opuestos, sino como sistemas que se entrelazan y se transforman mutuamente.
       La comunicación acompaña este cuestionamiento, construyendo una experiencia que invita al espectador a hacerse estas preguntas antes y durante el recorrido de la muestra.</p>
-      <p>El sistema visual se construye a partir de la descomposición de la imagen hasta su unidad mínima: el píxel.
+      <p data-es="El sistema visual se construye a partir de la descomposición de la imagen hasta su unidad mínima: el píxel.
+      En este gesto, el píxel se aproxima a la lógica de la célula: ambos funcionan como estructuras básicas que, al organizarse, dan forma a un cuerpo. Esta analogía permite pensar lo digital y lo biológico dentro de una misma escala.
+      Las imágenes se presentan fragmentadas, recortadas como en un collage digital. Esta operación no es solo formal, sino que actúa como metáfora de un cuerpo atravesado por la tecnología, donde los límites entre lo natural y lo artificial se vuelven inestables." data-en="The visual system is built from the decomposition of the image to its minimum unit: the pixel.
+      In this gesture, the pixel approaches the logic of the cell: both function as basic structures that, when organized, give form to a body. This analogy allows us to think about the digital and the biological within the same scale.
+      The images are presented fragmented, cut like in a digital collage. This operation is not only formal, but also acts as a metaphor for a body traversed by technology, where the boundaries between the natural and the artificial become unstable.">El sistema visual se construye a partir de la descomposición de la imagen hasta su unidad mínima: el píxel.
       En este gesto, el píxel se aproxima a la lógica de la célula: ambos funcionan como estructuras básicas que, al organizarse, dan forma a un cuerpo. Esta analogía permite pensar lo digital y lo biológico dentro de una misma escala.
       Las imágenes se presentan fragmentadas, recortadas como en un collage digital. Esta operación no es solo formal, sino que actúa como metáfora de un cuerpo atravesado por la tecnología, donde los límites entre lo natural y lo artificial se vuelven inestables.</p>
-      <p>Se desarrolló una identidad dinámica, sostenida en operaciones gráficas sutiles pero con una fuerte carga conceptual.
+      <p data-es="Se desarrolló una identidad dinámica, sostenida en operaciones gráficas sutiles pero con una fuerte carga conceptual.
+      El sistema tipográfico se organiza mediante bloques y alineaciones estrictas, aportando estructura y orden frente a la fragmentación de la imagen.
+      El logotipo fue diseñado en dos versiones —compacta y expandida— que permiten adaptabilidad sin perder coherencia, reforzando la idea de sistema flexible." data-en="A dynamic identity was developed, sustained by subtle graphic operations but with a strong conceptual load.
+      The typographic system is organized through strict blocks and alignments, providing structure and order against the fragmentation of the image.
+      The logo was designed in two versions —compact and expanded— that allow adaptability without losing coherence, reinforcing the idea of a flexible system.">Se desarrolló una identidad dinámica, sostenida en operaciones gráficas sutiles pero con una fuerte carga conceptual.
       El sistema tipográfico se organiza mediante bloques y alineaciones estrictas, aportando estructura y orden frente a la fragmentación de la imagen.
       El logotipo fue diseñado en dos versiones —compacta y expandida— que permiten adaptabilidad sin perder coherencia, reforzando la idea de sistema flexible.</p>
       
       <div id="datos">
-      <h1 id="titulo">PROYECTO</h1>
-        <P id="lista">Académico</P>
-      <h1 id="titulo">EQUIPO</h1>
-        <P id="lista" >Constanza Caba</P>
-      <h1 id="titulo">ROL</h1>
-        <P id="lista">Diseñadora, imágen</P>
+      <h1 id="titulo" data-es="PROYECTO" data-en="PROJECT">PROYECTO</h1>
+        <P id="lista" data-es="Académico" data-en="Academic">Académico</P>
+      <h1 id="titulo" data-es="EQUIPO" data-en="TEAM">EQUIPO</h1>
+        <P id="lista" data-es="Constanza Caba" data-en="Constanza Caba">Constanza Caba</P>
+      <h1 id="titulo" data-es="ROL" data-en="ROLE">ROL</h1>
+        <P id="lista" data-es="Diseñadora" data-en="Designer">Diseñadora</P>
+      <h1 id="titulo" data-es="MENCIONES" data-en="MENTIONS ">MENCIONES</h1>
+        <P id="lista" data-es="Muestra de Diseño 2022 - LED UTDT" data-en="Design Show 2022 - LED University Torcuatto Di Tella">Muestra de Diseño 2022 - LED UTDT</P>
       </div>  
 
-        <a href="pulsos.html" class="btn-siguiente">Ver más →</a>
+        <a href="pulsos.html" class="btn-siguiente">→</a>
         
     </div>
 
@@ -120,6 +134,8 @@
   <img src="../imagenes/footer2.png" alt="Logo de Constanza Caba" class="footer-logo">
 </footer>
 
+  <script src="../cursor.js"></script>
   <script src="../sketch.js"></script>
+  <script src="../idioma.js"></script>
 </body>
 </html>

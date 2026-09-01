@@ -13,13 +13,13 @@
 <body>
   <header class="site-header">
     <h1>Constanza Caba</h1>
-    <button class="menu-toggle" onclick="document.querySelector('.site-nav').classList.toggle('abierto')">☰</button>
+    <button class="menu-toggle" onclick="toggleMenu(event)">☰</button>
     <nav class="site-nav">
-      <a href="../index.html">Trabajos,</a>
-      <a href="../sobremi.html"> Sobre mí,</a>
-      <a href="../mijardin.html"> Mi Jardín,</a>
-      <a href="#" onclick="abrirOverlay(); return false;"> Contacto,</a>
-      <a href="../mijardin.html" class="idioma">ES→</a>
+      <a href="../index.html" data-es="Trabajos," data-en="Works,">Trabajos,</a>
+      <a href="../sobremi.html" data-es=" Sobre mí," data-en=" About,"> Sobre mí,</a>
+      <a href="../mijardin.html" data-es=" Mi Jardín," data-en=" My Garden,"> Mi Jardín,</a>
+      <a href="#" onclick="abrirOverlay(); return false;" data-es=" Contacto," data-en=" Contact,"> Contacto,</a>
+      <a href="#" class="idioma" id="idioma-toggle" onclick="toggleIdioma(); return false;">EN→</a>
     </nav>
   </header>
 
@@ -29,8 +29,8 @@
       <img src="../imagenes/cruz.verde.png" alt="cerrar">
     </button>
     <div class="overlay-text-block">
-      <h2><span class="resaltado">CONTACTO</span></h2>
-      <p>Cualquier consulta o propuesta es bienvenida. No dudes en escribirme:)</p>
+      <h2><span class="resaltado" data-es="CONTACTO" data-en="CONTACT">CONTACTO</span></h2>
+      <p data-es="Cualquier consulta o propuesta es bienvenida. No dudes en escribirme:)" data-en="Any inquiry or proposal is welcome. Feel free to write to me :)">Cualquier consulta o propuesta es bienvenida. No dudes en escribirme:)</p>
       <a href="mailto:caba.constanza@gmail.com">caba.constanza@gmail.com</a>
       <a href="https://wa.me/5492914133188" target="_blank">Whatsapp</a>
     </div>
@@ -65,7 +65,7 @@
   <section>
     <div class="linea">
     <div class="datita">
-      <div>Gráfica Editorial</div>
+      <div data-es="Gráfica Editorial" data-en="Graphic Editorial">Gráfica Editorial</div>
       <div></div>
       <div>2025</div>
     </div>
@@ -73,24 +73,23 @@
 
 <div class="trabajo-descripcion-larga">
     <div class="main-col3">
-    <h1>Pulsos</h1>
+    <h1 data-es="Pulsos" data-en="Pulses">Pulsos</h1>
     </div>
     <div class="main-col4">
-      <h1 id="titulo">CONCEPTO</h1>
-        <p id="subrayado">“Pulsos” es un proyecto de diseño editorial que explora la relación entre el cuerpo, el espacio y el tiempo a través de una narrativa visual. La publicación se estructura en torno a la idea de los pulsos como ritmos vitales que conectan diferentes dimensiones de la experiencia humana. A través de una combinación de fotografía, ilustración y tipografía, el proyecto busca crear una experiencia inmersiva que invite a reflexionar sobre la interconexión entre el individuo y su entorno.</p>
-        <p>Proyecto de identidad visual para SOMA, explorando la dualidad entre lo orgánico y lo digital a través de formas en tensión. El diseño se basa en la idea de un soporte material que alberga información, con una estética que combina elementos naturales y tecnológicos para reflejar la esencia del proyecto.</p>
-        <p>Proyecto de identidad visual para SOMA, explorando la dualidad entre lo orgánico y lo digital a través de formas en tensión. El diseño se basa en la idea de un soporte material que alberga información, con una estética que combina elementos naturales y tecnológicos para reflejar la esencia del proyecto.</p>
+      <h1 id="titulo" data-es="CONCEPTO" data-en="CONCEPT">CONCEPTO</h1>
+        <p><u data-es="“Pulsos” es un proyecto de diseño editorial que explora las diferentes manifestaciones del arte y el diseño desde una concepción individualista/digital hasta una colectiva/corpórea." data-en="“Pulses” is a graphic editorial project that explores the different manifestations of art and design from an individualistic/digital conception to a collective/corporeal one.">“Pulsos” es un proyecto de diseño editorial que explora las diferentes manifestaciones del arte y el diseño desde una concepción individualista/digital hasta una colectiva/corpórea.</u></p>
+        <p data-es="La noción de pulso responde a un registro de la vitalidad de una obra o imagen, siendo asi evidencia de las diferentes dimensiones de la experiencia humana y colectiva." data-en="The notion of pulse responds to a record of the vitality of a work or image, being thus evidence of the different dimensions of the human and collective experience.">La noción de pulso responde a un registro de la vitalidad de una obra o imagen, siendo asi evidencia de las diferentes dimensiones de la experiencia humana y colectiva.</p>
+        <p data-es="A través de una combinación de fotografía, ilustración y tipografía, el proyecto busca crear un espacio que invite a reflexionar sobre la interconexión entre el individuo y su entorno, en diferentes niveles e intensidades." data-en="Through a combination of photography, illustration and typography, the project aims to create a space that invites reflection on the interconnection between the individual and their environment, at different levels and intensities.">A través de una combinación de fotografía, ilustración y tipografía, el proyecto busca crear un espacio que invite a reflexionar sobre la interconexión entre el individuo y su entorno, en diferentes niveles e intensidades.</p>
+        <p data-es="A través del dibujo, como punto común entre disciplinas, se hicieron traducciones en medios digitales y analógicos, que dejaran ver las sutiles diferencias entre aquellos trazos realizados por una mano vs. un mouse, los dibujos expresivos frente a los vectoriales y engrillados. Parecería que las latencias de los pueblos siempre se manifiestan por unos de los dos caminos, aunque hay veces en los que trabajan juntos con un mismo propósito: evidenciar un pulso. " data-en="Through drawing, as a common point between disciplines, translations were made in digital and analog media, which would reveal the subtle differences between those strokes made by hand vs. a mouse, expressive drawings versus vectorial and gridded ones. It would seem that the latencies of peoples always manifest through one of the two paths, although there are times when they work together with the same purpose: to evidence a pulse. ">A través del dibujo, como punto común entre disciplinas, se hicieron traducciones en medios digitales y analógicos, que dejaran ver las sutiles diferencias entre aquellos trazos realizados por una mano vs. un mouse, los dibujos expresivos frente a los vectoriales y engrillados. Parecería que las latencias de los pueblos siempre se manifiestan por unos de los dos caminos, aunque hay veces en los que trabajan juntos con un mismo propósito: evidenciar un pulso. </p>
         
        <div id="datos">
-      <h1 id="titulo">PROYECTO</h1>
-        <P id="lista">Académico</P>
-      <h1 id="titulo">AUTORÍA</h1>
-        <P id="lista">Constanza Caba</P>
-      <h1 id="titulo">ROL</h1>
-        <P id="lista">Selección y edición de material.</P>
+      <h1 id="titulo" data-es="PROYECTO" data-en="PROJECT">PROYECTO</h1>
+        <P id="lista" data-es="Académico" data-en="Academic">Académico</P>
+      <h1 id="titulo" data-es="AUTORÍA" data-en="AUTHORSHIP">AUTORÍA</h1>
+        <P id="lista" data-es="Constanza Caba" data-en="Constanza Caba">Constanza Caba</P>
       </div>
 
-        <a href="militante.html" class="btn-siguiente">Ver más →</a>
+        <a href="militante.html" class="btn-siguiente">→</a>
         
     </div>
 
@@ -103,6 +102,8 @@
   <img src="../imagenes/footer2.png" alt="Logo de Constanza Caba" class="footer-logo">
 </footer>
 
+  <script src="../cursor.js"></script>
   <script src="../sketch.js"></script>
+   <script src="../idioma.js"></script>
 </body>
 </html>

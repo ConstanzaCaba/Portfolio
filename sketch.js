@@ -17,7 +17,12 @@ document.querySelectorAll('.site-nav a').forEach(link => {
 let slideActual = 0;
 let animando = false;
 
+function esMobile() {
+  return window.innerWidth <= 768;
+}
+
 function moverSlide(direccion) {
+  if (esMobile()) return; // en mobile el scroll nativo se encarga
   if (animando) return;
   const slides = document.querySelectorAll('.carrusel-slide');
   const dots = document.querySelectorAll('.carrusel-dot');
@@ -66,30 +71,36 @@ function moverSlide(direccion) {
 
 document.addEventListener('DOMContentLoaded', () => {
   const slides = document.querySelectorAll('.carrusel-slide');
+  const carrusel = document.getElementById('carrusel');
+  const dots = document.querySelectorAll('.carrusel-dot');
+
+  if (!slides.length) return;
+
+  // Siempre resetear al primer slide al cargar/recargar
+  slideActual = 0;
   slides.forEach((slide, i) => {
-    slide.style.zIndex = 0;
+    slide.style.transition = 'none';
+    slide.style.zIndex = i === 0 ? 1 : 0;
     slide.style.transform = i === 0 ? 'translateX(0)' : 'translateX(100%)';
   });
-  slides[0].style.zIndex = 1;
-});
+  dots.forEach((d, i) => d.classList.toggle('activo', i === 0));
 
-document.addEventListener('DOMContentLoaded', () => {
-  const slides = document.querySelectorAll('.carrusel-slide');
-  if (slides.length) {
-    slides[0].style.transform = 'translateX(0)';
-    slides[0].style.zIndex = 1;
+  // Listener de scroll para mobile (actualiza los dots con el scroll nativo)
+  if (carrusel && dots.length) {
+    let scrollTimer = null;
+    carrusel.addEventListener('scroll', () => {
+      if (!esMobile()) return;
+      // Usar requestAnimationFrame para no saturar el hilo principal
+      if (scrollTimer) return;
+      scrollTimer = requestAnimationFrame(() => {
+        const idx = Math.round(carrusel.scrollLeft / carrusel.offsetWidth);
+        slideActual = idx;
+        dots.forEach((d, i) => d.classList.toggle('activo', i === idx));
+        scrollTimer = null;
+      });
+    }, { passive: true });
   }
 });
-
-const carrusel = document.getElementById('carrusel');
-const dots     = document.querySelectorAll('.carrusel-dot');
-
-if (carrusel && dots.length) {
-  carrusel.addEventListener('scroll', () => {
-    const idx = Math.round(carrusel.scrollLeft / carrusel.offsetWidth);
-    dots.forEach((d, i) => d.classList.toggle('activo', i === idx));
-  });
-}
 
 if (window.innerWidth <= 768) {
   const observer = new IntersectionObserver((entries) => {
@@ -146,4 +157,54 @@ closeBtn.addEventListener('click', () => {
     document.body.style.overflow = '';
     document.body.style.paddingRight = '';
   };
+});
+
+const NAV_ANIM_DURATION = 400;
+const NAV_ANIM_EASING = 'cubic-bezier(0.77, 0, 0.175, 1)';
+
+function abrirMenu() {
+  const nav = document.querySelector('.site-nav');
+  if (!nav) return;
+  nav.getAnimations().forEach(a => a.cancel());
+  nav.classList.add('abierto');
+  nav.animate(
+    [
+      { clipPath: 'inset(0 100% 0 0)' },
+      { clipPath: 'inset(0 0 0 0)' }
+    ],
+    { duration: NAV_ANIM_DURATION, easing: NAV_ANIM_EASING, fill: 'forwards' }
+  );
+}
+
+function cerrarMenu() {
+  const nav = document.querySelector('.site-nav');
+  if (!nav || !nav.classList.contains('abierto')) return;
+  nav.getAnimations().forEach(a => a.cancel());
+  const anim = nav.animate(
+    [
+      { clipPath: 'inset(0 0 0 0)' },
+      { clipPath: 'inset(0 100% 0 0)' }
+    ],
+    { duration: NAV_ANIM_DURATION, easing: NAV_ANIM_EASING, fill: 'forwards' }
+  );
+  anim.onfinish = () => {
+    nav.classList.remove('abierto');
+  };
+}
+
+function toggleMenu(e) {
+  e.stopPropagation();
+  const nav = document.querySelector('.site-nav');
+  if (nav && nav.classList.contains('abierto')) {
+    cerrarMenu();
+  } else {
+    abrirMenu();
+  }
+}
+
+document.addEventListener('click', function (e) {
+  const nav = document.querySelector('.site-nav');
+  if (!nav.contains(e.target)) {
+    cerrarMenu();
+  }
 });

@@ -5,22 +5,7 @@ body {
   min-height: -webkit-fill-available;
   background: rgb(206,210,213);
   font-family: 'Archivo', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-  cursor: url('/imagenes/cursor1.png') 16 16, auto;
-}
-
- a, button [role="button"] { 
-  cursor: url('/imagenes/cursor.activo.png') 16 16, pointer !important; 
-}
-
-video::-webkit-media-controls,
-video::-webkit-media-controls-panel,
-video::-webkit-media-controls-play-button,
-video::-webkit-media-controls-timeline,
-video::-webkit-media-controls-volume-slider,
-video::-webkit-media-controls-mute-button,
-video::-webkit-media-controls-fullscreen-button,
-video {
-  cursor: url('/imagenes/cursor1.png') 16 16, auto;
+  /* Cursor personalizado: ver cursor.js */
 }
 
 canvas {
@@ -53,6 +38,10 @@ canvas {
   to {
     clip-path: inset(0 0% 0 0);
   }
+}
+
+a{
+    color: inherit;
 }
 
 /* Header styles: full width, height equal to text (32px) */
@@ -202,25 +191,18 @@ canvas {
   color: rgb(243,241,239);
 }
 
-.main-col {
- /* background-color: rgb(250, 253, 247);*/
-  display: flex;
-  flex-direction: column;
-  width: 33%;
-  gap:25px;
-  text-indent: 25px;
-}
-
-.main-col h2{
-  font-size: 24px;
-  margin: 0;
-  font-weight: 400;
-}
-
 .trabajos {
   display: flex;
   font-size: 12px;
-  gap:0.5%;
+  gap: 0.5%;
+}
+
+.main-col {
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+  gap: 25px;
+  text-indent: 25px;
 }
 
 .trabajo-imagen{
@@ -264,6 +246,9 @@ canvas {
   border-bottom: 1px solid rgb(192, 192, 192);
 }
 .celda h2{
+  font-size: 24px;
+  margin: 0;
+  font-weight: 400;
   border-bottom: 1px solid rgb(192, 192, 192);
 }
 .celda img{
@@ -498,11 +483,6 @@ canvas {
   text-transform: uppercase;
 }
 
-#subrayado{
-  text-decoration: underline;
-  margin-bottom:25px;
-}
-
 .site-footer {
   display: flex;
   justify-content: space-between;
@@ -700,7 +680,7 @@ canvas {
     font-size: 20px;
   }
 
-  .main-col h2{
+  .celda h2{
     font-size: 20px;
     margin: 0;
     font-weight: 400;
@@ -810,7 +790,6 @@ canvas {
     appearance: none;
     color: black !important;
     flex-shrink: 0;
-    cursor: url('/imagenes/cursor.activo.png') 16 16, pointer; 
   }
 
   .celda:hover .trabajo-descripcion {
@@ -824,6 +803,7 @@ canvas {
 
   .site-nav {
     display: none;
+    animation: none; /* apertura/cierre animados por JS (sketch.js) */
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
@@ -918,7 +898,6 @@ canvas {
   background-color: rgb(243,241,239);
   display: block;
 }
-
 
   .timeline-fecha{
     font-size: 8px;

@@ -11,27 +11,26 @@
   <link rel="preload" href="IBMPlexMono-Regular.ttf" as="font" type="font/truetype">
 </head>
 <body>
-
   <header class="site-header">
     <h1>Constanza Caba</h1>
-    <button class="menu-toggle" onclick="document.querySelector('.site-nav').classList.toggle('abierto')">☰</button>
-      <nav class="site-nav">
-      <a href="index.html">Trabajos,</a>
-      <a href="sobremi.html">Sobre mí,</a>
-      <a href="mijardin.html">Mi Jardín,</a>
-      <a href="#" onclick="abrirOverlay(); return false;">Contacto,</a>
-      <a href="mijardin.html" class="idioma">ES→</a>
+    <button class="menu-toggle" onclick="toggleMenu(event)">☰</button>
+    <nav class="site-nav">
+      <a href="../index.html" data-es="Trabajos," data-en="Works,">Trabajos,</a>
+      <a href="../sobremi.html" data-es=" Sobre mí," data-en=" About,"> Sobre mí,</a>
+      <a href="../mijardin.html" data-es=" Mi Jardín," data-en=" My Garden,"> Mi Jardín,</a>
+      <a href="#" onclick="abrirOverlay(); return false;" data-es=" Contacto," data-en=" Contact,"> Contacto,</a>
+      <a href="#" class="idioma" id="idioma-toggle" onclick="toggleIdioma(); return false;">EN→</a>
     </nav>
   </header>
 
 <div id="overlay-contacto">
   <div class="overlay-content">
     <button class="close-button" id="close-button-contacto">
-      <img src="imagenes/cruz.verde.png" alt="cerrar">
+      <img src="../imagenes/cruz.verde.png" alt="cerrar">
     </button>
     <div class="overlay-text-block">
-      <h2><span class="resaltado">CONTACTO</span></h2>
-      <p>Cualquier consulta o propuesta es bienvenida. No dudes en escribirme:)</p>
+      <h2><span class="resaltado" data-es="CONTACTO" data-en="CONTACT">CONTACTO</span></h2>
+      <p data-es="Cualquier consulta o propuesta es bienvenida. No dudes en escribirme:)" data-en="Any inquiry or proposal is welcome. Feel free to write to me :)">Cualquier consulta o propuesta es bienvenida. No dudes en escribirme:)</p>
       <a href="mailto:caba.constanza@gmail.com">caba.constanza@gmail.com</a>
       <a href="https://wa.me/5492914133188" target="_blank">Whatsapp</a>
     </div>
@@ -41,8 +40,7 @@
   <section class="site-section">
     <div class="col">
           <div class="inner-col">
-              <div>
-              Diseñadora Integral<br>Buenos Aires, Argentina
+              <div data-es="Diseñadora Integral<br>Buenos Aires, Argentina" data-en="Integral Designer<br>Buenos Aires, Argentina">Diseñadora Integral<br>Buenos Aires, Argentina
               </div>
               <div>
                 <nav class="contact-links">
@@ -55,124 +53,120 @@
               </div>
           </div>
     </div>
-    <div class="col" id="texto">
-    Busco generar soluciones visuales que comuniquen con claridad y construyan sentido. Me interesa participar en proyectos creativos, gráficos, audiovisuales y culturales.
+
+    <div class="col" id="texto" data-es="Busco generar soluciones visuales que comuniquen con claridad y construyan sentido. Me interesa participar en proyectos creativos, gráficos, audiovisuales y culturales." data-en="I seek to create visual solutions that communicate clearly and build meaning. I am interested in participating in creative projects, graphic, audiovisual and cultural.">
     </div>
   </section>
  
-  <section class="menu">
-    <nav>
-      <a href="#trabajos">All</a>
-      <a href="#sobre-mi">Gráfica</a>
-      <a href="#contacto">Identidad</a>
-      <a href="#mi-jardin">Infografía</a>
-      <a href="#mi-jardin">Editorial</a>
-      <a href="#mi-jardin">Audiovisual</a>
-      <a href="#mi-jardin">Cultural</a>
+   <section class="menu">
+    <nav id="menu-filtros">
+      <a href="#" class="activo" onclick="filtrarTrabajos('all', this); return false;">All</a>
+      <a href="#" onclick="filtrarTrabajos('identidad', this); return false;" data-es="Identidad" data-en="Identity">Identidad</a>
+      <a href="#" onclick="filtrarTrabajos('infografia', this); return false;" data-es="Infografía" data-en="Infography">Infografía</a>
+      <a href="#" onclick="filtrarTrabajos('editorial', this); return false;" data-es="Editorial" data-en="Editorial">Editorial</a>
+      <a href="#" onclick="filtrarTrabajos('audiovisual', this); return false;" data-es="Audiovisual" data-en="Audiovisual">Audiovisual</a>
+      <a href="#" onclick="filtrarTrabajos('cultural', this); return false;" data-es="Cultural" data-en="Cultural">Cultural</a>
+      <a href="#" onclick="filtrarTrabajos('museo', this); return false;" data-es="Museografía" data-en="Museography">Museografía</a>
     </nav>
   </section>
 
 
-  <section class="trabajos">
-    <div class="main-col"> 
-      <div class="celda" onclick="window.location.href='trabajos/soma.html'">
+  <section class="trabajos" id="trabajos-grid">
+    <div class="main-col" id="main-col-1">
+      <div class="celda" data-categorias="identidad" onclick="window.location.href='trabajos/soma.html'">
        <div class="inner-col">
-        <div>Gráfica</div>
+        <div data-es="Gráfica" data-en="Graphic">Gráfica</div>
         <div>2025</div>
       </div>
-       <h2>SOMA: Soporte Material</h2>
-       <img src="imagenes/soma.png" alt="SOMA" class="trabajo-imagen">
-       <p class="trabajo-descripcion">Identidad visual para SOMA, una muestra de objetos de diseño argentino que explora las diferentes formas de la materia, y su transformación al vincularse con el cuerpo.</p>
+       <h2 data-es="SOMA: Soporte Material" data-en="SOMA: Material Support">SOMA: Soporte Material</h2>
+       <img src="imagenes/soma.png" alt="SOMA" class="trabajo-imagen" width="861" height="609" decoding="async">
+       <p class="trabajo-descripcion" data-es="Una muestra de objetos de diseño argentino que explora las diferentes transformaciones de la materia al vincularse con el cuerpo." data-en="A showcase of Argentine design objects that explore the different transformations of matter when linked with the body.">Una muestra de objetos de diseño argentino que explora las diferentes transformaciones de la materia al vincularse con el cuerpo.</p>
       </div>
 
-      <div class="celda" onclick="window.location.href='trabajos/jaguar.html'">
+      <div class="celda" data-categorias="identidad" onclick="window.location.href='trabajos/jaguar.html'">
         <div class="inner-col">
-          <div>Gráfica</div>
+          <div data-es="Identidad gráfica" data-en="Graphic Identity">Identidad gráfica</div>
           <div>2025</div>
         </div>
-        <h2>Jaguar: Un musical del Centro de Arte UTDT</h2>
-        <img src="imagenes/jaguar2.png" alt="JAGUAR" class="trabajo-imagen">
-        <p class="trabajo-descripcion">Proyecto de identidad visual para Jaguar, una obra musical impulsada por el Departamento de Arte de la Universidad Torcuato Di Tella.</p>
+        <h2 data-es="Jaguar: Un musical del Centro de Arte UTDT" data-en="Jaguar: A Musical from the Art Department at UTDT">Jaguar: Un musical del Centro de Arte UTDT</h2>
+        <img src="imagenes/jaguar2.png" alt="JAGUAR" class="trabajo-imagen" width="555" height="705" decoding="async">
+        <p class="trabajo-descripcion" data-es="Proyecto de identidad visual para Jaguar, una obra musical impulsada por el Departamento de Arte de la Universidad Torcuato Di Tella." data-en="Visual identity project for Jaguar, a musical work driven by the Department of Art at Universidad Torcuato Di Tella.">Proyecto de identidad visual para Jaguar, una obra musical impulsada por el Departamento de Arte de la Universidad Torcuato Di Tella.</p>
       </div>
 
-      <div class="celda" onclick="window.location.href='trabajos/ronda.html'">
+      <div class="celda" data-categorias="cultural" onclick="window.location.href='trabajos/ronda.html'">
         <div class="inner-col">
-          <div>Gráfica</div>
+          <div data-es="Gráfica" data-en="Graphic">Gráfica</div>
           <div>2025</div>
         </div>
-        <h2>Ronda Redonda: Re-diseño de la exposición de arte “Aprendizaje Infinito” expuesta en el Museo Moderno.</h2>
-        <img src="imagenes/ronda.png" alt="Ronda Redonda" class="trabajo-imagen">
-        <p class="trabajo-descripcion">La muestra explora el vínculo entre diferentes pedagogías que aprovechan al arte como herramienta para expandir los limites del aprendizaje, recorriendo diferentes momentos de la historia a través de las voces de diferentes docentes, artistas y activistas. </p>
+        <h2 data-es="Ronda Redonda: Re-diseño de la exposición de arte “Aprendizaje Infinito” expuesta en el Museo Moderno" data-en="Ronda Redonda: Redesign of the art exhibition “Infinite Learning” displayed at the Modern Museum">Ronda Redonda: Re-diseño de la exposición de arte “Aprendizaje Infinito” expuesta en el Museo Moderno</h2>
+        <img src="imagenes/ronda.png" alt="Ronda Redonda" class="trabajo-imagen" width="1440" height="920" decoding="async">
+        <p class="trabajo-descripcion" data-es="Una muestra que explora el vínculo entre la educación y el arte, desde el Museo Moderno hacia el Centro Cultural Recoleta." data-en="A showcase that explores the link between education and art, from the Modern Museum to the Recoleta Cultural Center.">Una muestra que explora el vínculo entre la educación y el arte, desde el Museo Moderno hacia el Centro Cultural Recoleta.</p>
       </div>
-
     </div>
 
-    <div class="main-col"> 
-      <div class="celda" onclick="window.location.href='trabajos/inteligente.html'">
+    <div class="main-col" id="main-col-2">
+      <div class="celda" data-categorias="grafica identidad" onclick="window.location.href='trabajos/inteligente.html'">
         <div class="inner-col">
-          <div>Gráfica</div>
+          <div data-es="Gráfica" data-en="Graphic">Gráfica</div>
           <div>2025</div>
         </div>
-        <h2>INTELI-GENTE: Exposición sobre tecnología en el MARQ</h2>
-        <img src="imagenes/inteli-gente3.png" alt="INTELI-GENTE" class="trabajo-imagen">
-        <p class="trabajo-descripcion">Exposición de tecnología que propone una reflexión sobre la relación entre usuarios y dispositivos, entendidos como sistemas que se entrelazan y se transforman mutuamente.</p>
+        <h2 data-es="INTELI-GENTE: Exposición sobre el vínculo con tecnología en el MARQ" data-en="INTELI-GENTE: Exhibition on the Link with Technology at the MARQ">INTELI-GENTE: Exposición sobre el vínculo con tecnología en el MARQ</h2>
+        <img src="imagenes/inteli-gente3.png" alt="INTELI-GENTE" class="trabajo-imagen" width="1566" height="2349" decoding="async">
+        <p class="trabajo-descripcion" data-es="Exposición de tecnología que reflexiona sobre la relación entre usuarios y dispositivos, entendidos como sistemas que se entrelazan y se transforman mutuamente." data-en="Technology exhibition that reflects on the relationship between users and devices, understood as systems that intertwine and transform each other.">Exposición de tecnología que reflexiona sobre la relación entre usuarios y dispositivos, entendidos como sistemas que se entrelazan y se transforman mutuamente.</p>
       </div>
 
-     <div class="celda" onclick="window.location.href='trabajos/pulsos.html'">
+     <div class="celda" data-categorias="editorial" onclick="window.location.href='trabajos/pulsos.html'">
         <div class="inner-col">
-          <div>Gráfica</div>
+          <div data-es="Gráfica" data-en="Graphic">Gráfica</div>
           <div>2025</div>
         </div>
-        <h2>Pulsos: Una exploración sobre las convergencias entre arte y diseño</h2>
-        <img src="imagenes/pulsos0.png" alt="PULSOS" class="trabajo-imagen">
-        <p class="trabajo-descripcion">Desarrollo de editorial con curaduría de imágenes y obras de profesionales del arte y el diseño.</p>
+        <h2 data-es="Pulsos: Una exploración sobre las convergencias entre arte y diseño" data-en="Pulsos: An Exploration of the Convergences between Art and Design">Pulsos: Una exploración sobre las convergencias entre arte y diseño</h2>
+        <img src="imagenes/pulsos0.png" alt="PULSOS" class="trabajo-imagen" width="973" height="1080" decoding="async">
+        <p class="trabajo-descripcion" data-es="Desarrollo de editorial con curaduría de imágenes y obras de profesionales del arte y el diseño." data-en="Editorial development with curation of images and works by professionals in art and design.">Desarrollo de editorial con curaduría de imágenes y obras de profesionales del arte y el diseño.</p>
       </div>
       
-      <div class="celda" onclick="window.location.href='trabajos/militante.html'">
+      <div class="celda" data-categorias="audiovisual" onclick="window.location.href='trabajos/militante.html'">
         <div class="inner-col">
-          <div>Gráfica</div>
+          <div data-es="Gráfica" data-en="Graphic">Gráfica</div>
           <div>2025</div>
         </div>
-        <h2>Militante de la forma: Un documental sobre Elisa Strada.</h2>
-        <img src="imagenes/documental.png" alt="PULSOS" class="trabajo-imagen">
-        <p class="trabajo-descripcion">Desarrollo de video documental sobre el poder de transformación social de la imagen, el color y la forma. Entre FADU y Di Tella.</p>
+        <h2 data-es="Militante de la forma: Un documental sobre Elisa Strada" data-en="Militant of Form: A Documentary on Elisa Strada">Militante de la forma: Un documental sobre Elisa Strada</h2>
+        <img src="imagenes/documental.png" alt="PULSOS" class="trabajo-imagen" width="1440" height="810" decoding="async">
+        <p class="trabajo-descripcion" data-es="Video documental sobre el poder de transformación social de la imagen, el color y la forma. Entre FADU y Di Tella." data-en="Documentary video about the power of social transformation of image, color and form. Between FADU and Di Tella.">Video documental sobre el poder de transformación social de la imagen, el color y la forma. Entre FADU y Di Tella.</p>
       </div>
-
     </div>
 
-    <div class="main-col">
-       <div class="celda" onclick="window.location.href='trabajos/ruido.html'">
+    <div class="main-col" id="main-col-3">
+       <div class="celda" data-categorias="infografia" onclick="window.location.href='trabajos/ruido.html'">
         <div class="inner-col">
-          <div>Gráfica</div>
+          <div data-es="Gráfica" data-en="Graphic">Gráfica</div>
           <div>2025</div>
         </div>
-        <h2>¿VES EL RUIDO?: Un recorrido sensorial por la ciudad de Buenos Aires</h2>
-        <img src="imagenes/veselruido.png" alt="¿VES EL RUIDO?" class="trabajo-imagen">
-        <p class="trabajo-descripcion">El proyecto propone visibilizar estos patrones de ruido y entender cómo se manifiestan en el espacio urbano. Un recorrido consciente por la Comuna 13, que enmarca hitos audio/visuales.</p>
+        <h2 data-es="¿VES EL RUIDO?: Un recorrido sensorial por la ciudad de Buenos Aires" data-en="Do You See the Noise?: A Sensory Walk Through the City of Buenos Aires">¿VES EL RUIDO?: Un recorrido sensorial por la ciudad de Buenos Aires</h2>
+        <img src="imagenes/veselruido.png" alt="¿VES EL RUIDO?" class="trabajo-imagen" width="1860" height="1288" decoding="async">
+        <p class="trabajo-descripcion" data-es="Proyecto que visibiliza patrones de ruido y silencio en el espacio urbano. Un recorrido consciente por la Comuna 13, que enmarca hitos audio/visuales." data-en="Project that highlights patterns of noise and silence in the urban space. A conscious walk through Community 13, framing audio/visual landmarks.">Proyecto que visibiliza patrones de ruido y silencio en el espacio urbano. Un recorrido consciente por la Comuna 13, que enmarca hitos audio/visuales.</p>
       </div>
     
-       <div class="celda" onclick="window.location.href='trabajos/cuerpohibrido.html'">
+       <div class="celda" data-categorias="grafica" onclick="window.location.href='trabajos/cuerpohibrido.html'">
         <div class="inner-col">
-          <div>Gráfica</div>
+          <div data-es="Gráfica" data-en="Graphic">Gráfica</div>
           <div>2025</div>
         </div>
-        <h2>El cuerpo híbrido: Un paseo virtual.</h2>
-        <img src="imagenes/rosalia.png" alt="¿VES EL RUIDO?" class="trabajo-imagen">
-        <p class="trabajo-descripcion">Experiencia interactiva que se pregunta por la despersonalización y fragmentación de los cuerpos hoy. Inteligencia artificial y la construcción de la imagen de un cuerpo.</p>
+        <h2 data-es="El cuerpo híbrido: Un paseo virtual" data-en="The Hybrid Body: A Virtual Walk">El cuerpo híbrido: Un paseo virtual</h2>
+        <img src="imagenes/rosalia.png" alt="El cuerpo híbrido" class="trabajo-imagen" width="483" height="678" decoding="async">
+        <p class="trabajo-descripcion" data-es="Experiencia interactiva que se pregunta por la despersonalización y fragmentación de los cuerpos hoy. Inteligencia artificial y la construcción de la imagen de un cuerpo." data-en="Interactive experience that questions the depersonalization and fragmentation of bodies today. Artificial intelligence and the construction of the image of a body.">Experiencia interactiva que se pregunta por la despersonalización y fragmentación de los cuerpos hoy. Inteligencia artificial y la construcción de la imagen de un cuerpo.</p>
       </div> 
     
-      <div class="celda" onclick="window.location.href='trabajos/primitivo.html'">
+      <div class="celda" data-categorias="grafica identidad" onclick="window.location.href='trabajos/primitivo.html'">
         <div class="inner-col">
-          <div>Gráfica</div>
+          <div data-es="Gráfica" data-en="Graphic">Gráfica</div>
           <div>2025</div>
         </div>
-        <h2>Primitivo: sonido solo para quienes quieran conocer su verdadero ser.</h2>
-        <img src="imagenes/primitivo-mock.jpg" alt="Primitivo" class="trabajo-imagen">
-        <p class="trabajo-descripcion">Diseño de identidad para un proyecto de sonido experimental.</p>
+        <h2 data-es="Primitivo: sonido solo para quienes quieran conocer su verdadero ser" data-en="Primitive: Sound Only for Those Who Want to Know Their True Essence">Primitivo: sonido solo para quienes quieran conocer su verdadero ser</h2>
+        <img src="imagenes/primitivo-mock.jpg" alt="Primitivo" class="trabajo-imagen" width="736" height="920" decoding="async">
+        <p class="trabajo-descripcion" data-es="Diseño de identidad para un proyecto de sonido experimental." data-en="Identity design for an experimental sound project.">Diseño de identidad para un proyecto de sonido experimental.</p>
       </div>
-    
     </div>
-
 
   </section>
 
@@ -182,6 +176,108 @@
 </footer>
 
 
+<script src="cursor.js"></script>
 <script src="sketch.js"></script>
+<script src="../idioma.js"></script>
+<script>
+var celdasOriginal = Array.from(document.querySelectorAll('#trabajos-grid .celda'));
+var columnasTrabajos = [
+  document.getElementById('main-col-1'),
+  document.getElementById('main-col-2'),
+  document.getElementById('main-col-3'),
+];
+
+var TRABAJOS_DURACION = 800; // igual a la animación entrarIzquierda del .celda
+var TRABAJOS_DURACION_IMG = 1200; // igual a la animación entrarIzquierda de .trabajo-imagen
+var TRABAJOS_EASING = 'cubic-bezier(0.77, 0, 0.175, 1)';
+
+function esperarImagen(celda) {
+  var img = celda.querySelector('.trabajo-imagen');
+  if (!img || img.complete) return Promise.resolve();
+  return new Promise(function (resolve) {
+    img.addEventListener('load', resolve, { once: true });
+    img.addEventListener('error', resolve, { once: true });
+  });
+}
+
+function filtrarTrabajos(categoria, elementoClickeado) {
+  document.querySelectorAll('#menu-filtros a').forEach(function (a) {
+    a.classList.remove('activo');
+  });
+  elementoClickeado.classList.add('activo');
+
+  celdasOriginal.forEach(function (celda) {
+    celda.getAnimations().forEach(function (a) { a.cancel(); });
+    var img = celda.querySelector('.trabajo-imagen');
+    if (img) img.getAnimations().forEach(function (a) { a.cancel(); });
+  });
+
+  // 1. Cerrar todas las celdas (y sus imágenes) en su posición actual (igual que entrarIzquierda, invertida)
+  var cierres = celdasOriginal.map(function (celda) {
+    var img = celda.querySelector('.trabajo-imagen');
+    if (img) {
+      img.animate(
+        [
+          { clipPath: 'inset(0 0% 0 0)' },
+          { clipPath: 'inset(0 100% 0 0)' }
+        ],
+        { duration: TRABAJOS_DURACION, easing: TRABAJOS_EASING, fill: 'forwards' }
+      );
+    }
+    return celda.animate(
+      [
+        { clipPath: 'inset(0 0% 0 0)' },
+        { clipPath: 'inset(0 100% 0 0)' }
+      ],
+      { duration: TRABAJOS_DURACION, easing: TRABAJOS_EASING, fill: 'forwards' }
+    ).finished;
+  });
+
+  // Mientras cierra, esperamos también a que las imágenes estén listas,
+  // para no reabrir una celda con la imagen todavía cargando (efecto "glitch").
+  Promise.all(cierres.concat(celdasOriginal.map(esperarImagen))).then(function () {
+    // 2. Reordenar en el DOM (invisibles, sin salto visual): coincidencias primero
+    var coincidentes = [];
+    var noCoincidentes = [];
+    celdasOriginal.forEach(function (celda) {
+      var categorias = (celda.dataset.categorias || '').split(' ');
+      var coincide = categoria === 'all' || categorias.indexOf(categoria) !== -1;
+      (coincide ? coincidentes : noCoincidentes).push(celda);
+    });
+    var ordenNuevo = coincidentes.concat(noCoincidentes);
+    var porColumna = Math.ceil(ordenNuevo.length / columnasTrabajos.length);
+    ordenNuevo.forEach(function (celda, i) {
+      columnasTrabajos[Math.floor(i / porColumna)].appendChild(celda);
+    });
+
+    // 3. Abrir las celdas (y sus imágenes) en su nuevo lugar, igual que entrarIzquierda
+    celdasOriginal.forEach(function (celda) {
+      celda.animate(
+        [
+          { clipPath: 'inset(0 100% 0 0)' },
+          { clipPath: 'inset(0 0% 0 0)' }
+        ],
+        { duration: TRABAJOS_DURACION, easing: TRABAJOS_EASING, fill: 'forwards' }
+      ).finished.then(function () {
+        celda.getAnimations().forEach(function (a) { a.cancel(); });
+      });
+
+      var img = celda.querySelector('.trabajo-imagen');
+      if (img) {
+        img.animate(
+          [
+            { clipPath: 'inset(0 100% 0 0)' },
+            { clipPath: 'inset(0 0% 0 0)' }
+          ],
+          { duration: TRABAJOS_DURACION_IMG, easing: TRABAJOS_EASING, fill: 'forwards' }
+        ).finished.then(function () {
+          img.getAnimations().forEach(function (a) { a.cancel(); });
+        });
+      }
+    });
+  });
+}
+</script>
+
 </body>
 </html>

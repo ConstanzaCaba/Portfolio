@@ -13,13 +13,13 @@
 <body>
   <header class="site-header">
     <h1>Constanza Caba</h1>
-    <button class="menu-toggle" onclick="document.querySelector('.site-nav').classList.toggle('abierto')">☰</button>
+    <button class="menu-toggle" onclick="toggleMenu(event)">☰</button>
     <nav class="site-nav">
-      <a href="../index.html">Trabajos,</a>
-      <a href="../sobremi.html"> Sobre mí,</a>
-      <a href="../mijardin.html"> Mi Jardín,</a>
-      <a href="#" onclick="abrirOverlay(); return false;"> Contacto,</a>
-      <a href="../mijardin.html" class="idioma">ES→</a>
+      <a href="../index.html" data-es="Trabajos," data-en="Works,">Trabajos,</a>
+      <a href="../sobremi.html" data-es=" Sobre mí," data-en=" About,"> Sobre mí,</a>
+      <a href="../mijardin.html" data-es=" Mi Jardín," data-en=" My Garden,"> Mi Jardín,</a>
+      <a href="#" onclick="abrirOverlay(); return false;" data-es=" Contacto," data-en=" Contact,"> Contacto,</a>
+      <a href="#" class="idioma" id="idioma-toggle" onclick="toggleIdioma(); return false;">EN→</a>
     </nav>
   </header>
 
@@ -29,8 +29,8 @@
       <img src="../imagenes/cruz.verde.png" alt="cerrar">
     </button>
     <div class="overlay-text-block">
-      <h2><span class="resaltado">CONTACTO</span></h2>
-      <p>Cualquier consulta o propuesta es bienvenida. No dudes en escribirme:)</p>
+      <h2><span class="resaltado" data-es="CONTACTO" data-en="CONTACT">CONTACTO</span></h2>
+      <p data-es="Cualquier consulta o propuesta es bienvenida. No dudes en escribirme:)" data-en="Any inquiry or proposal is welcome. Feel free to write to me :)">Cualquier consulta o propuesta es bienvenida. No dudes en escribirme:)</p>
       <a href="mailto:caba.constanza@gmail.com">caba.constanza@gmail.com</a>
       <a href="https://wa.me/5492914133188" target="_blank">Whatsapp</a>
     </div>
@@ -78,27 +78,33 @@
 
 <div class="trabajo-descripcion-larga">
     <div class="main-col3">
-    <h1>Jaguar: El musical</h1>
+    <h1 data-es="Jaguar: El musical" data-en="Jaguar: The Musical">Jaguar: El musical</h1>
     </div>
     <div class="main-col4">
-      <h1 id="titulo">CONCEPTO</h1>
-        <p id="subrayado">Jaguar surge como una obra musical impulsada por el Departamento de Arte de la Universidad Torcuato Di Tella, con el objetivo de seguir tejiendo relatos del presente que dialoguen con un momento clave de la cultura argentina.</p>
-        <p>La obra se estructura a partir de una cita a Hair (1967), ícono de la contracultura y de la llamada “Era de Acuario”, cuya promesa de una nueva espiritualidad basada en el amor y la paz aún resuena en la actualidad. Desde este cruce entre pasado y presente, el proyecto busca recuperar ese espíritu y reactivarlo en un nuevo contexto.</p>
-        <p>A partir de este marco conceptual, se diseñó una imagen representativa de la obra que condensara su esencia y resultara atractiva tanto para el público como para los artistas y la institución.</p>
-        <p>Dentro de este sistema, se desarrolló el personaje del jaguar, pieza central de la comunicación. Su diseño articula el universo simbólico de la obra y funciona como elemento unificador a lo largo de las distintas aplicaciones.</p>
-        <p>Desde este rol, se definió la dirección visual del sistema, estableciendo los criterios formales y expresivos que guían su implementación. </p>
-        <p>Se desarrolló una pieza visual principal que funciona como eje de la comunicación de la obra, junto con un conjunto de piezas gráficas destinadas a su difusión. El sistema se implementó en materiales para el evento y en contenidos para redes sociales, asegurando coherencia y reconocimiento en los distintos puntos de contacto con el público.</p>
+      <h1 id="titulo" data-es="CONCEPTO" data-en="CONCEPT">CONCEPTO</h1>
+        <p> <u data-es="Jaguar surge como una obra musical impulsada por el Departamento de Arte de la Universidad Torcuato Di Tella, con el objetivo de seguir tejiendo relatos del presente que dialoguen con un momento clave de la cultura argentina." data-en="Jaguar emerges as a musical work driven by the Department of Art at Universidad Torcuato Di Tella, with the goal of continuing to weave narratives of the present that dialogue with a pivotal moment in Argentine culture.">Jaguar surge como una obra musical impulsada por el Departamento de Arte de la Universidad Torcuato Di Tella, con el objetivo de seguir tejiendo relatos del presente que dialoguen con un momento clave de la cultura argentina.</u></p>
+        <p data-es="La obra se estructura a partir de una cita a Hair (1967), ícono de la contracultura y de la llamada “Era de Acuario”, cuya promesa de una nueva espiritualidad basada en el amor y la paz aún resuena en la actualidad. Desde este cruce entre pasado y presente, el proyecto busca recuperar ese espíritu y reactivarlo en un nuevo contexto." data-en="The work is structured around a reference to Hair (1967), an icon of the counterculture and the so-called 'Aquarian Age', whose promise of a new spirituality based on love and peace still resonates today. From this intersection of past and present, the project aims to recover that spirit and reactivate it in a new context.">La obra se estructura a partir de una cita a Hair (1967), ícono de la contracultura y de la llamada “Era de Acuario”, cuya promesa de una nueva espiritualidad basada en el amor y la paz aún resuena en la actualidad. Desde este cruce entre pasado y presente, el proyecto busca recuperar ese espíritu y reactivarlo en un nuevo contexto.</p>
+        <p data-es="A partir de este marco conceptual, se diseñó una imagen representativa de la obra que condensara su esencia y resultara atractiva tanto para el público como para los artistas y la institución." data-en="Based on this conceptual framework, a representative image of the work was designed that condensed its essence and proved attractive to both the public and the artists and institution.">A partir de este marco conceptual, se diseñó una imagen representativa de la obra que condensara su esencia y resultara atractiva tanto para el público como para los artistas y la institución.</p>
+        <p data-es="Dentro de este sistema, se desarrolló el personaje del jaguar, pieza central de la comunicación. Su diseño articula el universo simbólico de la obra y funciona como elemento unificador a lo largo de las distintas aplicaciones." data-en="Within this system, the character of the jaguar was developed, serving as the central element of communication. Its design articulates the symbolic universe of the work and functions as a unifying element across various applications.">Dentro de este sistema, se desarrolló el personaje del jaguar, pieza central de la comunicación. Su diseño articula el universo simbólico de la obra y funciona como elemento unificador a lo largo de las distintas aplicaciones.</p>
+        <p data-es="Desde este rol, se definió la dirección visual del sistema, estableciendo los criterios formales y expresivos que guían su implementación." data-en="From this role, the visual direction of the system was defined, establishing formal and expressive criteria that guide its implementation.">Desde este rol, se definió la dirección visual del sistema, estableciendo los criterios formales y expresivos que guían su implementación.</p>
+        <p data-es="Se desarrolló una pieza visual principal que funciona como eje de la comunicación de la obra, junto con un conjunto de piezas gráficas destinadas a su difusión. El sistema se implementó en materiales para el evento y en contenidos para redes sociales, asegurando coherencia y reconocimiento en los distintos puntos de contacto con el público." data-en="A main visual piece was developed that functions as the axis of communication for the work, along with a set of graphic pieces intended for its dissemination. The system was implemented in materials for the event and in content for social media, ensuring coherence and recognition across different touchpoints with the public.">Se desarrolló una pieza visual principal que funciona como eje de la comunicación de la obra, junto con un conjunto de piezas gráficas destinadas a su difusión. El sistema se implementó en materiales para el evento y en contenidos para redes sociales, asegurando coherencia y reconocimiento en los distintos puntos de contacto con el público.</p>
 
       <div id="datos">
-      <h1 id="titulo">PROYECTO</h1>
-        <P id="lista">Institucional, Encargo</P>
-      <h1 id="titulo">EQUIPO</h1>
+      <h1 id="titulo" data-es="PROYECTO" data-en="PROJECT">PROYECTO</h1>
+        <P id="lista" data-es="Institucional, Encargo" data-en="Institutional, Commission">Institucional, Encargo</P>
+      <h1 id="titulo" data-es="EQUIPO" data-en="TEAM">EQUIPO</h1>
         <P id="lista">Julieta Cersofios, Sara Iglesias, Bautista Ausqui, Violeta Casabal, Constanza Caba</P>
-      <h1 id="titulo">ROL</h1>
-        <P id="lista">Definición del sistema visual y supervisión de su aplicación en piezas gráficas y digitales.</P>
+      <h1 id="titulo" data-es="ROL" data-en="ROLE">ROL</h1>
+        <P id="lista" data-es="Dirección de arte" data-en="Art Direction">Dirección de arte</P>
+      <h1 id="titulo" data-es="MEDIOS" data-en="MEDIA">MEDIOS</h1>
+        <p id="lista"
+   data-es='<a href="https://www.utdt.edu/ver_contenido.php?id_contenido=25001&amp;id_item_menu=40517">Centro de Arte UTDT, 2024</a>'
+   data-en='<a href="https://www.utdt.edu/ver_contenido.php?id_contenido=25001&amp;id_item_menu=40517">Art Department, Universidad Torcuato Di Tella, 2024</a>'>
+   <a href="https://www.utdt.edu/ver_contenido.php?id_contenido=25001&id_item_menu=40517">Centro de Arte UTDT, 2024</a>
+</p>
       </div>
 
-      <a href="ronda.html" class="btn-siguiente">Ver más →</a>
+      <a href="ronda.html" class="btn-siguiente">→</a>
         
     </div>
 
@@ -111,6 +117,8 @@
   <img src="../imagenes/footer2.png" alt="Logo de Constanza Caba" class="footer-logo">
 </footer>
 
+  <script src="../cursor.js"></script>
   <script src="../sketch.js"></script>
+  <script src="../idioma.js"></script>
 </body>
 </html>

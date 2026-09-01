@@ -13,13 +13,13 @@
 <body>
   <header class="site-header">
     <h1>Constanza Caba</h1>
-    <button class="menu-toggle" onclick="document.querySelector('.site-nav').classList.toggle('abierto')">☰</button>
+    <button class="menu-toggle" onclick="toggleMenu(event)">☰</button>
     <nav class="site-nav">
-      <a href="../index.html">Trabajos,</a>
-      <a href="../sobremi.html"> Sobre mí,</a>
-      <a href="../mijardin.html"> Mi Jardín,</a>
-      <a href="#" onclick="abrirOverlay(); return false;"> Contacto,</a>
-      <a href="../mijardin.html" class="idioma">ES→</a>
+      <a href="../index.html" data-es="Trabajos," data-en="Works,">Trabajos,</a>
+      <a href="../sobremi.html" data-es=" Sobre mí," data-en=" About,"> Sobre mí,</a>
+      <a href="../mijardin.html" data-es=" Mi Jardín," data-en=" My Garden,"> Mi Jardín,</a>
+      <a href="#" onclick="abrirOverlay(); return false;" data-es=" Contacto," data-en=" Contact,"> Contacto,</a>
+      <a href="#" class="idioma" id="idioma-toggle" onclick="toggleIdioma(); return false;">EN→</a>
     </nav>
   </header>
 
@@ -29,8 +29,8 @@
       <img src="../imagenes/cruz.verde.png" alt="cerrar">
     </button>
     <div class="overlay-text-block">
-      <h2><span class="resaltado">CONTACTO</span></h2>
-      <p>Cualquier consulta o propuesta es bienvenida. No dudes en escribirme:)</p>
+      <h2><span class="resaltado" data-es="CONTACTO" data-en="CONTACT">CONTACTO</span></h2>
+      <p data-es="Cualquier consulta o propuesta es bienvenida. No dudes en escribirme:)" data-en="Any inquiry or proposal is welcome. Feel free to write to me :)">Cualquier consulta o propuesta es bienvenida. No dudes en escribirme:)</p>
       <a href="mailto:caba.constanza@gmail.com">caba.constanza@gmail.com</a>
       <a href="https://wa.me/5492914133188" target="_blank">Whatsapp</a>
     </div>
@@ -67,7 +67,7 @@
   <section>
     <div class="linea"></div>
     <div class="datita">
-      <div>Exposición | Museografía</div>
+      <div data-es="Exposición|Museografía" data-en="Exhibition| Museography">Exposición|Museografía</div>
       <div></div>
       <div>2024</div>
     </div>
@@ -75,28 +75,29 @@
 
 <div class="trabajo-descripcion-larga">
     <div class="main-col3">
-    <h1>Ronda Redonda</h1>
+    <h1 data-es="Ronda Redonda" data-en="Round Ring">Ronda Redonda</h1>
     </div>
     <div class="main-col4">
-        <h1 id="titulo">CONCEPTO</h1>
-        <p>La exposición aborda una visión no tradicional de la educación, vinculada a la democratización del arte. Lxs artistas-gestores-educadores participantes sugieren formas no convencionales en las que la educación puede emerger a través de prácticas artísticas, promoviendo la construcción de relaciones interpersonales y el vínculo con el entorno.
-        <p>El translado de la exposición desde el Museo Moderno hacia las salas 6,7 y 8 del Centro Cultural Recoleta es el desafio que da lugar al rediseño y reestructuración la muestra. El CCR se trata de un espacio histórico donde se unen y conviven la educación, el estudio, la juventud, el arte y la vanguardia. El espacio no es un recipiente neutral, sino un recorrido transicional para el visitante. </p>
-        <p>La muestra re-tirulada Ronda Redonda, propone un recorrido desde la instancia más individual de la educación hacia una colectiva, o desde una pedagogía tradicional a una futura: Pupitre, Mentores, Timbre, Recreo y Ronda son las instancias.</p>
-        <p>Se diseñaron dispositivos museográficos específicos, como asintos, soportes y rótulos que se ajustan a las necesidades de cada sección y ayudan a guiar al visitante, promoviendo momentos de contemplación y de interacción.</p>
-        <p>Para el diseño de la gráfica se retomaron elementos presentes en las aulas a lo largo de la historia, desde reglones hasta la paleta de colores. La utilización de puntos en la tipografía y el logo es un gesto que busca evocar la tranición de una práctica individualista hacia una colectiva.</p>
+        <h1 id="titulo" data-es="CONCEPTO" data-en="CONCEPT">CONCEPTO</h1>
+        <p><u data-es="La exposición aborda una visión no tradicional de la educación, vinculada a la democratización del arte. Lxs artistas-gestores-educadores participantes sugieren formas no convencionales en las que la educación puede emerger a través de prácticas artísticas, promoviendo la construcción de relaciones interpersonales y el vínculo con el entorno." data-en="The exhibition addresses a non-traditional view of education, linked to the democratization of art. The participating artists-managers-educators suggest unconventional approaches through which education can emerge via artistic practices, promoting the construction of interpersonal relationships and connection with the environment.">La exposición aborda una visión no tradicional de la educación, vinculada a la democratización del arte. Lxs artistas-gestores-educadores participantes sugieren formas no convencionales en las que la educación puede emerger a través de prácticas artísticas, promoviendo la construcción de relaciones interpersonales y el vínculo con el entorno.</u></p>
+        <p data-es="El translado de la exposición desde el Museo Moderno hacia las salas 6,7 y 8 del Centro Cultural Recoleta es el desafio que da lugar al rediseño y reestructuración la muestra. El CCR se trata de un espacio histórico donde se unen y conviven la educación, el estudio, la juventud, el arte y la vanguardia. El espacio no es un recipiente neutral, sino un recorrido transicional para el visitante." data-en="The relocation of the exhibition from the Modern Museum to rooms 6, 7 and 8 of the Cultural Center Recoleta is the challenge that leads to the redesign and restructuring of the show. The CCR is a historical space where education, study, youth, art and avant-garde coexist. The space is not a neutral container, but a transitional journey for the visitor.">El translado de la exposición desde el Museo Moderno hacia las salas 6,7 y 8 del Centro Cultural Recoleta es el desafio que da lugar al rediseño y reestructuración la muestra. El CCR se trata de un espacio histórico donde se unen y conviven la educación, el estudio, la juventud, el arte y la vanguardia. El espacio no es un recipiente neutral, sino un recorrido transicional para el visitante. </p>
+        <p data-es="La muestra re-tirulada Ronda Redonda, propone un recorrido desde la instancia más individual de la educación hacia una colectiva, o desde una pedagogía tradicional a una futura: Pupitre, Mentores, Timbre, Recreo y Ronda son las instancias." data-en="The restructured exhibition Ronda Redonda proposes a journey from the most individual instance of education towards a collective one, or from a traditional pedagogy to a future one: Pupitre, Mentors, Bell, Recess and Round are the instances.">La muestra re-tirulada Ronda Redonda, propone un recorrido desde la instancia más individual de la educación hacia una colectiva, o desde una pedagogía tradicional a una futura: Pupitre, Mentores, Timbre, Recreo y Ronda son las instancias.</p>
+        <p data-es="Se diseñaron dispositivos museográficos específicos, como asintos, soportes y rótulos que se ajustan a las necesidades de cada sección y ayudan a guiar al visitante, promoviendo momentos de contemplación y de interacción." data-en="Specific museographic devices were designed, such as asints, supports and signs that adapt to the needs of each section and help guide the visitor, promoting moments of contemplation and interaction.">Se diseñaron dispositivos museográficos específicos, como asintos, soportes y rótulos que se ajustan a las necesidades de cada sección y ayudan a guiar al visitante, promoviendo momentos de contemplación y de interacción.</p>
+        <p data-es="Para el diseño de la gráfica se retomaron elementos presentes en las aulas a lo largo de la historia, desde reglones hasta la paleta de colores. La utilización de puntos en la tipografía y el logo es un gesto que busca evocar la tranición de una práctica individualista hacia una colectiva." data-en="For the design of the graphics elements present in the classrooms throughout history were reused, from lines to the color palette. The use of dots in the typography and logo is a gesture that seeks to evoke the transition from an individualistic practice to a collective one.">Para el diseño de la gráfica se retomaron elementos presentes en las aulas a lo largo de la historia, desde reglones hasta la paleta de colores. La utilización de puntos en la tipografía y el logo es un gesto que busca evocar la tranición de una práctica individualista hacia una colectiva.</p>
+      
 
       <div id="datos">
-      <h1 id="titulo">PROYECTO</h1>
-        <P id="lista">Académico</P>
-      <h1 id="titulo">EQUIPO</h1>
-        <P id="lista">Bautista Ausqui, Valentina Castellanos, Juan Ignacio Nuñez, Julieta Cersofios, Constanza Caba.</P>
-      <h1 id="titulo">ROL</h1>
-        <P id="lista">Definición del sistema visual y supervisión de su aplicación en piezas gráficas y digitales.</P>
-      <h1 id="titulo">MENTORES</h1>
-        <P id="lista">Marcela Gené y  </P>
+      <h1 id="titulo" data-es="PROYECTO" data-en="PROJECT">PROYECTO</h1>
+        <P id="lista" data-es="Académico" data-en="Academic">Académico</P>
+      <h1 id="titulo" data-es="EQUIPO" data-en="TEAM">EQUIPO</h1>
+        <P id="lista" data-es="Bautista Ausqui, Valentina Castellanos, Juan Ignacio Nuñez, Julieta Cersofios, Constanza Caba." data-en="Bautista Ausqui, Valentina Castellanos, Juan Ignacio Nuñez, Julieta Cersofios, Constanza Caba.">Bautista Ausqui, Valentina Castellanos, Juan Ignacio Nuñez, Julieta Cersofios, Constanza Caba.</P>
+      <h1 id="titulo" data-es="ROL" data-en="ROLE">ROL</h1>
+        <P id="lista" data-es="Diseño de puesta museográfica y definición del sistema visual." data-en="Design of museographic installation and definition of the visual system.">Diseño de puesta museográfica y definición del sistema visual.</P>
+      <h1 id="titulo" data-es="MENTORÍA" data-en="MENTORSHIP">MENTORÍA</h1>
+        <P id="lista">Marcela Gené, María Florencia reyes Santiago</P>
       </div>
 
-    <a href="inteligente.html" class="btn-siguiente">Ver más →</a>
+      <a href="inteligente.html" class="btn-siguiente">→</a>
         
     </div>
 
@@ -104,11 +105,12 @@
   </section>
 
 
-
 <footer class="site-footer">
   <img src="../imagenes/footer2.png" alt="Logo de Constanza Caba" class="footer-logo">
 </footer>
 
+  <script src="../cursor.js"></script>
   <script src="../sketch.js"></script>
+  <script src="../idioma.js"></script>
 </body>
 </html>

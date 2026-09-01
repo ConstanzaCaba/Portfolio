@@ -1,31 +1,31 @@
 const nodosData = [
-  { nombre: 'nodo16', x: -150, y:  -50, z:  230, cx1: -120, cy1: -150, cz1:  10, cx2: -230, cy2:  350, cz2:  15, descripcion: 'Descripción nodo 16' },
-  { nombre: 'nodo2',  x:  -80, y: -320, z: -380, cx1:  -30, cy1: -100, cz1: -10, cx2:  -50, cy2: -220, cz2: -20, descripcion: 'Descripción nodo 2'  },
-  { nombre: 'nodo3',  x:  300, y: -280, z:  360, cx1:   80, cy1: -200, cz1:  40, cx2:  200, cy2: -260, cz2:  50, descripcion: 'Descripción nodo 3'  },
+  { nombre: 'nodo16', x: -150, y:  -50, z:  230, cx1: -120, cy1: -150, cz1:  10, cx2: -230, cy2:  350, cz2:  15, descripcion: 'Ilustración digital' },
+  { nombre: 'nodo2',  x:  -80, y: -320, z: -380, cx1:  -30, cy1: -100, cz1: -10, cx2:  -50, cy2: -220, cz2: -20, descripcion: 'Fotografía'  },
+  { nombre: 'nodo3',  x:  300, y: -280, z:  360, cx1:   80, cy1: -200, cz1:  40, cx2:  200, cy2: -260, cz2:  50, descripcion: 'Ilustración técnica mixta'  },
   { nombre: 'nodo4',  x: -350, y: -250, z:  -50, cx1: -100, cy1: -180, cz1: -30, cx2: -250, cy2: -230, cz2: -40, descripcion: 'Collage digital'  },
-  { nombre: 'nodo14', x:  500, y: -150, z:   30, cx1:  150, cy1: -300, cz1:  20, cx2:  350, cy2: -200, cz2:  25, descripcion: 'Descripción nodo 14' },
-  { nombre: 'nodo6',  x: -600, y: -100, z: -280, cx1: -120, cy1: -280, cz1: -50, cx2: -380, cy2: -180, cz2: -60, descripcion: 'Descripción nodo 6'  },
-  { nombre: 'nodo8',  x:  200, y: -400, z: -340, cx1:   60, cy1: -150, cz1: -20, cx2:  150, cy2: -300, cz2: -30, descripcion: 'Descripción nodo 8'  },
-  { nombre: 'nodo1',  x: -200, y: -380, z:  270, cx1:  -50, cy1: -120, cz1:  40, cx2: -150, cy2: -280, cz2:  55, descripcion: 'Descripción nodo 1'  },
-  { nombre: 'nodo9',  x:  550, y: -200, z:  -90, cx1:  100, cy1: -350, cz1: -60, cx2:  300, cy2: -250, cz2: -75, descripcion: 'Descripción nodo 9'  },
-  { nombre: 'nodo19', x: -450, y: -200, z:  190, cx1: -100, cy1:  350, cz1:  60, cx2:  100, cy2: -250, cz2:-175, descripcion: 'Descripción nodo 19' },
-  { nombre: 'nodo17', x:  430, y: -200, z:  -50, cx1:  100, cy1: -350, cz1: -60, cx2:  300, cy2: -250, cz2: -75, descripcion: 'Descripción nodo 17' },
-  { nombre: 'nodo10', x: -400, y: -300, z:   40, cx1:  -90, cy1: -200, cz1:  25, cx2: -300, cy2: -280, cz2:  35, descripcion: 'Descripción nodo 10' },
-  { nombre: 'nodo11', x:  150, y: -450, z:   80, cx1:   40, cy1: -180, cz1:  50, cx2:  100, cy2: -350, cz2:  65, descripcion: 'Descripción nodo 11' },
-  { nombre: 'nodo12', x:  100, y: -300, z:   80, cx1:   40, cy1: -180, cz1:  50, cx2:  100, cy2: -270, cz2:  65, descripcion: 'Descripción nodo 12' },
-  { nombre: 'nodo21', x:  90, y: -200, z:  -10, cx1:   40, cy1: -180, cz1:  50, cx2:  100, cy2: -130, cz2: -85, descripcion: 'Descripción nodo 21' },
-  { nombre: 'nodo22', x:   50, y:   20, z:   80, cx1:   40, cy1:   10, cz1:  50, cx2:   60, cy2:  -10, cz2:  65, descripcion: 'Descripción nodo 22' },
-  { nombre: 'nodo20', x: -150, y: -420, z:  -60, cx1:  -40, cy1: -160, cz1: -35, cx2: -100, cy2: -320, cz2: -50, descripcion: 'Descripción nodo 20' },
-  { nombre: 'nodo13', x:  300, y:  -80, z: -300, cx1:  200, cy1: -120, cz1:  10, cx2:  200, cy2: -150, cz2:  15, descripcion: 'Descripción nodo 13' },
-  { nombre: 'nodo5',  x: -400, y:   70, z:  -80, cx1: -180, cy1:    0, cz1: -20, cx2: -220, cy2:   50, cz2: -25, descripcion: 'Descripción nodo 5'  },
-  { nombre: 'nodo28',  x: -450, y:   -40, z:  -80, cx1: -180, cy1:    0, cz1: -20, cx2: -220, cy2:   50, cz2: -25, descripcion: 'Descripción nodo 5'  },
-  { nombre: 'nodo7',  x: -300, y:   70, z:   80, cx1: -180, cy1:    0, cz1: -20, cx2: -220, cy2:   50, cz2: -25, descripcion: 'Descripción nodo 7'  },
-  { nombre: 'nodo15', x:   30, y: -480, z: -300, cx1:   10, cy1: -200, cz1:  -5, cx2:   20, cy2: -380, cz2:  -8, descripcion: 'Fotografía' },
+  { nombre: 'nodo14', x:  500, y: -150, z:   30, cx1:  150, cy1: -300, cz1:  20, cx2:  350, cy2: -200, cz2:  25, descripcion: 'Ilustración digital' },
+  { nombre: 'nodo6',  x: -600, y: -100, z: -280, cx1: -120, cy1: -280, cz1: -50, cx2: -380, cy2: -180, cz2: -60, descripcion: 'Ilustración técnica mixta'  },
+  { nombre: 'nodo8',  x:  200, y: -400, z: -340, cx1:   60, cy1: -150, cz1: -20, cx2:  150, cy2: -300, cz2: -30, descripcion: 'Fotografía de moda'  },
+  { nombre: 'nodo1',  x: -200, y: -380, z:  270, cx1:  -50, cy1: -120, cz1:  40, cx2: -150, cy2: -280, cz2:  55, descripcion: 'Ilustración digital'  },
+  { nombre: 'nodo9',  x:  550, y: -200, z:  -90, cx1:  100, cy1: -350, cz1: -60, cx2:  300, cy2: -250, cz2: -75, descripcion: 'Ilustración digital'  },
+  { nombre: 'nodo19', x: -450, y: -200, z:  190, cx1: -100, cy1:  350, cz1:  60, cx2:  100, cy2: -250, cz2:-175, descripcion: 'Experiencia inmersiva' },
+  { nombre: 'nodo17', x:  430, y: -200, z:  -50, cx1:  100, cy1: -350, cz1: -60, cx2:  300, cy2: -250, cz2: -75, descripcion: 'Diseño de visuales en tiempo real' },
+  { nombre: 'nodo10', x: -400, y: -300, z:   40, cx1:  -90, cy1: -200, cz1:  25, cx2: -300, cy2: -280, cz2:  35, descripcion: 'Ilustración técnica mixta' },
+  { nombre: 'nodo11', x:  150, y: -450, z:   80, cx1:   40, cy1: -180, cz1:  50, cx2:  100, cy2: -350, cz2:  65, descripcion: 'Ilustración digital' },
+  { nombre: 'nodo12', x:  100, y: -300, z:   80, cx1:   40, cy1: -180, cz1:  50, cx2:  100, cy2: -270, cz2:  65, descripcion: 'Ilustración digital' },
+  { nombre: 'nodo21', x:  90, y: -200, z:  -10, cx1:   40, cy1: -180, cz1:  50, cx2:  100, cy2: -130, cz2: -85, descripcion: 'Ilustración digital' },
+  { nombre: 'nodo22', x:   50, y:   20, z:   80, cx1:   40, cy1:   10, cz1:  50, cx2:   60, cy2:  -10, cz2:  65, descripcion: 'Ilustración digital' },
+  { nombre: 'nodo20', x: -150, y: -420, z:  -60, cx1:  -40, cy1: -160, cz1: -35, cx2: -100, cy2: -320, cz2: -50, descripcion: 'Afiche digital' },
+  { nombre: 'nodo13', x:  300, y:  -80, z: -300, cx1:  200, cy1: -120, cz1:  10, cx2:  200, cy2: -150, cz2:  15, descripcion: 'Ilustración técnica mixta' },
+  { nombre: 'nodo5',  x: -400, y:   70, z:  -80, cx1: -180, cy1:    0, cz1: -20, cx2: -220, cy2:   50, cz2: -25, descripcion: 'Ilustración digital, Tapa de disco'  },
+  { nombre: 'nodo28',  x: -450, y:   -40, z:  -80, cx1: -180, cy1:    0, cz1: -20, cx2: -220, cy2:   50, cz2: -25, descripcion: 'Ilustración digital'  },
+  { nombre: 'nodo7',  x: -300, y:   70, z:   80, cx1: -180, cy1:    0, cz1: -20, cx2: -220, cy2:   50, cz2: -25, descripcion: 'Ilustración digital'  },
+  { nombre: 'nodo15', x:   30, y: -480, z: -300, cx1:   10, cy1: -200, cz1:  -5, cx2:   20, cy2: -380, cz2:  -8, descripcion: 'Fotografía de moda' },
   { nombre: 'nodo23', x:   90, y: -400, z: -200, cx1:   10, cy1: -200, cz1:  -5, cx2:   50, cy2: -480, cz2:  -8, descripcion: 'Ilustración digital' },
   { nombre: 'nodo24', x:  400, y:  -180, z: -400, cx1:  80, cy1: -20, cz1:  -360, cx2:  200, cy2: -150, cz2:  195, descripcion: 'Ilustración digital' },
-  { nombre: 'nodo25',  x: -470, y: -190, z: -280, cx1: -120, cy1: -180, cz1: -50, cx2: 280, cy2: -120, cz2: -360, descripcion: 'Descripción nodo 6'  },
-  { nombre: 'nodo26',  x:  550, y: -50, z:  -90, cx1:  100, cy1: -350, cz1: -60, cx2:  390, cy2: -50, cz2: -75, descripcion: 'Descripción nodo 9'  },
-  { nombre: 'nodo27',  x:  600, y: -100, z:  -190, cx1:  100, cy1: -350, cz1: -60, cx2:  300, cy2: -250, cz2: -75, descripcion: 'Descripción nodo 9'  },
+  { nombre: 'nodo25',  x: -470, y: -190, z: -280, cx1: -120, cy1: -180, cz1: -50, cx2: 280, cy2: -120, cz2: -360, descripcion: 'Ilustración técnica mixta'  },
+  { nombre: 'nodo26',  x:  550, y: -50, z:  -90, cx1:  100, cy1: -350, cz1: -60, cx2:  390, cy2: -50, cz2: -75, descripcion: 'Ilustración digital'  },
+  { nombre: 'nodo27',  x:  600, y: -100, z:  -190, cx1:  100, cy1: -350, cz1: -60, cx2:  300, cy2: -250, cz2: -75, descripcion: 'Ilustración digital'  },
 ];
 
 
@@ -61,10 +61,10 @@ function initJardin() {
 
   const origenY = -500;
 
-  // renderer
+  // renderer de líneas/textos (siempre nítido)
   const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
   renderer.setPixelRatio(window.devicePixelRatio);
-  
+
   const W = () => window.innerWidth;
   const H = () => window.visualViewport ? window.visualViewport.height : window.innerHeight;
   renderer.setPixelRatio(window.devicePixelRatio);
@@ -74,13 +74,31 @@ function initJardin() {
     top: '0',
     left: '0',
     width: '100%',
-    height: '1',
+    height: '100%',
     zIndex: '-1',
     pointerEvents: 'none',
   });
+  renderer.domElement.classList.add('jardin-fade');
 
   document.body.appendChild(renderer.domElement);
-  document.body.style.cursor = "url('../imagenes/cursor1.png') 16 16, auto";
+
+  // renderer de nodos (imágenes), en un canvas separado para poder desenfocarlo
+  // sin afectar a las líneas — se dibuja encima del renderer de líneas.
+  const rendererNodos = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+  rendererNodos.setPixelRatio(window.devicePixelRatio);
+  rendererNodos.setSize(W(), H());
+  Object.assign(rendererNodos.domElement.style, {
+    position: 'fixed',
+    top: '0',
+    left: '0',
+    width: '100%',
+    height: '100%',
+    zIndex: '-1',
+    pointerEvents: 'none',
+  });
+  rendererNodos.domElement.classList.add('jardin-canvas');
+
+  document.body.appendChild(rendererNodos.domElement);
 
   // escena y cámara
   const scene  = new THREE.Scene();
@@ -95,8 +113,9 @@ function initJardin() {
   // luces
   scene.add(new THREE.AmbientLight(0xFFCA9F, 0.9));
 
-  // raycaster
+  // raycaster (solo contra los nodos, que viven en la capa 1)
   const raycaster = new THREE.Raycaster();
+  raycaster.layers.set(1);
   const mouse     = new THREE.Vector2();
   const meshes    = [];
   const lineMats  = [];
@@ -162,6 +181,7 @@ function initJardin() {
       );
       plano.position.set(n.x, n.y, n.z);
       plano.userData = { nodoIdx: idx };
+      plano.layers.set(1); // capa de nodos: se renderiza aparte para poder desenfocarla
       pivot.add(plano);
       meshes.push(plano);
     });
@@ -210,34 +230,84 @@ function initJardin() {
     mouse.y = -(clientY / window.innerHeight) * 2 + 1;
   }
 
-  function checkHover(clientX, clientY) {
-    if (menuEstaAbierto()) {
-      if (hoveredMesh) { hoveredMesh.scale.set(1, 1, 1); hoveredMesh = null; }
-      document.body.style.cursor = "url('../imagenes/cursor1.png') 16 16, auto";
-      return;
-    }
-    pointerToNDC(clientX, clientY);
-    raycaster.setFromCamera(mouse, camera);
-    const hits = raycaster.intersectObjects(meshes);
-    if (hits.length > 0) {
-      const hit = hits[0].object;
-      if (hoveredMesh !== hit) {
-        if (hoveredMesh) hoveredMesh.scale.set(1, 1, 1);
-        hoveredMesh = hit;
-        hoveredMesh.scale.set(1.18, 1.18, 1.18);
-        document.body.style.cursor = "url('../imagenes/cursor.activo.png') 16 16, pointer";
-      }
-    } else {
-      if (hoveredMesh) {
-        hoveredMesh.scale.set(1, 1, 1);
-        hoveredMesh = null;
-      }
-      document.body.style.cursor = "url('../imagenes/cursor1.png') 16 16, auto";
+  // Bienvenida: splash inicial con la geometría de fondo desenfocada, en cada carga de la página.
+  // El splash y el resto del HTML aparecen primero; el jardín (líneas + nodos) aparece
+  // suavemente detrás recién después, con un pequeño retraso.
+  const BIENVENIDA_EASING = 'cubic-bezier(0.77, 0, 0.175, 1)';
+  const bienvenida = document.getElementById('bienvenida');
+  const btnPasear = document.getElementById('btn-pasear');
+  let bienvenidaActiva = false;
+
+  if (bienvenida) {
+    bienvenidaActiva = true;
+    bienvenida.style.display = 'flex';
+    bienvenida.animate(
+      [
+        { clipPath: 'inset(0 100% 0 0)' },
+        { clipPath: 'inset(0 0% 0 0)' }
+      ],
+      { duration: 900, easing: BIENVENIDA_EASING, fill: 'forwards' }
+    );
+
+    if (btnPasear) {
+      btnPasear.addEventListener('click', function () {
+        bienvenidaActiva = false;
+        rendererNodos.domElement.classList.remove('desenfocado');
+        rendererNodos.domElement.classList.add('visible');
+        renderer.domElement.classList.add('visible');
+        const cierre = bienvenida.animate(
+          [
+            { clipPath: 'inset(0 0% 0 0)' },
+            { clipPath: 'inset(0 100% 0 0)' }
+          ],
+          { duration: 700, easing: BIENVENIDA_EASING, fill: 'forwards' }
+        );
+        cierre.finished.then(function () {
+          bienvenida.style.display = 'none';
+        });
+      });
     }
   }
 
+  // El jardín aparece recién después de que el splash/HTML ya se vieron
+  const RETRASO_JARDIN = bienvenida ? 700 : 200;
+  setTimeout(function () {
+    renderer.domElement.classList.add('visible');
+    rendererNodos.domElement.classList.add(bienvenidaActiva ? 'desenfocado' : 'visible');
+  }, RETRASO_JARDIN);
+
+function checkHover(clientX, clientY) {
+  if (bienvenidaActiva || menuEstaAbierto()) {
+    if (hoveredMesh) {
+      hoveredMesh.scale.set(1, 1, 1);
+      hoveredMesh = null;
+      window.CursorFX.setActive(false);
+    }
+    return;
+  }
+  pointerToNDC(clientX, clientY);
+  raycaster.setFromCamera(mouse, camera);
+  const hits = raycaster.intersectObjects(meshes);
+
+  if (hits.length > 0) {
+    const hit = hits[0].object;
+    if (hoveredMesh !== hit) {
+      if (hoveredMesh) hoveredMesh.scale.set(1, 1, 1);
+      hoveredMesh = hit;
+      hoveredMesh.scale.set(1.18, 1.18, 1.18);
+    }
+    window.CursorFX.setActive(true);
+  } else if (hoveredMesh) {
+    // Solo apagamos el cursor activo si veníamos de un nodo: si no hay nodo
+    // bajo el mouse, el estado del cursor lo maneja cursor.js (hover de links/botones del DOM).
+    hoveredMesh.scale.set(1, 1, 1);
+    hoveredMesh = null;
+    window.CursorFX.setActive(false);
+  }
+}
+
   function checkClick(clientX, clientY) {
-    if (menuEstaAbierto()) return;
+    if (bienvenidaActiva || menuEstaAbierto()) return;
     pointerToNDC(clientX, clientY);
     raycaster.setFromCamera(mouse, camera);
     const hits = raycaster.intersectObjects(meshes);
@@ -288,6 +358,7 @@ function initJardin() {
   // resize
   window.addEventListener('resize', () => {
   renderer.setSize(W(), H());
+  rendererNodos.setSize(W(), H());
   camera.aspect = W() / H();
   camera.updateProjectionMatrix();
   });
@@ -296,6 +367,7 @@ function initJardin() {
   if (window.visualViewport) {
     window.visualViewport.addEventListener('resize', () => {
       renderer.setSize(W(), H());
+      rendererNodos.setSize(W(), H());
       camera.aspect = W() / H();
       camera.updateProjectionMatrix();
     });
@@ -333,7 +405,14 @@ function initJardin() {
       colors.needsUpdate = true;
     });
 
+    // dos pasadas: capa 0 (líneas/textos, siempre nítido) y capa 1 (nodos, puede desenfocarse)
+    camera.layers.set(0);
     renderer.render(scene, camera);
+
+    camera.layers.set(1);
+    rendererNodos.render(scene, camera);
+
+    camera.layers.set(0);
   }
   animate();
 

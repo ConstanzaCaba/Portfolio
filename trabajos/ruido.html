@@ -11,31 +11,31 @@
   <link rel="preload" href="IBMPlexMono-Regular.ttf" as="font" type="font/truetype">
 </head>
 <body>
-  <header class="site-header">
+ <header class="site-header">
     <h1>Constanza Caba</h1>
-    <button class="menu-toggle" onclick="document.querySelector('.site-nav').classList.toggle('abierto')">☰</button>
+    <button class="menu-toggle" onclick="toggleMenu(event)">☰</button>
     <nav class="site-nav">
-      <a href="../index.html">Trabajos,</a>
-      <a href="../sobremi.html"> Sobre mí,</a>
-      <a href="../mijardin.html"> Mi Jardín,</a>
-      <a href="#" onclick="abrirOverlay(); return false;"> Contacto,</a>
-      <a href="../mijardin.html" class="idioma">ES→</a>
+      <a href="../index.html" data-es="Trabajos," data-en="Works,">Trabajos,</a>
+      <a href="../sobremi.html" data-es=" Sobre mí," data-en=" About,"> Sobre mí,</a>
+      <a href="../mijardin.html" data-es=" Mi Jardín," data-en=" My Garden,"> Mi Jardín,</a>
+      <a href="#" onclick="abrirOverlay(); return false;" data-es=" Contacto," data-en=" Contact,"> Contacto,</a>
+      <a href="#" class="idioma" id="idioma-toggle" onclick="toggleIdioma(); return false;">EN→</a>
     </nav>
   </header>
 
-  <div id="overlay-contacto">
-    <div class="overlay-content">
-      <button class="close-button" id="close-button-contacto">
-        <img src="../imagenes/cruz.verde.png" alt="cerrar">
-      </button>
-      <div class="overlay-text-block">
-        <h2><span class="resaltado">CONTACTO</span></h2>
-        <p>Cualquier consulta o propuesta es bienvenida. No dudes en escribirme:)</p>
-        <a href="mailto:caba.constanza@gmail.com">caba.constanza@gmail.com</a>
-        <a href="https://wa.me/5492914133188" target="_blank">Whatsapp</a>
-      </div>
+<div id="overlay-contacto">
+  <div class="overlay-content">
+    <button class="close-button" id="close-button-contacto">
+      <img src="../imagenes/cruz.verde.png" alt="cerrar">
+    </button>
+    <div class="overlay-text-block">
+      <h2><span class="resaltado" data-es="CONTACTO" data-en="CONTACT">CONTACTO</span></h2>
+      <p data-es="Cualquier consulta o propuesta es bienvenida. No dudes en escribirme:)" data-en="Any inquiry or proposal is welcome. Feel free to write to me :)">Cualquier consulta o propuesta es bienvenida. No dudes en escribirme:)</p>
+      <a href="mailto:caba.constanza@gmail.com">caba.constanza@gmail.com</a>
+      <a href="https://wa.me/5492914133188" target="_blank">Whatsapp</a>
     </div>
   </div>
+</div>
 
  <div class="carrusel-wrapper">
   <button class="carrusel-btn prev" onclick="moverSlide(-1)">‹</button>
@@ -78,7 +78,7 @@
   <section>
     <div class="linea">
     <div class="datita">
-      <div>Infografía</div>
+      <div data-es="Infografía" data-en="Infographic">Infografía</div>
       <div></div>
       <div>2022</div>
     </div>
@@ -86,29 +86,37 @@
 
 <div class="trabajo-descripcion-larga">
     <div class="main-col3">
-    <h1>¿Ves el ruido?</h1>
+    <h1 data-es="¿Ves el ruido?" data-en="Do you see the noise?">¿Ves el ruido?</h1>
     </div>
     <div class="main-col4">
-       <h1 id="titulo">CONCEPTO</h1>
-        <p id="subrayado">En la ciudad estamos envueltos en un ruido constante, tanto visual como sonoro. A partir de un recorrido consciente por la Comuna 13, el proyecto propone visibilizar estos patrones de ruido y entender cómo se manifiestan en el espacio urbano. </p>
-        <p>Las zonas más ruidosas coinciden con aquellas más saturadas de estímulos: carteles, grafitis, colores y texturas que se superponen y compiten por la atención.
+       <h1 id="titulo" data-es="CONCEPTO" data-en="CONCEPT">CONCEPTO</h1>
+        <p> <u data-es="En la ciudad estamos envueltos en un ruido constante, tanto visual como sonoro. A partir de un recorrido consciente por la Comuna 13, el proyecto propone visibilizar estos patrones de ruido y entender cómo se manifiestan en el espacio urbano. " data-en="In the city we are enveloped in constant noise, both visual and auditory. Starting from a conscious walk through Comuna 13, the project proposes to visualize these noise patterns and understand how they manifest in the urban space. ">En la ciudad estamos envueltos en un ruido constante, tanto visual como sonoro. A partir de un recorrido consciente por la Comuna 13, el proyecto propone visibilizar estos patrones de ruido y entender cómo se manifiestan en el espacio urbano. </u></p>
+        <p data-es="Las zonas más ruidosas coinciden con aquellas más saturadas de estímulos: carteles, grafitis, colores y texturas que se superponen y compiten por la atención.
+        El recorrido invita a agudizar la percepción y a observar la ciudad como un sistema de capas en tensión." data-en="The noisier areas coincide with those most saturated with stimuli: signs, graffiti, colors and textures that overlap and compete for attention.
+        The walk invites to sharpen perception and to observe the city as a system of layers in tension.">Las zonas más ruidosas coinciden con aquellas más saturadas de estímulos: carteles, grafitis, colores y texturas que se superponen y compiten por la atención.
         El recorrido invita a agudizar la percepción y a observar la ciudad como un sistema de capas en tensión.</p>
-        <p> diseñó una pieza infográfica que acompaña el recorrido, señalando paradas clave y ofreciendo un análisis de las distintas expresiones visuales presentes en el entorno: marcas, grafitis y arte callejero.
-        A través de este relevamiento se identifican patrones, repeticiones y firmas, entendiendo la calle como un espacio de comunicación en constante transformación.
-        <p>El sistema propone una lógica adaptable: así como el entorno cambia, la lectura también se construye en movimiento. El recorrido no es fijo, sino que se redefine con cada experiencia. Se desarrolló un sistema gráfico que traduce la intensidad del entorno urbano.
+        <p data-es="diseñó una pieza infográfica que acompaña el recorrido, señalando paradas clave y ofreciendo un análisis de las distintas expresiones visuales presentes en el entorno: marcas, grafitis y arte callejero.
+        A través de este relevamiento se identifican patrones, repeticiones y firmas, entendiendo la calle como un espacio de comunicación en constante transformación." data-en="He designed an infographic piece that accompanies the walk, indicating key stops and offering an analysis of the different visual expressions present in the environment: brands, graffiti and street art.
+        Through this survey, patterns, repetitions and signatures are identified, understanding the street as a space of communication in constant transformation.">diseñó una pieza infográfica que acompaña el recorrido, señalando paradas clave y ofreciendo un análisis de las distintas expresiones visuales presentes en el entorno: marcas, grafitis y arte callejero.
+        A través de este relevamiento se identifican patrones, repeticiones y firmas, entendiendo la calle como un espacio de comunicación en constante transformación.</p>
+        <p data-es="El sistema propone una lógica adaptable: así como el entorno cambia, la lectura también se construye en movimiento. El recorrido no es fijo, sino que se redefine con cada experiencia. Se desarrolló un sistema gráfico que traduce la intensidad del entorno urbano.
+        La tipografía se presenta irreverente y expansiva, mientras que los grafismos ocupan todo el espacio disponible, imponiéndose en la composición. La calle se entiende como soporte y como medio." data-en="The system proposes an adaptable logic: just as the environment changes, the reading also builds in motion. The walk is not fixed, but redefined with each experience. A graphic system was developed that translates the intensity of the urban environment.
+        The typography is presented as irreverent and expansive, while the graphics occupy all available space, imposing themselves in the composition. The street is understood as support and as a medium.">El sistema propone una lógica adaptable: así como el entorno cambia, la lectura también se construye en movimiento. El recorrido no es fijo, sino que se redefine con cada experiencia. Se desarrolló un sistema gráfico que traduce la intensidad del entorno urbano.
         La tipografía se presenta irreverente y expansiva, mientras que los grafismos ocupan todo el espacio disponible, imponiéndose en la composición. La calle se entiende como soporte y como medio.</p>
-        <p>El sistema responde al contexto: en espacios vacíos y silenciosos, la comunicación amplifica su presencia; en zonas saturadas, se vuelve más directa y sintética, generando hitos visuales a través de intervenciones gráficas y objetuales.</p>
-        
+        <p data-es="El sistema responde al contexto: en espacios vacíos y silenciosos, la comunicación amplifica su presencia; en zonas saturadas, se vuelve más directa y sintética, generando hitos visuales a través de intervenciones gráficas y objetuales." data-en="The system responds to the context: in empty and silent spaces, communication amplifies its presence; in saturated areas, it becomes more direct and synthetic, generating visual landmarks through graphic interventions and objetives.">El sistema responde al contexto: en espacios vacíos y silenciosos, la comunicación amplifica su presencia; en zonas saturadas, se vuelve más directa y sintética, generando hitos visuales a través de intervenciones gráficas y objetuales.</p>
+            
       <div id="datos">
-      <h1 id="titulo">PROYECTO</h1>
-        <P id="lista">Académico</P>
-      <h1 id="titulo">AUTORÍA</h1>
-        <P id="lista">Constanza Caba</P>
-      <h1 id="titulo">ROL</h1>
-        <P id="lista">Diseñadora, imágen</P>
+      <h1 id="titulo" data-es="PROYECTO" data-en="PROJECT">PROYECTO</h1>
+        <P id="lista" data-es="Académico" data-en="Academic">Académico</P>
+      <h1 id="titulo" data-es="AUTORÍA" data-en="AUTHORSHIP">AUTORÍA</h1>
+        <P id="lista" data-es="Constanza Caba" data-en="Constanza Caba">Constanza Caba</P>
+      <h1 id="titulo" data-es="ROL" data-en="ROLE">ROL</h1>
+        <P id="lista" data-es="Diseñadora, imágen" data-en="Designer, image">Diseñadora, imágen</P>
+      <h1 id="titulo" data-es="MENCIONES" data-en="MENTIONS">MENCIONES</h1>
+        <P id="lista" data-es="Muestra de Diseño 2022 - LED UTDT" data-en="Design Show 2022 - LED Torcuatto Di Tella University">Muestra de Diseño 2022 - LED UTDT</P>
       </div>
 
-        <a href="cuerpohibrido.html" class="btn-siguiente">Ver más →</a>
+      <a href="cuerpohibrido.html" class="btn-siguiente">→</a>
         
     </div>
 
@@ -116,11 +124,12 @@
   </section>
 
 
-
 <footer class="site-footer">
   <img src="../imagenes/footer2.png" alt="Logo de Constanza Caba" class="footer-logo">
 </footer>
 
+  <script src="../cursor.js"></script>
   <script src="../sketch.js"></script>
+  <script src="../idioma.js"></script>
 </body>
 </html>
