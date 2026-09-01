@@ -187,38 +187,107 @@ function initJardin() {
     });
   }); // ← cierre del forEach
 
-  // textos en líneas
-  function crearTextoEnLinea(texto, nodo) {
+  // Nube de palabras: cada una distribuida sobre una línea distinta y orientada
+  // siguiendo su tangente, igual que 'Ilustración' (la referencia de este mecanismo,
+  // por eso ya no hace falta esa etiqueta suelta). Se revela recién al hacer click en "Pasear".
+  const grupoPalabras = new THREE.Group();
+  grupoPalabras.visible = false;
+  pivot.add(grupoPalabras);
+
+  const PALABRAS_FLOTANTES = [
+    { texto: 'ESPACIO',       nodoIndex:  0, t: 0.40 },
+    { texto: 'TIEMPO',        nodoIndex:  1, t: 0.48 },
+    { texto: 'LO MATERIAL',   nodoIndex:  2, t: 0.56 },
+    { texto: 'ARGENTINA',     nodoIndex:  3, t: 0.64 },
+    { texto: 'UNIVERSO',      nodoIndex:  4, t: 0.40 },
+    { texto: 'CONTEMPORÁNEO', nodoIndex:  5, t: 0.48 },
+    { texto: 'EXPERIENCIAS',  nodoIndex:  6, t: 0.56 },
+    { texto: 'PROPÓSITO',     nodoIndex:  7, t: 0.64 },
+    { texto: 'DISEÑO',        nodoIndex:  8, t: 0.40, destacado: true },
+    { texto: 'IMPACTO',       nodoIndex:  9, t: 0.48 },
+    { texto: 'ARTE',          nodoIndex: 10, t: 0.56 },
+    { texto: 'EXPRESIÓN',     nodoIndex: 11, t: 0.64 },
+    { texto: 'DIGITAL',       nodoIndex: 12, t: 0.40 },
+    { texto: 'COMUNICACIÓN',  nodoIndex: 13, t: 0.48, extraY: 30 },
+    { texto: 'DIBUJO',        nodoIndex: 14, t: 0.56 },
+    { texto: 'IMÁGEN',        nodoIndex: 15, t: 0.64 },
+    { texto: 'FOTOGRAFÍA',    nodoIndex: 16, t: 0.40 },
+    { texto: 'CUERPO',        nodoIndex: 17, t: 0.48 },
+    { texto: 'ANALÓGICO',     nodoIndex: 18, t: 0.56 },
+    { texto: 'NUTRIR',        nodoIndex: 19, t: 0.64 },
+    { texto: 'SENSORIAL',     nodoIndex: 20, t: 0.40 },
+    { texto: 'DISFRUTE',      nodoIndex: 21, t: 0.48 },
+  ];
+
+  function crearPalabraEnLinea(item) {
+    const nodo = nodosData[item.nodoIndex];
+    const R = 3; // resolución del canvas, para que el texto no se vea pixelado
+    const fontSize = 15 * R;
+    const fuente = `${fontSize}px 'IBMPlexMono', 'Courier New', monospace`;
+
+    const medidor = document.createElement('canvas').getContext('2d');
+    medidor.font = fuente;
+    const anchoTexto = medidor.measureText(item.texto).width;
+
+    const padX = 22 * R, padY = 14 * R;
+    const w = anchoTexto + padX * 2;
+    const h = fontSize + padY * 2;
     const canvas = document.createElement('canvas');
-    canvas.width  = 512;
-    canvas.height = 64;
+    canvas.width = w; canvas.height = h;
+
     const ctx = canvas.getContext('2d');
-    ctx.fillStyle = '#ffffff';
-    ctx.font = '32px serif';
-    ctx.fillText(texto, 0, 40);
+    ctx.font = fuente;
+    ctx.fillStyle = 'rgba(151, 151, 151, 0.92)';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(item.texto, w / 2, h / 2);
+
+    if (item.destacado) {
+      const medida = ctx.measureText(item.texto);
+      const lineY = h / 2 + fontSize * 0.42;
+      ctx.strokeStyle = 'rgba(243,241,239,0.92)';
+      ctx.lineWidth = R;
+      ctx.beginPath();
+      ctx.moveTo(w / 2 - medida.width / 2, lineY);
+      ctx.lineTo(w / 2 + medida.width / 2, lineY);
+      ctx.stroke();
+    }
+
+    const tex = new THREE.CanvasTexture(canvas);
+    tex.minFilter = THREE.LinearFilter;
+    const factorMundo = 0.234; // píxeles de canvas → unidades de la escena (+30%)
     const plano = new THREE.Mesh(
-      new THREE.PlaneGeometry(200, 25),
-      new THREE.MeshBasicMaterial({ map: new THREE.CanvasTexture(canvas), transparent: true, side: THREE.DoubleSide })
+      new THREE.PlaneGeometry(w * factorMundo, h * factorMundo),
+      new THREE.MeshBasicMaterial({ map: tex, transparent: true, side: THREE.DoubleSide })
     );
-    const t = 0.7;
+
+    // posición y orientación siguiendo la tangente de la línea, igual que crearTextoEnLinea
+    const t = item.t;
     plano.position.set(
       bezier(0,       nodo.cx1, nodo.cx2, nodo.x, t),
       bezier(origenY, nodo.cy1, nodo.cy2, nodo.y, t),
       bezier(0,       nodo.cz1, nodo.cz2, nodo.z, t)
     );
-    const t2  = 0.72;
+    const t2 = t + 0.02;
     const dir = new THREE.Vector3(
       bezier(0,       nodo.cx1, nodo.cx2, nodo.x, t2) - plano.position.x,
       bezier(origenY, nodo.cy1, nodo.cy2, nodo.y, t2) - plano.position.y,
       bezier(0,       nodo.cz1, nodo.cz2, nodo.z, t2) - plano.position.z,
     ).normalize();
     plano.quaternion.setFromUnitVectors(new THREE.Vector3(1, 0, 0), dir);
-    pivot.add(plano);
+
+    // desplaza la palabra hacia "arriba" (según su propia orientación) para que
+    // la línea quede debajo del texto y no lo atraviese
+    const arriba = new THREE.Vector3(0, 1, 0).applyQuaternion(plano.quaternion);
+    const separacion = (h * factorMundo) / 2 + 6;
+    plano.position.addScaledVector(arriba, separacion);
+
+    if (item.extraY) plano.position.y += item.extraY; // ajuste manual puntual
+
+    grupoPalabras.add(plano);
   }
 
-  crearTextoEnLinea('Ilustración',nodosData[5]);
-  crearTextoEnLinea('Collage',nodosData[3]);
-  crearTextoEnLinea('Fotografía',nodosData[1]);
+  PALABRAS_FLOTANTES.forEach(crearPalabraEnLinea);
 
   // helpers de pointer
   function menuEstaAbierto() {
@@ -255,6 +324,7 @@ function initJardin() {
         rendererNodos.domElement.classList.remove('desenfocado');
         rendererNodos.domElement.classList.add('visible');
         renderer.domElement.classList.add('visible');
+        grupoPalabras.visible = true;
         const cierre = bienvenida.animate(
           [
             { clipPath: 'inset(0 0% 0 0)' },
@@ -274,6 +344,7 @@ function initJardin() {
   setTimeout(function () {
     renderer.domElement.classList.add('visible');
     rendererNodos.domElement.classList.add(bienvenidaActiva ? 'desenfocado' : 'visible');
+    if (!bienvenida) grupoPalabras.visible = true; // sin splash no hay botón "Pasear": se muestran igual
   }, RETRASO_JARDIN);
 
 function checkHover(clientX, clientY) {
