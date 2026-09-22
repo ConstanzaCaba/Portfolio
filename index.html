@@ -200,6 +200,22 @@ function esperarImagen(celda) {
   });
 }
 
+document.addEventListener('DOMContentLoaded', function () {
+  celdasOriginal.forEach(function (celda) {
+    var img = celda.querySelector('.trabajo-imagen');
+    if (!img) return;
+    esperarImagen(celda).then(function () {
+      img.animate(
+        [
+          { clipPath: 'inset(0 100% 0 0)' },
+          { clipPath: 'inset(0 0% 0 0)' }
+        ],
+        { duration: TRABAJOS_DURACION_IMG, easing: TRABAJOS_EASING, fill: 'forwards' }
+      );
+    });
+  });
+});
+
 function filtrarTrabajos(categoria, elementoClickeado) {
   document.querySelectorAll('#menu-filtros a').forEach(function (a) {
     a.classList.remove('activo');

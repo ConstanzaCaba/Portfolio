@@ -8,6 +8,14 @@ function aplicarIdioma(idioma) {
     }
   });
 
+  document.querySelectorAll('[data-href-es]').forEach(function (el) {
+    var href = el.getAttribute('data-href-' + idioma);
+    if (href !== null) {
+      el.setAttribute('href', href);
+      el.setAttribute('download', href);
+    }
+  });
+
   document.documentElement.lang = idioma;
 
   var boton = document.getElementById('idioma-toggle');

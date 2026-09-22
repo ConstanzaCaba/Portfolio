@@ -206,7 +206,7 @@ a{
 }
 
 .trabajo-imagen{
-  animation: entrarIzquierda 1.2s cubic-bezier(0.77, 0, 0.175, 1) 0.2s forwards;
+  clip-path: inset(0 100% 0 0);
   text-indent: 0;
   width: 100%;
   height: auto;
