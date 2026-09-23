@@ -21,6 +21,19 @@ function esMobile() {
   return window.innerWidth <= 768;
 }
 
+function activarVideoDeSlide(indice) {
+  document.querySelectorAll('.carrusel-slide').forEach((slide, i) => {
+    const video = slide.querySelector('video');
+    if (!video) return;
+    if (i === indice) {
+      if (video.preload !== 'auto') video.preload = 'auto';
+      video.play().catch(() => {});
+    } else {
+      video.pause();
+    }
+  });
+}
+
 function moverSlide(direccion) {
   if (esMobile()) return; // en mobile el scroll nativo se encarga
   if (animando) return;
@@ -44,6 +57,7 @@ function moverSlide(direccion) {
           slides[slideActual].style.zIndex = 0;
           slideActual = siguiente;
           dots.forEach((d, i) => d.classList.toggle('activo', i === slideActual));
+          activarVideoDeSlide(slideActual);
           animando = false;
         }, 500);
       });
@@ -64,6 +78,7 @@ function moverSlide(direccion) {
       slides[slideActual].style.zIndex = 0;
       slideActual = anterior;
       dots.forEach((d, i) => d.classList.toggle('activo', i === slideActual));
+      activarVideoDeSlide(slideActual);
       animando = false;
     }, 500);
   }
@@ -84,6 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
     slide.style.transform = i === 0 ? 'translateX(0)' : 'translateX(100%)';
   });
   dots.forEach((d, i) => d.classList.toggle('activo', i === 0));
+  activarVideoDeSlide(0);
 
   // Listener de scroll para mobile (actualiza los dots con el scroll nativo)
   if (carrusel && dots.length) {
@@ -96,6 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const idx = Math.round(carrusel.scrollLeft / carrusel.offsetWidth);
         slideActual = idx;
         dots.forEach((d, i) => d.classList.toggle('activo', i === idx));
+        activarVideoDeSlide(idx);
         scrollTimer = null;
       });
     }, { passive: true });
