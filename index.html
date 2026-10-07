@@ -276,7 +276,7 @@ function filtrarTrabajos(categoria, elementoClickeado) {
         { duration: TRABAJOS_DURACION, easing: TRABAJOS_EASING, fill: 'forwards' }
       ).finished.then(function () {
         celda.getAnimations().forEach(function (a) { a.cancel(); });
-      });
+      }).catch(function () {});
 
       var img = celda.querySelector('.trabajo-imagen');
       if (img) {
@@ -287,8 +287,11 @@ function filtrarTrabajos(categoria, elementoClickeado) {
           ],
           { duration: TRABAJOS_DURACION_IMG, easing: TRABAJOS_EASING, fill: 'forwards' }
         ).finished.then(function () {
+          // El CSS base de .trabajo-imagen la deja oculta (clip-path),
+          // así que fijamos el estado visible antes de cancelar la animación.
+          img.style.clipPath = 'inset(0 0% 0 0)';
           img.getAnimations().forEach(function (a) { a.cancel(); });
-        });
+        }).catch(function () {});
       }
     });
   });
