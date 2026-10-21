@@ -29,7 +29,7 @@ var TRABAJOS = [
     tipo: { es: 'Identidad gráfica', en: 'Graphic Identity' },
     anio: '2025',
     titulo: { es: 'Jaguar: Un musical del Centro de Arte UTDT', en: 'Jaguar: A Musical from the Art Department at UTDT' },
-    imagen: 'imagenes/jaguar2.png', alt: 'JAGUAR', ancho: 555, alto: 705,
+    imagen: 'imagenes/portada_jaguar.png', alt: 'JAGUAR', ancho: 555, alto: 705,
     descripcion: {
       es: 'Proyecto de identidad visual para Jaguar, una obra musical impulsada por el Departamento de Arte de la Universidad Torcuato Di Tella.',
       en: 'Visual identity project for Jaguar, a musical work driven by the Department of Art at Universidad Torcuato Di Tella.'
@@ -46,7 +46,7 @@ var TRABAJOS = [
       es: 'Ronda Redonda: Re-diseño de la exposición de arte “Aprendizaje Infinito” expuesta en el Museo Moderno',
       en: 'Ronda Redonda: Redesign of the art exhibition “Infinite Learning” displayed at the Modern Museum'
     },
-    imagen: 'imagenes/ronda.png', alt: 'Ronda Redonda', ancho: 1440, alto: 920,
+    imagen: 'imagenes/portada_ronda.png', alt: 'Ronda Redonda', ancho: 1440, alto: 920,
     descripcion: {
       es: 'Una muestra que explora el vínculo entre la educación y el arte, desde el Museo Moderno hacia el Centro Cultural Recoleta.',
       en: 'A showcase that explores the link between education and art, from the Modern Museum to the Recoleta Cultural Center.'
@@ -141,7 +141,7 @@ var TRABAJOS = [
     tipo: { es: 'Diseño web', en: 'Web Design' },
     anio: '2026',
     titulo: { es: 'PAPOTA', en: 'PAPOTA' },
-    imagen: 'imagenes/PAPOTA2.webp', alt: 'PAPOTA', ancho: 1920, alto: 1080,
+    imagen: 'imagenes/portada_papota.png', alt: 'PAPOTA', ancho: 1920, alto: 1080,
     descripcion: {
       es: 'Diseño web para Ca7riel y Paco Amoroso por el lanzamiento de su álbum PAPOTA.',
       en: 'Web design for Ca7riel and Paco Amoroso for the release of their album PAPOTA.'
