@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Un viaje a otro Mundo | Constanza Caba</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+  <link rel="stylesheet" href="style-trabajos.css">
+  <link rel="icon" type="image/png" href="../imagenes/favicon.png">
+  <link rel="preload" href="Archivo-Regular.ttf" as="font" type="font/truetype">
+  <link rel="preload" href="IBMPlexMono-Regular.ttf" as="font" type="font/truetype">
+</head>
+<body>
+   <header class="site-header">
+    <h1>Constanza Caba</h1>
+    <button class="menu-toggle" onclick="toggleMenu(event)">☰</button>
+    <nav class="site-nav">
+      <a href="../index.html" data-es="Trabajos," data-en="Works,">Trabajos,</a>
+      <a href="../sobremi.html" data-es=" Sobre mí," data-en=" About,"> Sobre mí,</a>
+      <a href="../mijardin.html" data-es=" Mi Jardín," data-en=" My Garden,"> Mi Jardín,</a>
+      <a href="#" onclick="abrirOverlay(); return false;" data-es=" Contacto," data-en=" Contact,"> Contacto,</a>
+      <a href="#" class="idioma" id="idioma-toggle" onclick="toggleIdioma(); return false;">EN→</a>
+    </nav>
+  </header>
+
+<div id="overlay-contacto">
+  <div class="overlay-content">
+    <button class="close-button" id="close-button-contacto">
+      <img src="../imagenes/cruz.verde.png" alt="cerrar">
+    </button>
+    <div class="overlay-text-block">
+      <h2><span class="resaltado" data-es="CONTACTO" data-en="CONTACT">CONTACTO</span></h2>
+      <p data-es="Cualquier consulta o propuesta es bienvenida. No dudes en escribirme:)" data-en="Any inquiry or proposal is welcome. Feel free to write to me :)">Cualquier consulta o propuesta es bienvenida. No dudes en escribirme:)</p>
+      <a href="mailto:caba.constanza@gmail.com">caba.constanza@gmail.com</a>
+      <a href="https://wa.me/5492914133188" target="_blank">Whatsapp</a>
+    </div>
+  </div>
+</div>
+
+ <div class="carrusel-wrapper">
+  <button class="carrusel-btn prev" onclick="moverSlide(-1)">‹</button>
+  <div class="carrusel" id="carrusel">
+<div class="carrusel-slide"><img src="../imagenes/Amanita1.png" alt="Un viaje a otro Mundo"></div>
+    <div class="carrusel-slide"><img src="../imagenes/Amanita2.png" alt="Un viaje a otro Mundo"></div>
+    <div class="carrusel-slide"><img src="../imagenes/Amanita3.png" alt="Un viaje a otro Mundo"></div>
+    <div class="carrusel-slide"><img src="../imagenes/Amanita4.png" alt="Un viaje a otro Mundo"></div>
+    <div class="carrusel-slide"><img src="../imagenes/Amanita5.png" alt="Un viaje a otro Mundo"></div>
+    <div class="carrusel-slide"><img src="../imagenes/Amanita6.png" alt="Un viaje a otro Mundo"></div>
+    <div class="carrusel-slide"><img src="../imagenes/Amanita7.png" alt="Un viaje a otro Mundo"></div>
+    <div class="carrusel-slide"><img src="../imagenes/Amanita8.png" alt="Un viaje a otro Mundo"></div>
+
+  </div>
+  <button class="carrusel-btn next" onclick="moverSlide(1)">›</button>
+</div>
+<div class="carrusel-dots">
+  <div class="carrusel-dot activo"></div>
+  <div class="carrusel-dot"></div>
+  <div class="carrusel-dot"></div>
+  <div class="carrusel-dot"></div>
+  <div class="carrusel-dot"></div>
+  <div class="carrusel-dot"></div>
+  <div class="carrusel-dot"></div>
+  <div class="carrusel-dot"></div>
+</div>
+
+  <section>
+    <div class="linea">
+    <div class="datita">
+      <div data-es="Infografía" data-en="Infographic">Infografía</div>
+      <div></div>
+      <div>2026</div>
+    </div>
+    </div>
+
+<div class="trabajo-descripcion-larga">
+    <div class="main-col3">
+    <h1 data-es="Un viaje a otro Mundo" data-en="A Journey to Another World">Un viaje a otro Mundo</h1>
+    </div>
+
+    <div class="main-col4">
+      <h1 id="titulo" data-es="CONCEPTO" data-en="CONCEPT">CONCEPTO</h1>
+        <p><u data-es="Diseño de folleto infográfico sobre la ingesta del hongo alucinógeno Amanita Muscaria." data-en="Infographic leaflet design about the ingestion of the hallucinogenic mushroom Amanita Muscaria.">Diseño de folleto infográfico sobre la ingesta del hongo alucinógeno Amanita Muscaria.</u></p>
+        <p data-es="El fascículo toma una A4 doble faz, con información sobre el proceso de absorción de las sustancias que generan distintos efectos psicoactivos en el cerebro. A partir de una distribución partida y una ilustración central que vincula directamente hongo-cerebro, se hace un desglose detallado de sustancias químicas y sus efectos en el tiempo." data-en="The booklet uses a double-sided A4 sheet, with information on how the body absorbs the substances that produce different psychoactive effects in the brain. Based on a split layout and a central illustration that directly links mushroom and brain, it offers a detailed breakdown of the chemical substances and their effects over time.">
+        El fascículo toma una A4 doble faz, con información sobre el proceso de absorción de las sustancias que generan distintos efectos psicoactivos en el cerebro. A partir de una distribución partida y una ilustración central que vincula directamente hongo-cerebro, se hace un desglose detallado de sustancias químicas y sus efectos en el tiempo.</p>
+        <p data-es="Se desarrolla un sistema de ilustraciones que son aplicadas tanto en el fascículo impreso como en el prototipo interactivo en formato Mobile. El prototipo explora una dimensión complementaria a la información del impreso, haciendo un paso a paso por la receta para poder ingerir la Amanita Muscaria. Las ilustraciones fueron hechas a mano y complementadas con ajustes de inteligencia artificial." data-en="A system of illustrations was developed and applied both to the printed booklet and to the interactive mobile prototype. The prototype explores a dimension complementary to the printed information, walking step by step through the recipe for ingesting Amanita Muscaria. The illustrations were made by hand and complemented with artificial intelligence adjustments.">
+        Se desarrolla un sistema de ilustraciones que son aplicadas tanto en el fascículo impreso como en el prototipo interactivo en formato Mobile. El prototipo explora una dimensión complementaria a la información del impreso, haciendo un paso a paso por la receta para poder ingerir la Amanita Muscaria. Las ilustraciones fueron hechas a mano y complementadas con ajustes de inteligencia artificial.</p>
+      <div id="datos">
+      <h1 id="titulo" data-es="PROYECTO" data-en="PROJECT">PROYECTO</h1>
+        <P id="lista" data-es="Académico" data-en="Academic">Académico</P>
+      <h1 id="titulo" data-es="EQUIPO" data-en="TEAM">EQUIPO</h1>
+        <P id="lista" data-es="Constanza Caba, Bautista Ausqui y Matías Cornara" data-en="Constanza Caba, Bautista Ausqui and Matías Cornara">Constanza Caba, Bautista Ausqui y Matías Cornara</P>
+      <h1 id="titulo" data-es="ROL" data-en="ROLE">ROL</h1>
+        <P id="lista" data-es="Diseño, ilustración" data-en="Design, illustration">Diseño, ilustración</P>
+      </div>
+      <!-- El destino de la flecha lo calcula trabajos-data.js (próximo trabajo visible) -->
+      <a href="../index.html" class="btn-siguiente">→</a>
+    </div>
+</div>    
+  </section>
+
+<footer class="site-footer">
+  <img src="../imagenes/footer2.png" alt="Logo de Constanza Caba" class="footer-logo">
+</footer>
+
+  <script src="../cursor.js"></script>
+  <script src="../sketch.js"></script>
+  <script src="../idioma.js"></script>
+  <script src="../trabajos-data.js"></script>
+</body>
+</html>

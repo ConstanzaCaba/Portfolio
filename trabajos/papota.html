@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>PAPOTA | Constanza Caba</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+  <link rel="stylesheet" href="style-trabajos.css">
+  <link rel="icon" type="image/png" href="../imagenes/favicon.png">
+  <link rel="preload" href="Archivo-Regular.ttf" as="font" type="font/truetype">
+  <link rel="preload" href="IBMPlexMono-Regular.ttf" as="font" type="font/truetype">
+</head>
+<body>
+   <header class="site-header">
+    <h1>Constanza Caba</h1>
+    <button class="menu-toggle" onclick="toggleMenu(event)">☰</button>
+    <nav class="site-nav">
+      <a href="../index.html" data-es="Trabajos," data-en="Works,">Trabajos,</a>
+      <a href="../sobremi.html" data-es=" Sobre mí," data-en=" About,"> Sobre mí,</a>
+      <a href="../mijardin.html" data-es=" Mi Jardín," data-en=" My Garden,"> Mi Jardín,</a>
+      <a href="#" onclick="abrirOverlay(); return false;" data-es=" Contacto," data-en=" Contact,"> Contacto,</a>
+      <a href="#" class="idioma" id="idioma-toggle" onclick="toggleIdioma(); return false;">EN→</a>
+    </nav>
+  </header>
+
+<div id="overlay-contacto">
+  <div class="overlay-content">
+    <button class="close-button" id="close-button-contacto">
+      <img src="../imagenes/cruz.verde.png" alt="cerrar">
+    </button>
+    <div class="overlay-text-block">
+      <h2><span class="resaltado" data-es="CONTACTO" data-en="CONTACT">CONTACTO</span></h2>
+      <p data-es="Cualquier consulta o propuesta es bienvenida. No dudes en escribirme:)" data-en="Any inquiry or proposal is welcome. Feel free to write to me :)">Cualquier consulta o propuesta es bienvenida. No dudes en escribirme:)</p>
+      <a href="mailto:caba.constanza@gmail.com">caba.constanza@gmail.com</a>
+      <a href="https://wa.me/5492914133188" target="_blank">Whatsapp</a>
+    </div>
+  </div>
+</div>
+
+ <div class="carrusel-wrapper">
+  <button class="carrusel-btn prev" onclick="moverSlide(-1)">‹</button>
+  <div class="carrusel" id="carrusel">
+<div class="carrusel-slide"><video loop muted playsinline preload="none">
+      <source src="../imagenes/PAPOTA1.mp4" type="video/mp4">
+      </video></div>
+    <div class="carrusel-slide"><img src="../imagenes/PAPOTA2.webp" alt="PAPOTA"></div>
+    <div class="carrusel-slide slide-cover"><video loop muted playsinline preload="none">
+      <source src="../imagenes/PAPOTA3.mp4" type="video/mp4">
+      </video></div>
+    <div class="carrusel-slide"><img src="../imagenes/PAPOTA4.webp" alt="PAPOTA"></div>
+    <div class="carrusel-slide"><img src="../imagenes/PAPOTA5.webp" alt="PAPOTA"></div>
+    <div class="carrusel-slide"><img src="../imagenes/PAPOTA6.webp" alt="PAPOTA"></div>
+
+  </div>
+  <button class="carrusel-btn next" onclick="moverSlide(1)">›</button>
+</div>
+<div class="carrusel-dots">
+  <div class="carrusel-dot activo"></div>
+  <div class="carrusel-dot"></div>
+  <div class="carrusel-dot"></div>
+  <div class="carrusel-dot"></div>
+  <div class="carrusel-dot"></div>
+  <div class="carrusel-dot"></div>
+</div>
+
+  <section>
+    <div class="linea">
+    <div class="datita">
+      <div data-es="Identidad" data-en="Identity">Identidad</div>
+      <div></div>
+      <div>2026</div>
+    </div>
+    </div>
+
+<div class="trabajo-descripcion-larga">
+    <div class="main-col3">
+    <h1 data-es="PAPOTA" data-en="PAPOTA">PAPOTA</h1>
+    </div>
+
+    <div class="main-col4">
+      <h1 id="titulo" data-es="CONCEPTO" data-en="CONCEPT">CONCEPTO</h1>
+        <p><u data-es="Diseño web para Ca7riel y Paco Amoroso por el lanzamiento de su álbum PAPOTA." data-en="Web design for Ca7riel and Paco Amoroso for the release of their album PAPOTA.">Diseño web para Ca7riel y Paco Amoroso por el lanzamiento de su álbum PAPOTA.</u></p>
+        <p data-es="PAPOTA es el sitio web del EP de Ca7riel &amp; Paco Amoroso — un disco que canaliza su energía caótica en una mezcla de trap latino, jazz, funk y ritmos tropicales. El título, argot argentino para el cóctel de proteínas y pastillas que usan los que van al gimnasio para crecer rápido, alude a su propio ascenso veloz mientras pliega la autocrítica en un humor irreverente." data-en="PAPOTA is the website for Ca7riel &amp; Paco Amoroso's EP — a record that channels their chaotic energy into a mix of Latin trap, jazz, funk and tropical rhythms. The title, Argentine slang for the cocktail of proteins and pills used by gym-goers to grow fast, alludes to their own rapid rise while folding self-criticism into irreverent humor.">
+        PAPOTA es el sitio web del EP de Ca7riel &amp; Paco Amoroso — un disco que canaliza su energía caótica en una mezcla de trap latino, jazz, funk y ritmos tropicales. El título, argot argentino para el cóctel de proteínas y pastillas que usan los que van al gimnasio para crecer rápido, alude a su propio ascenso veloz mientras pliega la autocrítica en un humor irreverente.</p>
+        <p data-es="El sitio desarrolla una experiencia 3D inmersiva con Three.js, con versiones infladas como globos del dúo flotando por el cielo — traduciendo la absurdidad lúdica del EP en un espacio digital interactivo." data-en="The site builds an immersive 3D experience with Three.js, with balloon-like inflated versions of the duo floating across the sky — translating the playful absurdity of the EP into an interactive digital space.">
+        El sitio desarrolla una experiencia 3D inmersiva con Three.js, con versiones infladas como globos del dúo flotando por el cielo — traduciendo la absurdidad lúdica del EP en un espacio digital interactivo.</p>
+      <div id="datos">
+      <h1 id="titulo" data-es="EQUIPO" data-en="TEAM">EQUIPO</h1>
+        <P id="lista" data-es="Julián Leiss, Bautista Ausqui y Constanza Caba" data-en="Julián Leiss, Bautista Ausqui and Constanza Caba">Julián Leiss, Bautista Ausqui y Constanza Caba</P>
+      <h1 id="titulo" data-es="ROL" data-en="ROLE">ROL</h1>
+        <P id="lista" data-es="Diseño, assets 3D" data-en="Design, 3D assets">Diseño, assets 3D</P>
+      </div>
+      <!-- El destino de la flecha lo calcula trabajos-data.js (próximo trabajo visible) -->
+      <a href="../index.html" class="btn-siguiente">→</a>
+    </div>
+</div>    
+  </section>
+
+<footer class="site-footer">
+  <img src="../imagenes/footer2.png" alt="Logo de Constanza Caba" class="footer-logo">
+</footer>
+
+  <script src="../cursor.js"></script>
+  <script src="../sketch.js"></script>
+  <script src="../idioma.js"></script>
+  <script src="../trabajos-data.js"></script>
+</body>
+</html>
