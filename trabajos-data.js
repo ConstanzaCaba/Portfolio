@@ -46,7 +46,7 @@ var TRABAJOS = [
       es: 'Ronda Redonda: Re-diseño de la exposición de arte “Aprendizaje Infinito” expuesta en el Museo Moderno',
       en: 'Ronda Redonda: Redesign of the art exhibition “Infinite Learning” displayed at the Modern Museum'
     },
-    imagen: 'imagenes/portada_ronda.png', alt: 'Ronda Redonda', ancho: 1440, alto: 920,
+    imagen: 'imagenes/portada_Ronda.png', alt: 'Ronda Redonda', ancho: 1440, alto: 920,
     descripcion: {
       es: 'Una muestra que explora el vínculo entre la educación y el arte, desde el Museo Moderno hacia el Centro Cultural Recoleta.',
       en: 'A showcase that explores the link between education and art, from the Modern Museum to the Recoleta Cultural Center.'
