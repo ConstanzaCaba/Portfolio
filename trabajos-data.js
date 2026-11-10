@@ -23,33 +23,29 @@ var TRABAJOS = [
   },
   {
     visible: true,
-    pagina: 'jaguar.html',
-    categorias: 'identidad cultural',
-    orden: { cultural: 2 }, // posición dentro de una categoría (opcional; sin número va al final, en el orden de la lista)
-    tipo: { es: 'Identidad gráfica', en: 'Graphic Identity' },
-    anio: '2025',
-    titulo: { es: 'Jaguar: Un musical del Centro de Arte UTDT', en: 'Jaguar: A Musical from the Art Department at UTDT' },
-    imagen: 'imagenes/portada_jaguar.png', alt: 'JAGUAR', ancho: 555, alto: 705,
+    pagina: 'papota.html',
+    categorias: 'identidad',
+    tipo: { es: 'Diseño web', en: 'Web Design' },
+    anio: '2026',
+    titulo: { es: 'PAPOTA', en: 'PAPOTA' },
+    imagen: 'imagenes/portada_papota.png', alt: 'PAPOTA', ancho: 1920, alto: 1080,
     descripcion: {
-      es: 'Proyecto de identidad visual para Jaguar, una obra musical impulsada por el Departamento de Arte de la Universidad Torcuato Di Tella.',
-      en: 'Visual identity project for Jaguar, a musical work driven by the Department of Art at Universidad Torcuato Di Tella.'
+      es: 'Diseño web para Ca7riel y Paco Amoroso por el lanzamiento de su álbum PAPOTA.',
+      en: 'Web design for Ca7riel and Paco Amoroso for the release of their album PAPOTA.'
     }
   },
   {
     visible: true,
-    pagina: 'ronda.html',
-    categorias: 'cultural',
-    orden: { cultural: 1 },
+    pagina: 'cuerpohibrido.html',
+    categorias: 'audiovisual grafica',
+    orden: { audiovisual: 2 },
     tipo: { es: 'Gráfica', en: 'Graphic' },
     anio: '2025',
-    titulo: {
-      es: 'Ronda Redonda: Re-diseño de la exposición de arte “Aprendizaje Infinito” expuesta en el Museo Moderno',
-      en: 'Ronda Redonda: Redesign of the art exhibition “Infinite Learning” displayed at the Modern Museum'
-    },
-    imagen: 'imagenes/portada_Ronda.png', alt: 'Ronda Redonda', ancho: 1440, alto: 920,
+    titulo: { es: 'El cuerpo híbrido: Un paseo virtual', en: 'The Hybrid Body: A Virtual Walk' },
+    imagen: 'imagenes/rosalia.png', alt: 'El cuerpo híbrido', ancho: 483, alto: 678,
     descripcion: {
-      es: 'Una muestra que explora el vínculo entre la educación y el arte, desde el Museo Moderno hacia el Centro Cultural Recoleta.',
-      en: 'A showcase that explores the link between education and art, from the Modern Museum to the Recoleta Cultural Center.'
+      es: 'Experiencia interactiva que se pregunta por la despersonalización y fragmentación de los cuerpos hoy. Inteligencia artificial y la construcción de la imagen de un cuerpo.',
+      en: 'Interactive experience that questions the depersonalization and fragmentation of bodies today. Artificial intelligence and the construction of the image of a body.'
     }
   },
   {
@@ -107,16 +103,19 @@ var TRABAJOS = [
   },
   {
     visible: true,
-    pagina: 'cuerpohibrido.html',
-    categorias: 'audiovisual grafica',
-    orden: { audiovisual: 2 },
+    pagina: 'ronda.html',
+    categorias: 'cultural',
+    orden: { cultural: 1 },
     tipo: { es: 'Gráfica', en: 'Graphic' },
     anio: '2025',
-    titulo: { es: 'El cuerpo híbrido: Un paseo virtual', en: 'The Hybrid Body: A Virtual Walk' },
-    imagen: 'imagenes/rosalia.png', alt: 'El cuerpo híbrido', ancho: 483, alto: 678,
+    titulo: {
+      es: 'Ronda Redonda: Re-diseño de la exposición de arte “Aprendizaje Infinito” expuesta en el Museo Moderno',
+      en: 'Ronda Redonda: Redesign of the art exhibition “Infinite Learning” displayed at the Modern Museum'
+    },
+    imagen: 'imagenes/portada_Ronda.png', alt: 'Ronda Redonda', ancho: 1440, alto: 920,
     descripcion: {
-      es: 'Experiencia interactiva que se pregunta por la despersonalización y fragmentación de los cuerpos hoy. Inteligencia artificial y la construcción de la imagen de un cuerpo.',
-      en: 'Interactive experience that questions the depersonalization and fragmentation of bodies today. Artificial intelligence and the construction of the image of a body.'
+      es: 'Una muestra que explora el vínculo entre la educación y el arte, desde el Museo Moderno hacia el Centro Cultural Recoleta.',
+      en: 'A showcase that explores the link between education and art, from the Modern Museum to the Recoleta Cultural Center.'
     }
   },
   {
@@ -136,15 +135,16 @@ var TRABAJOS = [
   // ---------- NUEVOS ----------
   {
     visible: true,
-    pagina: 'papota.html',
-    categorias: 'identidad',
-    tipo: { es: 'Diseño web', en: 'Web Design' },
-    anio: '2026',
-    titulo: { es: 'PAPOTA', en: 'PAPOTA' },
-    imagen: 'imagenes/portada_papota.png', alt: 'PAPOTA', ancho: 1920, alto: 1080,
+    pagina: 'jaguar.html',
+    categorias: 'identidad cultural',
+    orden: { cultural: 2 }, // posición dentro de una categoría (opcional; sin número va al final, en el orden de la lista)
+    tipo: { es: 'Identidad gráfica', en: 'Graphic Identity' },
+    anio: '2025',
+    titulo: { es: 'Jaguar: Un musical del Centro de Arte UTDT', en: 'Jaguar: A Musical from the Art Department at UTDT' },
+    imagen: 'imagenes/portada_jaguar.png', alt: 'JAGUAR', ancho: 555, alto: 705,
     descripcion: {
-      es: 'Diseño web para Ca7riel y Paco Amoroso por el lanzamiento de su álbum PAPOTA.',
-      en: 'Web design for Ca7riel and Paco Amoroso for the release of their album PAPOTA.'
+      es: 'Proyecto de identidad visual para Jaguar, una obra musical impulsada por el Departamento de Arte de la Universidad Torcuato Di Tella.',
+      en: 'Visual identity project for Jaguar, a musical work driven by the Department of Art at Universidad Torcuato Di Tella.'
     }
   },
   {
